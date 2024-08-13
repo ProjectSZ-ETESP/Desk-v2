@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaLog));
             this.btnForgetei = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEye = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.cboRemember = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogar = new System.Windows.Forms.PictureBox();
@@ -52,26 +52,13 @@
             // 
             this.btnForgetei.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForgetei.AutoSize = true;
-            this.btnForgetei.Font = new System.Drawing.Font("Poppins ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetei.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetei.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnForgetei.Location = new System.Drawing.Point(48, 412);
+            this.btnForgetei.Location = new System.Drawing.Point(58, 424);
             this.btnForgetei.Name = "btnForgetei";
-            this.btnForgetei.Size = new System.Drawing.Size(190, 28);
+            this.btnForgetei.Size = new System.Drawing.Size(180, 20);
             this.btnForgetei.TabIndex = 10;
             this.btnForgetei.Text = "Esqueci minha senha";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.Location = new System.Drawing.Point(20, 12);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(247, 24);
-            this.txtEmail.TabIndex = 9;
-            this.txtEmail.Text = "a";
             // 
             // panel1
             // 
@@ -96,24 +83,28 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.txtPassword);
             this.panel3.Controls.Add(this.btnEye);
-            this.panel3.Location = new System.Drawing.Point(2, 273);
+            this.panel3.Location = new System.Drawing.Point(3, 302);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(289, 55);
             this.panel3.TabIndex = 18;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3_Paint);
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtPassword.Location = new System.Drawing.Point(21, 12);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(215, 24);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.Size = new System.Drawing.Size(215, 19);
+            this.txtPassword.TabIndex = 14;
             this.txtPassword.Text = "a";
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             // 
             // btnEye
             // 
@@ -139,18 +130,33 @@
             this.panel2.Size = new System.Drawing.Size(289, 55);
             this.panel2.TabIndex = 17;
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(20, 12);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(247, 19);
+            this.txtEmail.TabIndex = 9;
+            this.txtEmail.Text = "a";
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            // 
             // cboRemember
             // 
             this.cboRemember.AutoSize = true;
-            this.cboRemember.Font = new System.Drawing.Font("Poppins Medium", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRemember.ForeColor = System.Drawing.SystemColors.Control;
-            this.cboRemember.Location = new System.Drawing.Point(23, 334);
+            this.cboRemember.Location = new System.Drawing.Point(23, 363);
             this.cboRemember.Name = "cboRemember";
-            this.cboRemember.Size = new System.Drawing.Size(140, 23);
+            this.cboRemember.Size = new System.Drawing.Size(124, 17);
             this.cboRemember.TabIndex = 15;
             this.cboRemember.Text = "Mantenha o login";
             this.cboRemember.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.cboRemember.UseVisualStyleBackColor = true;
+            this.cboRemember.CheckedChanged += new System.EventHandler(this.CboRemember_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -192,6 +198,7 @@
             this.ClientSize = new System.Drawing.Size(934, 599);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.MinimumSize = new System.Drawing.Size(950, 638);
             this.Name = "telaLog";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.TelaLog_Load);
@@ -215,13 +222,13 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox btnEye;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox cboRemember;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnLogar;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }
 

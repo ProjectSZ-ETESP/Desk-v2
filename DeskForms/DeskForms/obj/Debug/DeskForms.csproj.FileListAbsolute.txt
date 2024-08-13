@@ -41,3 +41,47 @@ C:\Users\Lab_ETESP\source\repos\DeskForms\DeskForms\bin\Debug\System.Threading.T
 C:\Users\Lab_ETESP\source\repos\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.CopyComplete
 C:\Users\Lab_ETESP\source\repos\DeskForms\DeskForms\obj\Debug\DeskForms.exe
 C:\Users\Lab_ETESP\source\repos\DeskForms\DeskForms\obj\Debug\DeskForms.pdb
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\DeskForms.exe.config
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\DeskForms.exe
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\DeskForms.pdb
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Google.Protobuf.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\MySql.Data.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Buffers.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Memory.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\ZstdSharp.dll
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Google.Protobuf.pdb
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Google.Protobuf.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\MySql.Data.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Buffers.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Memory.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csprojAssemblyReference.cache
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.telaLog.resources
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.Properties.Resources.resources
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.GenerateResource.cache
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.CoreCompileInputs.cache
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.CopyComplete
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.exe
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.pdb
+C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.Principal.resources

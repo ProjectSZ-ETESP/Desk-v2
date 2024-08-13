@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,18 +28,12 @@ namespace DeskForms
             textBox.ForeColor = Color.Gray;
         }
 
+
+        MySqlDataReader myreader;
         private void btnLogar_Click(object sender, EventArgs e)
         {
 
-            //string email = txtEmail.Text;
-            //if (!string.IsNullOrEmpty(email) && 
-            //    !string.IsNullOrEmpty(txtPassword.Text) && 
-            //    email.Contains("@"))
-            //{
-            //    Principal frm = new Principal();
-            //    frm.ShowDialog();
-            //    Close();
-            //}
+            
 
             if (cboRemember.Checked)
             {
@@ -46,11 +41,74 @@ namespace DeskForms
                 Properties.Settings.Default.Save();
             }
 
-            Principal frm = new Principal();
-            this.Hide();
-            frm.ShowDialog();
+
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string query = $"Select * from tblCliente where nome = '{txtEmail.Text}'";
+            List<string> strings = new List<string>();
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                
+
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    strings.Add(Convert.ToString(myreader["nome"]));
+                }
+
+                if(strings.Count() > 0)
+                {
+                    Principal frm = new Principal();
+                    this.Hide();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show($"XIHHHH", "uh oh");
+                }
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
 
         }
+
+        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
+
+
+        private int connection(string query)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            int ren = 0;
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteReader();
+                conn.Close();
+            }
+            catch(Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return ren;
+        }
+
 
         private void TogglePasswordVisibility()
         {
@@ -118,6 +176,21 @@ namespace DeskForms
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CboRemember_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }
