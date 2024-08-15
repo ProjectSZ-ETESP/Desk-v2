@@ -63,6 +63,16 @@ namespace DeskForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap amem {
+            get {
+                object obj = ResourceManager.GetObject("amem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap aviso {
             get {
                 object obj = ResourceManager.GetObject("aviso", resourceCulture);
@@ -153,16 +163,6 @@ namespace DeskForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Group_65 {
-            get {
-                object obj = ResourceManager.GetObject("Group_65", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap groups {
             get {
                 object obj = ResourceManager.GetObject("groups", resourceCulture);
@@ -183,10 +183,40 @@ namespace DeskForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logDark {
+            get {
+                object obj = ResourceManager.GetObject("logDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logLight {
+            get {
+                object obj = ResourceManager.GetObject("logLight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoDark_1 {
             get {
                 object obj = ResourceManager.GetObject("logoDark_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        internal static System.Drawing.Icon logoDark_11 {
+            get {
+                object obj = ResourceManager.GetObject("logoDark_11", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -213,9 +243,29 @@ namespace DeskForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap map_vector {
+        internal static System.Drawing.Bitmap logoWhite {
             get {
-                object obj = ResourceManager.GetObject("map_vector", resourceCulture);
+                object obj = ResourceManager.GetObject("logoWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapaClaro {
+            get {
+                object obj = ResourceManager.GetObject("mapaClaro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mapaEscuro {
+            get {
+                object obj = ResourceManager.GetObject("mapaEscuro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,16 +293,6 @@ namespace DeskForms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Tela_Login {
-            get {
-                object obj = ResourceManager.GetObject("Tela_Login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap vector {
             get {
                 object obj = ResourceManager.GetObject("vector", resourceCulture);
@@ -266,16 +306,6 @@ namespace DeskForms.Properties {
         internal static System.Drawing.Bitmap warning {
             get {
                 object obj = ResourceManager.GetObject("warning", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2024_06_07_at_21_25_42 {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp_Image_2024_06_07_at_21_25_42", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

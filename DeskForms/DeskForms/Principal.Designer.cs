@@ -78,7 +78,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
@@ -285,7 +285,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.BackgroundImage = global::DeskForms.Properties.Resources.WhatsApp_Image_2024_06_07_at_21_25_42;
+            this.pictureBox4.BackgroundImage = global::DeskForms.Properties.Resources.amem;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(26, 24);
             this.pictureBox4.Name = "pictureBox4";
@@ -310,7 +310,7 @@
             this.tabConsulta.Location = new System.Drawing.Point(4, 25);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(824, 592);
+            this.tabConsulta.Size = new System.Drawing.Size(831, 592);
             this.tabConsulta.TabIndex = 2;
             this.tabConsulta.Text = "tabConsulta";
             // 
@@ -466,7 +466,7 @@
             this.tabConfig.Location = new System.Drawing.Point(4, 25);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfig.Size = new System.Drawing.Size(824, 592);
+            this.tabConfig.Size = new System.Drawing.Size(831, 592);
             this.tabConfig.TabIndex = 4;
             this.tabConfig.Text = "tabConfig";
             // 
@@ -489,7 +489,7 @@
             this.tabForum.Location = new System.Drawing.Point(4, 25);
             this.tabForum.Name = "tabForum";
             this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(824, 592);
+            this.tabForum.Size = new System.Drawing.Size(831, 592);
             this.tabForum.TabIndex = 3;
             this.tabForum.Text = "tabForum";
             // 
@@ -568,13 +568,13 @@
             this.tabPerfil.Controls.Add(this.label15);
             this.tabPerfil.Controls.Add(this.label14);
             this.tabPerfil.Controls.Add(this.label13);
-            this.tabPerfil.Controls.Add(this.label12);
+            this.tabPerfil.Controls.Add(this.lblNome);
             this.tabPerfil.Controls.Add(this.btnEdit);
             this.tabPerfil.Controls.Add(this.imagePerfil);
             this.tabPerfil.Location = new System.Drawing.Point(4, 25);
             this.tabPerfil.Name = "tabPerfil";
             this.tabPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPerfil.Size = new System.Drawing.Size(824, 592);
+            this.tabPerfil.Size = new System.Drawing.Size(831, 592);
             this.tabPerfil.TabIndex = 0;
             this.tabPerfil.Text = "tabPerfil";
             // 
@@ -583,7 +583,7 @@
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(771, 529);
+            this.btnLogout.Location = new System.Drawing.Point(778, 529);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 8;
@@ -671,15 +671,15 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Nome";
             // 
-            // label12
+            // lblNome
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(339, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(214, 37);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Olá, Bombom";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(339, 65);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(214, 37);
+            this.lblNome.TabIndex = 9;
+            this.lblNome.Text = "Olá, Bombom";
             // 
             // btnEdit
             // 
@@ -716,7 +716,7 @@
             this.panelNav.Controls.Add(this.btnRegistro);
             this.panelNav.Location = new System.Drawing.Point(-1, 0);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(63, 587);
+            this.panelNav.Size = new System.Drawing.Size(49, 587);
             this.panelNav.TabIndex = 2;
             this.panelNav.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelNav_Paint);
             // 
@@ -724,9 +724,9 @@
             // 
             this.pfpLateral.BackgroundImage = global::DeskForms.Properties.Resources.dog;
             this.pfpLateral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pfpLateral.Location = new System.Drawing.Point(6, 20);
+            this.pfpLateral.Location = new System.Drawing.Point(8, 22);
             this.pfpLateral.Name = "pfpLateral";
-            this.pfpLateral.Size = new System.Drawing.Size(50, 50);
+            this.pfpLateral.Size = new System.Drawing.Size(35, 35);
             this.pfpLateral.TabIndex = 6;
             this.pfpLateral.TabStop = false;
             this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
@@ -736,9 +736,9 @@
             this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(15, 539);
+            this.btnConfig.Location = new System.Drawing.Point(11, 549);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(30, 30);
+            this.btnConfig.Size = new System.Drawing.Size(25, 25);
             this.btnConfig.TabIndex = 5;
             this.btnConfig.TabStop = false;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
@@ -748,9 +748,9 @@
             this.btnForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
             this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(15, 312);
+            this.btnForum.Location = new System.Drawing.Point(11, 318);
             this.btnForum.Name = "btnForum";
-            this.btnForum.Size = new System.Drawing.Size(30, 30);
+            this.btnForum.Size = new System.Drawing.Size(25, 25);
             this.btnForum.TabIndex = 4;
             this.btnForum.TabStop = false;
             this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
@@ -760,9 +760,9 @@
             this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(15, 221);
+            this.btnConsulta.Location = new System.Drawing.Point(11, 231);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(30, 30);
+            this.btnConsulta.Size = new System.Drawing.Size(25, 25);
             this.btnConsulta.TabIndex = 3;
             this.btnConsulta.TabStop = false;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
@@ -772,9 +772,9 @@
             this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
             this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistro.Location = new System.Drawing.Point(15, 134);
+            this.btnRegistro.Location = new System.Drawing.Point(11, 143);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(30, 30);
+            this.btnRegistro.Size = new System.Drawing.Size(25, 25);
             this.btnRegistro.TabIndex = 2;
             this.btnRegistro.TabStop = false;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
@@ -792,11 +792,11 @@
             this.abasPrincipal.Controls.Add(this.tabForum);
             this.abasPrincipal.Controls.Add(this.tabConfig);
             this.abasPrincipal.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.abasPrincipal.Location = new System.Drawing.Point(50, -27);
+            this.abasPrincipal.Location = new System.Drawing.Point(44, -27);
             this.abasPrincipal.Multiline = true;
             this.abasPrincipal.Name = "abasPrincipal";
             this.abasPrincipal.SelectedIndex = 0;
-            this.abasPrincipal.Size = new System.Drawing.Size(832, 621);
+            this.abasPrincipal.Size = new System.Drawing.Size(839, 621);
             this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.abasPrincipal.TabIndex = 3;
             this.abasPrincipal.TabStop = false;
@@ -826,7 +826,7 @@
             this.tabRegistro.Location = new System.Drawing.Point(4, 25);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(824, 592);
+            this.tabRegistro.Size = new System.Drawing.Size(831, 592);
             this.tabRegistro.TabIndex = 1;
             this.tabRegistro.Text = "tabProntuario";
             // 
@@ -993,7 +993,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox btnEdit;
         private System.Windows.Forms.PictureBox imagePerfil;
         private System.Windows.Forms.Panel panelNav;

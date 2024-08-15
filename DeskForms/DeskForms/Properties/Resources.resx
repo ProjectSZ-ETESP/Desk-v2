@@ -142,7 +142,7 @@
   <data name="logoDark_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoDark 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="map_vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="mapaClaro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\map-vector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -154,7 +154,7 @@
   <data name="groups" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\groups.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tela_Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="mapaEscuro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tela Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -166,13 +166,13 @@
   <data name="vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WhatsApp_Image_2024_06_07_at_21_25_42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="amem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2024-06-07 at 21.25.42.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="zoiofechado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoiofechado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Group_65" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="logLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -189,5 +189,14 @@
   </data>
   <data name="logoutClear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoutClear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoDark_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoDark 1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

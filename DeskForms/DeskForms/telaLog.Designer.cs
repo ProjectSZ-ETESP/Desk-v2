@@ -37,26 +37,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cboRemember = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnLogar = new System.Windows.Forms.PictureBox();
             this.menuBackground = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEye)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnForgetei
             // 
-            this.btnForgetei.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnForgetei.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForgetei.AutoSize = true;
-            this.btnForgetei.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetei.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetei.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnForgetei.Location = new System.Drawing.Point(58, 424);
+            this.btnForgetei.Location = new System.Drawing.Point(55, 436);
             this.btnForgetei.Name = "btnForgetei";
-            this.btnForgetei.Size = new System.Drawing.Size(180, 20);
+            this.btnForgetei.Size = new System.Drawing.Size(184, 28);
             this.btnForgetei.TabIndex = 10;
             this.btnForgetei.Text = "Esqueci minha senha";
             // 
@@ -68,7 +69,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cboRemember);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pctLogo);
             this.panel1.Controls.Add(this.btnLogar);
             this.panel1.Controls.Add(this.btnForgetei);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -83,7 +84,7 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Controls.Add(this.txtPassword);
             this.panel3.Controls.Add(this.btnEye);
-            this.panel3.Location = new System.Drawing.Point(3, 302);
+            this.panel3.Location = new System.Drawing.Point(3, 288);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(289, 55);
             this.panel3.TabIndex = 18;
@@ -94,17 +95,18 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtPassword.Location = new System.Drawing.Point(21, 12);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(215, 19);
+            this.txtPassword.Size = new System.Drawing.Size(215, 24);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.Text = "a";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyDown);
             // 
             // btnEye
             // 
@@ -135,14 +137,15 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(20, 12);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(247, 19);
+            this.txtEmail.Size = new System.Drawing.Size(247, 24);
             this.txtEmail.TabIndex = 9;
             this.txtEmail.Text = "a";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.TextChanged += new System.EventHandler(this.TxtEmail_TextChanged);
             // 
             // cboRemember
             // 
@@ -161,25 +164,25 @@
             this.cboRemember.UseVisualStyleBackColor = true;
             this.cboRemember.CheckedChanged += new System.EventHandler(this.CboRemember_CheckedChanged);
             // 
-            // pictureBox1
+            // pctLogo
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.logoDark_1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(113, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 75);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pctLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctLogo.BackgroundImage = global::DeskForms.Properties.Resources.logoDark_1;
+            this.pctLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctLogo.Location = new System.Drawing.Point(93, 61);
+            this.pctLogo.Name = "pctLogo";
+            this.pctLogo.Size = new System.Drawing.Size(100, 100);
+            this.pctLogo.TabIndex = 12;
+            this.pctLogo.TabStop = false;
             // 
             // btnLogar
             // 
             this.btnLogar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogar.BackgroundImage = global::DeskForms.Properties.Resources.Group_65;
+            this.btnLogar.BackgroundImage = global::DeskForms.Properties.Resources.logLight;
             this.btnLogar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogar.Location = new System.Drawing.Point(129, 504);
+            this.btnLogar.Location = new System.Drawing.Point(114, 503);
             this.btnLogar.Name = "btnLogar";
-            this.btnLogar.Size = new System.Drawing.Size(45, 45);
+            this.btnLogar.Size = new System.Drawing.Size(60, 60);
             this.btnLogar.TabIndex = 14;
             this.btnLogar.TabStop = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
@@ -201,9 +204,10 @@
             this.ClientSize = new System.Drawing.Size(934, 599);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuBackground);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 638);
             this.Name = "telaLog";
-            this.Text = "Form1";
+            this.Text = "Tela de Login";
             this.Load += new System.EventHandler(this.TelaLog_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -212,7 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEye)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -228,7 +232,7 @@
         private System.Windows.Forms.PictureBox btnEye;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox cboRemember;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctLogo;
         private System.Windows.Forms.PictureBox btnLogar;
         private System.Windows.Forms.MenuStrip menuBackground;
         private System.Windows.Forms.TextBox txtPassword;

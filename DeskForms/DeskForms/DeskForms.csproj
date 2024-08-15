@@ -239,6 +239,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logoWhite.png" />
+    <None Include="Resources\logoDark 1.ico" />
+    <None Include="Resources\logDark.png" />
     <Content Include="Resources\logoutClear.png" />
     <None Include="Resources\logoutClear1.png" />
   </ItemGroup>
