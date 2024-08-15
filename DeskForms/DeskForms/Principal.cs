@@ -54,6 +54,9 @@ namespace DeskForms
         private void BtnLogout_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.remember = false;
+            Properties.Settings.Default.user = "";
+            Properties.Settings.Default.pw = "";
+
             Properties.Settings.Default.Save();
 
             DeskForms.telaLog log = new DeskForms.telaLog();

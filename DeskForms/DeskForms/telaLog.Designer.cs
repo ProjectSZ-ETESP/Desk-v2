@@ -39,7 +39,7 @@
             this.cboRemember = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogar = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuBackground = new System.Windows.Forms.MenuStrip();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEye)).BeginInit();
@@ -147,11 +147,14 @@
             // cboRemember
             // 
             this.cboRemember.AutoSize = true;
-            this.cboRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRemember.FlatAppearance.BorderColor = System.Drawing.SystemColors.HighlightText;
+            this.cboRemember.FlatAppearance.BorderSize = 0;
+            this.cboRemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboRemember.Font = new System.Drawing.Font("Poppins Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRemember.ForeColor = System.Drawing.SystemColors.Control;
-            this.cboRemember.Location = new System.Drawing.Point(23, 363);
+            this.cboRemember.Location = new System.Drawing.Point(23, 376);
             this.cboRemember.Name = "cboRemember";
-            this.cboRemember.Size = new System.Drawing.Size(124, 17);
+            this.cboRemember.Size = new System.Drawing.Size(151, 29);
             this.cboRemember.TabIndex = 15;
             this.cboRemember.Text = "Mantenha o login";
             this.cboRemember.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,15 +184,15 @@
             this.btnLogar.TabStop = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
-            // menuStrip1
+            // menuBackground
             // 
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(934, 599);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuBackground.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuBackground.Location = new System.Drawing.Point(0, 0);
+            this.menuBackground.Name = "menuBackground";
+            this.menuBackground.Size = new System.Drawing.Size(934, 599);
+            this.menuBackground.TabIndex = 18;
+            this.menuBackground.Text = "menuStrip1";
             // 
             // telaLog
             // 
@@ -197,7 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 599);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuBackground);
             this.MinimumSize = new System.Drawing.Size(950, 638);
             this.Name = "telaLog";
             this.Text = "Form1";
@@ -227,7 +230,7 @@
         private System.Windows.Forms.CheckBox cboRemember;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnLogar;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuBackground;
         private System.Windows.Forms.TextBox txtPassword;
     }
 }

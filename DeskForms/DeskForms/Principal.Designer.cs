@@ -42,6 +42,8 @@
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.pnlPost = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label28 = new System.Windows.Forms.Label();
             this.tabConsulta = new System.Windows.Forms.TabPage();
             this.cboNotific = new System.Windows.Forms.ComboBox();
@@ -60,8 +62,14 @@
             this.tabConfig = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabForum = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
+            this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -71,7 +79,14 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.PictureBox();
+            this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
+            this.pfpLateral = new System.Windows.Forms.PictureBox();
+            this.btnConfig = new System.Windows.Forms.PictureBox();
+            this.btnForum = new System.Windows.Forms.PictureBox();
+            this.btnConsulta = new System.Windows.Forms.PictureBox();
+            this.btnRegistro = new System.Windows.Forms.PictureBox();
             this.abasPrincipal = new System.Windows.Forms.TabControl();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -79,44 +94,29 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.pfpLateral = new System.Windows.Forms.PictureBox();
-            this.btnConfig = new System.Windows.Forms.PictureBox();
-            this.btnForum = new System.Windows.Forms.PictureBox();
-            this.btnConsulta = new System.Windows.Forms.PictureBox();
-            this.btnRegistro = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.PictureBox();
-            this.btnEdit = new System.Windows.Forms.PictureBox();
-            this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.pfpPaciente = new System.Windows.Forms.PictureBox();
-            this.btnReport = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPost.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabConfig.SuspendLayout();
             this.tabForum.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
             this.panelNav.SuspendLayout();
-            this.abasPrincipal.SuspendLayout();
-            this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnForum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
+            this.abasPrincipal.SuspendLayout();
+            this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label27
@@ -270,6 +270,28 @@
             this.pnlPost.Name = "pnlPost";
             this.pnlPost.Size = new System.Drawing.Size(698, 166);
             this.pnlPost.TabIndex = 16;
+            // 
+            // btnReport
+            // 
+            this.btnReport.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReport.Location = new System.Drawing.Point(648, 15);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(35, 43);
+            this.btnReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReport.TabIndex = 15;
+            this.btnReport.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.BackgroundImage = global::DeskForms.Properties.Resources.WhatsApp_Image_2024_06_07_at_21_25_42;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(26, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
             // 
             // label28
             // 
@@ -471,6 +493,58 @@
             this.tabForum.TabIndex = 3;
             this.tabForum.Text = "tabForum";
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::DeskForms.Properties.Resources.recdiv;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(34, 42);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(688, 159);
+            this.panel2.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(569, 101);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(98, 34);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(554, 61);
+            this.textBox1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.dog;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(42, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DeskForms.Properties.Resources.Line_29;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(24, 431);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(698, 11);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -503,6 +577,18 @@
             this.tabPerfil.Size = new System.Drawing.Size(824, 592);
             this.tabPerfil.TabIndex = 0;
             this.tabPerfil.Text = "tabPerfil";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Location = new System.Drawing.Point(771, 529);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(30, 30);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.TabStop = false;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // label16
             // 
@@ -595,6 +681,29 @@
             this.label12.TabIndex = 9;
             this.label12.Text = "Olá, Bombom";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackgroundImage = global::DeskForms.Properties.Resources.edit__1_;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Location = new System.Drawing.Point(289, 135);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(35, 35);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.TabStop = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
+            // imagePerfil
+            // 
+            this.imagePerfil.BackgroundImage = global::DeskForms.Properties.Resources.dog;
+            this.imagePerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagePerfil.Location = new System.Drawing.Point(184, 33);
+            this.imagePerfil.Name = "imagePerfil";
+            this.imagePerfil.Size = new System.Drawing.Size(125, 125);
+            this.imagePerfil.TabIndex = 7;
+            this.imagePerfil.TabStop = false;
+            // 
             // panelNav
             // 
             this.panelNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -610,6 +719,65 @@
             this.panelNav.Size = new System.Drawing.Size(63, 587);
             this.panelNav.TabIndex = 2;
             this.panelNav.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelNav_Paint);
+            // 
+            // pfpLateral
+            // 
+            this.pfpLateral.BackgroundImage = global::DeskForms.Properties.Resources.dog;
+            this.pfpLateral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pfpLateral.Location = new System.Drawing.Point(6, 20);
+            this.pfpLateral.Name = "pfpLateral";
+            this.pfpLateral.Size = new System.Drawing.Size(50, 50);
+            this.pfpLateral.TabIndex = 6;
+            this.pfpLateral.TabStop = false;
+            this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
+            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfig.Location = new System.Drawing.Point(15, 539);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(30, 30);
+            this.btnConfig.TabIndex = 5;
+            this.btnConfig.TabStop = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnForum
+            // 
+            this.btnForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
+            this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnForum.Location = new System.Drawing.Point(15, 312);
+            this.btnForum.Name = "btnForum";
+            this.btnForum.Size = new System.Drawing.Size(30, 30);
+            this.btnForum.TabIndex = 4;
+            this.btnForum.TabStop = false;
+            this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
+            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsulta.Location = new System.Drawing.Point(15, 221);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(30, 30);
+            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.TabStop = false;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
+            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistro.Location = new System.Drawing.Point(15, 134);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(30, 30);
+            this.btnRegistro.TabIndex = 2;
+            this.btnRegistro.TabStop = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // abasPrincipal
             // 
@@ -720,100 +888,6 @@
             this.label20.TabIndex = 10;
             this.label20.Text = "Registro de Pacientes";
             // 
-            // pfpLateral
-            // 
-            this.pfpLateral.BackgroundImage = global::DeskForms.Properties.Resources.dog;
-            this.pfpLateral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pfpLateral.Location = new System.Drawing.Point(6, 20);
-            this.pfpLateral.Name = "pfpLateral";
-            this.pfpLateral.Size = new System.Drawing.Size(50, 50);
-            this.pfpLateral.TabIndex = 6;
-            this.pfpLateral.TabStop = false;
-            this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(15, 539);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(30, 30);
-            this.btnConfig.TabIndex = 5;
-            this.btnConfig.TabStop = false;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
-            // btnForum
-            // 
-            this.btnForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
-            this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(15, 312);
-            this.btnForum.Name = "btnForum";
-            this.btnForum.Size = new System.Drawing.Size(30, 30);
-            this.btnForum.TabIndex = 4;
-            this.btnForum.TabStop = false;
-            this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
-            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(15, 221);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(30, 30);
-            this.btnConsulta.TabIndex = 3;
-            this.btnConsulta.TabStop = false;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
-            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistro.Location = new System.Drawing.Point(15, 134);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(30, 30);
-            this.btnRegistro.TabIndex = 2;
-            this.btnRegistro.TabStop = false;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(771, 529);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(30, 30);
-            this.btnLogout.TabIndex = 8;
-            this.btnLogout.TabStop = false;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BackgroundImage = global::DeskForms.Properties.Resources.edit__1_;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Location = new System.Drawing.Point(289, 135);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(35, 35);
-            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnEdit.TabIndex = 8;
-            this.btnEdit.TabStop = false;
-            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
-            // 
-            // imagePerfil
-            // 
-            this.imagePerfil.BackgroundImage = global::DeskForms.Properties.Resources.dog;
-            this.imagePerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imagePerfil.Location = new System.Drawing.Point(184, 33);
-            this.imagePerfil.Name = "imagePerfil";
-            this.imagePerfil.Size = new System.Drawing.Size(125, 125);
-            this.imagePerfil.TabIndex = 7;
-            this.imagePerfil.TabStop = false;
-            // 
             // pfpPaciente
             // 
             this.pfpPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -825,80 +899,6 @@
             this.pfpPaciente.Size = new System.Drawing.Size(116, 106);
             this.pfpPaciente.TabIndex = 7;
             this.pfpPaciente.TabStop = false;
-            // 
-            // btnReport
-            // 
-            this.btnReport.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
-            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReport.Location = new System.Drawing.Point(648, 15);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(35, 43);
-            this.btnReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReport.TabIndex = 15;
-            this.btnReport.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.BackgroundImage = global::DeskForms.Properties.Resources.WhatsApp_Image_2024_06_07_at_21_25_42;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 24);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::DeskForms.Properties.Resources.recdiv;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(34, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(688, 159);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(569, 101);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(98, 34);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(554, 61);
-            this.textBox1.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.dog;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DeskForms.Properties.Resources.Line_29;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 431);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(698, 11);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
             // 
             // Principal
             // 
@@ -914,31 +914,31 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.pnlPost.ResumeLayout(false);
             this.pnlPost.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
             this.tabForum.ResumeLayout(false);
-            this.tabPerfil.ResumeLayout(false);
-            this.tabPerfil.PerformLayout();
-            this.panelNav.ResumeLayout(false);
-            this.abasPrincipal.ResumeLayout(false);
-            this.tabRegistro.ResumeLayout(false);
-            this.tabRegistro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnForum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPerfil.ResumeLayout(false);
+            this.tabPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
+            this.panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnForum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
+            this.abasPrincipal.ResumeLayout(false);
+            this.tabRegistro.ResumeLayout(false);
+            this.tabRegistro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).EndInit();
             this.ResumeLayout(false);
 
         }

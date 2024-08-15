@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace DeskForms
 {
@@ -31,26 +32,39 @@ namespace DeskForms
 
         MySqlDataReader myreader;
         private void btnLogar_Click(object sender, EventArgs e)
-        {
-
-            
+        {       
 
             if (cboRemember.Checked)
             {
                 Properties.Settings.Default.remember = true;
+                Properties.Settings.Default.user = txtEmail.Text;
+                Properties.Settings.Default.pw = txtPassword.Text;
+
                 Properties.Settings.Default.Save();
             }
 
+            logIn(txtEmail.Text, txtPassword.Text);
+            
 
+        }
+
+        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
+
+
+        private void logIn(string user, string pw)
+        {
             MySqlConnection conn = new MySqlConnection(stringConexão);
-            string query = $"Select * from tblCliente where nome = '{txtEmail.Text}'";
+
+            
+            string query = $"Select * from tblCliente where nome = '{user}' AND senha = '{pw}'";
+
             List<string> strings = new List<string>();
 
             try
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                
+
 
 
                 myreader = cmd.ExecuteReader();
@@ -59,7 +73,7 @@ namespace DeskForms
                     strings.Add(Convert.ToString(myreader["nome"]));
                 }
 
-                if(strings.Count() > 0)
+                if (strings.Count() > 0)
                 {
                     Principal frm = new Principal();
                     this.Hide();
@@ -80,33 +94,6 @@ namespace DeskForms
             {
                 conn.Close();
             }
-            
-
-        }
-
-        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
-
-
-        private int connection(string query)
-        {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
-            int ren = 0;
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteReader();
-                conn.Close();
-            }
-            catch(Exception ep)
-            {
-                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return ren;
         }
 
 
@@ -129,6 +116,8 @@ namespace DeskForms
             {
                 textBox.Text = "";
                 textBox.ForeColor = Color.Gray;
+                txtPassword.PasswordChar = '*';
+                btnEye.Visible = true;
             }
         }
 
@@ -144,17 +133,22 @@ namespace DeskForms
 
         string tema;
 
+        Timer t1 = new Timer();
 
-        private void TelaLog_Load(object sender, EventArgs e)
+
+
+
+        private void TelaLog_Load(object sender, EventArgs e)   
         {
-
             if (Properties.Settings.Default.remember)
             {
-                Principal frm = new Principal();
-                this.Hide();
-                frm.ShowDialog();
+                string user = Properties.Settings.Default.user;
+                string pw = Properties.Settings.Default.pw;
+                logIn(user, pw);
+                
             }
 
+            btnEye.Visible = false;
             tema = Properties.Settings.Default.theme;
 
 
@@ -165,12 +159,12 @@ namespace DeskForms
             {
                 case "Tema Claro":
                     panel1.BackColor = dark;
-                    menuStrip1.BackgroundImage = Properties.Resources.map_vector;
+                    menuBackground.BackgroundImage = Properties.Resources.map_vector;
 
                     break;
                 case "Tema Escuro":
                     panel1.BackColor = white;
-                    menuStrip1.BackgroundImage = Properties.Resources.Tela_Login;
+                    menuBackground.BackgroundImage = Properties.Resources.Tela_Login;
                     break;
             }
         }
