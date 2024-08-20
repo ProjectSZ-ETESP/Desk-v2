@@ -2,8 +2,6 @@ create database testDB
 
 use testDB
 
-drop table tblCliente
-
 create table tblCliente(
 	id int primary key AUTO_INCREMENT,
     email varchar(80),
