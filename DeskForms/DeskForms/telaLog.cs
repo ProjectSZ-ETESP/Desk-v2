@@ -24,7 +24,6 @@ namespace DeskForms
             textBox.ForeColor = Color.Gray;
         }
 
-        MySqlDataReader myreader;
         private void btnLogar_Click(object sender, EventArgs e)
         {
             if (cboRemember.Checked)
@@ -41,14 +40,17 @@ namespace DeskForms
 
         string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
 
+        MySqlDataReader myreader;
 
         private void logIn(string user, string pw)
         {
             MySqlConnection conn = new MySqlConnection(stringConexão);
             
-            string query = $"Select * from tblCliente where nome = '{user}' AND senha = '{pw}'";
+            string query = $"Select * from tblCliente where email = '{user}' AND senha = '{pw}'";
 
-            List<string> strings = new List<string>();
+            List<string> returns = new List<string>();
+
+            clsConexão cls = new clsConexão();
 
             try
             {
@@ -58,11 +60,13 @@ namespace DeskForms
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
-                    strings.Add(Convert.ToString(myreader["nome"]));
+                    returns.Add(Convert.ToString(myreader["email"]));
+                    
                 }
 
-                if (strings.Count() > 0)
+                if (returns.Count() > 0)
                 {
+                    cls.setEmail(txtEmail.Text);
                     Principal frm = new Principal();
                     this.Hide();
                     frm.ShowDialog();

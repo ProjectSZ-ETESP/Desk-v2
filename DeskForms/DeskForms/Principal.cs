@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,32 +72,122 @@ namespace DeskForms
 
         }
 
+        private string caminhoImagem = null;
+        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
+
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog();
-
-            dialog.Title = "Abrir Imagem";
-            dialog.Filter = "Image Files (*.bmp; *.jpg; *.jpeg; *.png; *.gif)|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog ofl = new OpenFileDialog();
+            ofl.Title = "Adicionar Imagem";
+            ofl.Filter = "All files (*.*)|*.*";
+            if (ofl.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-
-                    Image imagem = Image.FromFile(dialog.FileName);
-
-
-                    imagePerfil.BackgroundImage = imagem;
-                    pfpLateral.BackgroundImage = imagem;
-
-
-                    dialog.Dispose();
+                    imagePerfil.Image = new Bitmap(ofl.OpenFile());
+                    caminhoImagem = ofl.FileName;
+                    salvarFoto();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show("Ocorreu um erro ao carregar a imagem: " + ex.Message);
+                    MessageBox.Show("Falha ao carregar a imagem");
                 }
             }
+            ofl.Dispose();
+        }
+
+        public static byte[] ImgToByte(string camImg) //converte a imagem em []bytes
+        {
+            FileStream fs = new FileStream(camImg, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] imgByte = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();
+            return imgByte;
+        }
+
+        private void salvarFoto()
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string id = getId();
+            byte[] imagem = ImgToByte(caminhoImagem);
+
+
+            try
+            {
+                using (var connection = new MySqlConnection(stringConexão))
+                {
+                    connection.Open();
+
+                    string query = $"call Img_Upload({id}, {imagem})";
+
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@blobData", MySqlDbType.Blob);
+
+                        int result = command.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+        }
+        MySqlDataReader myreader;
+
+        
+
+        private string getId()
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+
+            clsConexão cls = new clsConexão();
+
+            string id = "";
+            string email = cls.getEmail();
+            string query = $"Select id from tblCliente where email = '{email}' ";
+
+            List<string> strings = new List<string>();
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    strings.Add(Convert.ToString(myreader["id"]));
+                }
+
+                if (strings.Count() > 0)
+                {
+                    id = strings[0];
+                }
+                else
+                {
+                    MessageBox.Show($"XIHHHH", "uh oh");
+                }
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return id;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -114,9 +206,7 @@ namespace DeskForms
             {
                 try
                 {
-
                     Image imagem = Image.FromFile(dialog.FileName);
-
 
                     pfpPaciente.BackgroundImage = imagem;
 

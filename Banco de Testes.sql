@@ -5,29 +5,30 @@ use testDB
 drop table tblCliente
 
 create table tblCliente(
-	id int primary key,
+	id int primary key AUTO_INCREMENT,
     email varchar(80),
     senha char(30),
     telefone varchar(11),
-    img LONGBLOB 
+    img MEDIUMBLOB
 )
 
-insert into tblCliente VALUES (1, 'Bia', '123')
+insert into tblCliente (email, senha) VALUES ('Bia', '123')
 insert into tblCliente VALUES (2, 'PedroLol', 'hiprocrita')
 
-DELIMITER //
+DELIMITER $$
 CREATE PROCEDURE Img_Upload (	
-IN @email varchar(80),
-    IN @senha char(30),
-    IN @telefone varchar(11),
-    IN @img varbinary(max)) READS SQL DATA
+	IN idRec int,
+	
+    IN byteIMG LONGBLOB) READS SQL DATA
 BEGIN
-	insert into contatosImg	VALUES (
-		@email,
-		@senha,
-		@telefone,
-		@img
-	)
-END;
-// DELIMITER ;
+	update tblCliente 
+    set img = byteIMG
+    where id = idRec;
+END $$
+DELIMITER ;
+
+select * from tblCliente;
+
+
+call Img_Upload(1, 5678)
 
