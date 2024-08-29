@@ -1,0 +1,18 @@
+-- bota na master rs
+-- Check se tá existente
+ -- Se sim, vai, se não cria
+ -- bota na Controle
+ -- código pra burlar o user, virar admin rs
+ 
+use master
+go
+IF EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = 'dbControle')
+	DROP DATABASE dbControle
+go
+Create database dbControle
+go
+use dbControle
+go
+
+USE dbControle
+exec sp_changedbowner 'sa', 'true'
