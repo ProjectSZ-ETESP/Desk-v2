@@ -254,6 +254,7 @@
     <None Include="Resources\logDark.png" />
     <None Include="Resources\arkhamChime.wav" />
     <None Include="Resources\arkham-ezgif.com-speed.gif" />
+    <None Include="Resources\arkham-_online-video-cutter.com_.gif" />
     <Content Include="Resources\arkham.gif" />
     <None Include="Resources\arkham1.gif" />
     <Content Include="Resources\logoutClear.png" />
