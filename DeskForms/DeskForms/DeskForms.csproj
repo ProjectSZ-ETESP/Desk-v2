@@ -253,10 +253,9 @@
     <None Include="Resources\logoDark 1.ico" />
     <None Include="Resources\logDark.png" />
     <None Include="Resources\arkhamChime.wav" />
-    <None Include="Resources\arkham.gif" />
-    <None Include="Resources\arkham1.gif" />
     <None Include="Resources\arkham-ezgif.com-speed.gif" />
-    <None Include="Resources\arkham.mp4" />
+    <Content Include="Resources\arkham.gif" />
+    <None Include="Resources\arkham1.gif" />
     <Content Include="Resources\logoutClear.png" />
     <None Include="Resources\logoutClear1.png" />
   </ItemGroup>

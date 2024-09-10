@@ -22,7 +22,7 @@ namespace DeskForms
 
         private void Load_Load(object sender, EventArgs e)
         {
-            axMSVidCtl1.
+           
                 playSimpleSound();
         }
 

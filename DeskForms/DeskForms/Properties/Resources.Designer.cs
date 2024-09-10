@@ -101,12 +101,12 @@ namespace DeskForms.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Byte[].
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static byte[] arkham2 {
+        internal static System.Drawing.Bitmap arkham2 {
             get {
                 object obj = ResourceManager.GetObject("arkham2", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

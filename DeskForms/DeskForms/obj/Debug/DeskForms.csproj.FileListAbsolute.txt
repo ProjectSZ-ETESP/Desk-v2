@@ -314,3 +314,7 @@ C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\Interop.WMPLib.dll
 C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.ResolveComReference.cache
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\Interop.MSVidCtlLib.dll
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\AxInterop.MSVidCtlLib.dll
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\Interop.MSVidCtlLib.dll
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\AxInterop.MSVidCtlLib.dll
