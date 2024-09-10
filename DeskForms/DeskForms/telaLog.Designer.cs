@@ -40,12 +40,14 @@
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.btnLogar = new System.Windows.Forms.PictureBox();
             this.menuBackground = new System.Windows.Forms.MenuStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEye)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnForgetei
@@ -53,11 +55,11 @@
             this.btnForgetei.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForgetei.AutoSize = true;
-            this.btnForgetei.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnForgetei.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetei.ForeColor = System.Drawing.SystemColors.Control;
             this.btnForgetei.Location = new System.Drawing.Point(55, 436);
             this.btnForgetei.Name = "btnForgetei";
-            this.btnForgetei.Size = new System.Drawing.Size(184, 28);
+            this.btnForgetei.Size = new System.Drawing.Size(161, 20);
             this.btnForgetei.TabIndex = 10;
             this.btnForgetei.Text = "Esqueci minha senha";
             // 
@@ -66,6 +68,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(124)))), ((int)(((byte)(100)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cboRemember);
@@ -95,13 +98,13 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtPassword.Location = new System.Drawing.Point(21, 12);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(215, 24);
+            this.txtPassword.Size = new System.Drawing.Size(215, 19);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.Text = "a";
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
@@ -137,11 +140,11 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.White;
             this.txtEmail.Location = new System.Drawing.Point(20, 12);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(247, 24);
+            this.txtEmail.Size = new System.Drawing.Size(247, 19);
             this.txtEmail.TabIndex = 9;
             this.txtEmail.Text = "a";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
@@ -153,11 +156,11 @@
             this.cboRemember.FlatAppearance.BorderColor = System.Drawing.SystemColors.HighlightText;
             this.cboRemember.FlatAppearance.BorderSize = 0;
             this.cboRemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboRemember.Font = new System.Drawing.Font("Poppins Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRemember.ForeColor = System.Drawing.SystemColors.Control;
             this.cboRemember.Location = new System.Drawing.Point(23, 376);
             this.cboRemember.Name = "cboRemember";
-            this.cboRemember.Size = new System.Drawing.Size(151, 29);
+            this.cboRemember.Size = new System.Drawing.Size(133, 21);
             this.cboRemember.TabIndex = 15;
             this.cboRemember.Text = "Mantenha o login";
             this.cboRemember.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,6 +200,18 @@
             this.menuBackground.TabIndex = 18;
             this.menuBackground.Text = "menuStrip1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.logLight;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(210, 101);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            // 
             // telaLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,7 +222,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(950, 638);
             this.Name = "telaLog";
-            this.Text = "Tela de Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "-";
             this.Load += new System.EventHandler(this.TelaLog_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -218,6 +234,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +253,7 @@
         private System.Windows.Forms.PictureBox btnLogar;
         private System.Windows.Forms.MenuStrip menuBackground;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

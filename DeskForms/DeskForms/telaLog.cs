@@ -38,15 +38,50 @@ namespace DeskForms
             logIn(txtEmail.Text, txtPassword.Text);
         }
 
-        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
+        string stringConexão = "server=localhost;database=sistemaHospitalar;uid=root;pwd=etesp;AllowUserVariables=True";
 
         MySqlDataReader myreader;
+
+        private List<string> sqlReturn(string query)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            List<string> returns = new List<string>();
+            clsConexão cls = new clsConexão();
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    returns.Add(Convert.ToString(myreader["email"]));
+                }               
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returns;
+        }
+
+       
 
         private void logIn(string user, string pw)
         {
             MySqlConnection conn = new MySqlConnection(stringConexão);
-            
-            string query = $"Select * from tblCliente where email = '{user}' AND senha = '{pw}'";
+
+            sqlReturn($"call proc_loginPac('{txtEmail.Text}','{txtPassword.Text}', @p_retorno);");
+
+            string query = "select @p_retorno;";
 
             List<string> returns = new List<string>();
 
@@ -60,11 +95,12 @@ namespace DeskForms
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
-                    returns.Add(Convert.ToString(myreader["email"]));
-                    
+                    returns.Add(Convert.ToString(myreader["@p_retorno"]));                    
                 }
 
-                if (returns.Count() > 0)
+                string pass = returns[0];
+
+                if (pass == "1")
                 {
                     cls.setEmail(txtEmail.Text);
                     Principal frm = new Principal();
@@ -123,12 +159,19 @@ namespace DeskForms
         {
             txtPassword.PasswordChar = '*';
             btnEye.Visible = true;
+            if (e.KeyData == Keys.Enter)
+            {
+                logIn(txtEmail.Text, txtPassword.Text);
+            }
         }
 
         string tema;
 
+        
         private void TelaLog_Load(object sender, EventArgs e)
         {
+            
+
             if (Properties.Settings.Default.remember)
             {
                 string user = Properties.Settings.Default.user;
@@ -186,5 +229,10 @@ namespace DeskForms
         }
         #endregion
 
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            load ld = new load();
+            ld.ShowDialog(); 
+        }
     }
 }

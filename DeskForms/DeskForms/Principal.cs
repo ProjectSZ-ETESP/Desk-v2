@@ -112,7 +112,6 @@ namespace DeskForms
             string id = getId();
             byte[] imagem = ImgToByte(caminhoImagem);
 
-
             try
             {
                 using (var connection = new MySqlConnection(stringConexão))
