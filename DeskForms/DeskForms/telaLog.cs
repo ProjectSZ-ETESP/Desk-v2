@@ -38,7 +38,7 @@ namespace DeskForms
             logIn(txtEmail.Text, txtPassword.Text);
         }
 
-        string stringConexão = "server=localhost;database=sistemaHospitalar;uid=root;pwd=etesp;AllowUserVariables=True";
+        string stringConexão = "server=localhost;database=hospitalar;uid=root;pwd=etesp;AllowUserVariables=True";
 
         MySqlDataReader myreader;
 
@@ -77,9 +77,9 @@ namespace DeskForms
 
         private void logIn(string user, string pw)
         {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
+            MySqlConnection conn = new MySqlConnection(stringConexão);            
 
-            sqlReturn($"call proc_loginPac('{txtEmail.Text}','{txtPassword.Text}', @p_retorno);");
+            sqlReturn($"call proc_loginPac('{user}','{pw}', @p_retorno);");
 
             string query = "select @p_retorno;";
 
@@ -140,7 +140,8 @@ namespace DeskForms
         private void txtBox_Click(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            textBox.Text = "";                
+            textBox.Text = "";
+            textBox.ForeColor = Color.White;
         }
 
         private void txtEmail_Click(object sender, EventArgs e)
@@ -233,6 +234,11 @@ namespace DeskForms
         {
             load ld = new load();
             ld.ShowDialog(); 
+        }
+
+        private void telaLog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

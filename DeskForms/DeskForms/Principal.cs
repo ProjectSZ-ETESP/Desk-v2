@@ -248,6 +248,42 @@ namespace DeskForms
             reset();
         }
 
+        private List<string> sqlReturn(string query)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            List<string> returns = new List<string>();
+            clsConexão cls = new clsConexão();
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    returns.Add(Convert.ToString(myreader["email"]));
+                }
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return returns;
+        }
+
+        private void dadosUser()
+        {
+
+        }
+
 
         private void maskCPF()
         {

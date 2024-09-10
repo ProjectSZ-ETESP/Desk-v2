@@ -72,9 +72,9 @@
             this.btnLogout = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -562,9 +562,9 @@
             this.tabPerfil.Controls.Add(this.btnLogout);
             this.tabPerfil.Controls.Add(this.label16);
             this.tabPerfil.Controls.Add(this.button1);
-            this.tabPerfil.Controls.Add(this.label19);
-            this.tabPerfil.Controls.Add(this.label18);
-            this.tabPerfil.Controls.Add(this.label17);
+            this.tabPerfil.Controls.Add(this.lblTelefone);
+            this.tabPerfil.Controls.Add(this.lblEmail);
+            this.tabPerfil.Controls.Add(this.lblNomeCompleto);
             this.tabPerfil.Controls.Add(this.label15);
             this.tabPerfil.Controls.Add(this.label14);
             this.tabPerfil.Controls.Add(this.label13);
@@ -594,7 +594,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label16.Location = new System.Drawing.Point(619, 383);
+            this.label16.Location = new System.Drawing.Point(632, 373);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 26);
             this.label16.TabIndex = 18;
@@ -614,32 +614,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label19
+            // lblTelefone
             // 
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(43, 454);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(207, 34);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "(11) 91231-2133";
+            this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(43, 454);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(207, 34);
+            this.lblTelefone.TabIndex = 16;
+            this.lblTelefone.Text = "(11) 91231-2133";
             // 
-            // label18
+            // lblEmail
             // 
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(46, 354);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(352, 34);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "bombom.etec@gmail.com";
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(46, 354);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(352, 34);
+            this.lblEmail.TabIndex = 15;
+            this.lblEmail.Text = "bombom.etec@gmail.com";
             // 
-            // label17
+            // lblNomeCompleto
             // 
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(43, 250);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(324, 34);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Luiz Ricardo de Souza";
+            this.lblNomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCompleto.Location = new System.Drawing.Point(43, 250);
+            this.lblNomeCompleto.Name = "lblNomeCompleto";
+            this.lblNomeCompleto.Size = new System.Drawing.Size(324, 34);
+            this.lblNomeCompleto.TabIndex = 14;
+            this.lblNomeCompleto.Text = "Luiz Ricardo de Souza";
             // 
             // label15
             // 
@@ -987,9 +987,9 @@
         private System.Windows.Forms.TabPage tabPerfil;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblNomeCompleto;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;

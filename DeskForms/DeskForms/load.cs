@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,57 +17,64 @@ namespace DeskForms
         {
             InitializeComponent();
 
-            //this.FormBorderStyle = FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void Load_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void Load_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if(time == 2)
-            {
-                enginePoweringDown(sender, e);
-            }
-        }
-
-        private void enginePoweringDown(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;    //cancel the event so the form won't be closed
-
-            t1.Tick += new EventHandler(fadeOut);  //this calls the fade out function
-            t1.Start();
-
-            if (Opacity == 0)
-            {
-                //if the form is completly transparent
-
-                Principal ld = new Principal();
-                ld.ShowDialog();
-                e.Cancel = false;
-            }   //resume the event - the program can be closed
-
-            
-        }
-
-        void fadeOut(object sender, EventArgs e)
-        {
-            if (Opacity <= 0)     //check if opacity is 0
-            {
-                t1.Stop();    //if it is, we stop the timer
-                Close();   //and we try to close the form
-            }
-            else
-                Opacity -= 0.1;
+            axMSVidCtl1.
+                playSimpleSound();
         }
 
         static int time = 0;
 
+
+        private void Load_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void playSimpleSound()
+        {
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.arkhamChime);
+            simpleSound.Play();
+        }
+
         private void Open_Tick(object sender, EventArgs e)
         {
-            time++;            
+            time++;
+            if(time == 3)
+            {
+
+
+                switch (Properties.Settings.Default.remember)
+                {
+                    case true:
+                        Principal principal = new Principal();
+                        principal.ShowDialog();
+                        break;
+                    case false:
+                        telaLog telaLog = new telaLog();
+                        telaLog.ShowDialog();
+                        break;
+                }
+            }
+        }
+
+        void fadeOut(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)     
+            {
+                t1.Stop();
+                Close();
+            }
+            else
+                Opacity -= 0.05;
+        }
+
+        private void t1_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

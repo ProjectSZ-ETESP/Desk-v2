@@ -35,8 +35,8 @@
             // 
             // t1
             // 
-            this.t1.Enabled = true;
             this.t1.Interval = 5;
+            this.t1.Tick += new System.EventHandler(this.t1_Tick);
             // 
             // open
             // 
@@ -48,7 +48,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 599);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.MaximumSize = new System.Drawing.Size(300, 300);
             this.Name = "load";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "load";
