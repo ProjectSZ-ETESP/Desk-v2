@@ -45,8 +45,6 @@ namespace DeskForms
             time++;
             if(time == 3)
             {
-
-
                 switch (Properties.Settings.Default.remember)
                 {
                     case true:

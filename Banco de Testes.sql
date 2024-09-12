@@ -1,4 +1,7 @@
-
+/*
+create database hospitalar;
+use hospitalar;
+*/
 
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
