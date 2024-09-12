@@ -265,3 +265,58 @@ BEGIN
     WHERE idUsuario = p_id;
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_InsertTeste`(
+    IN p_nome VARCHAR(50),
+    IN p_email VARCHAR(50),
+    IN p_data DATE,
+    IN p_sexo CHAR(1),
+    IN p_tel CHAR(15),
+    IN p_cpf CHAR(14)
+)
+BEGIN
+    DECLARE p_retorno INT;
+    DECLARE id INT;
+
+    SET p_retorno = 0;
+
+    -- Chama o procedimento de cadastro de usuário
+    CALL hospitalar.proc_cadastroUser(p_email, '123', p_retorno);
+
+    -- Verifica o valor de retorno
+    IF p_retorno = 1 THEN
+        -- Obtém o ID do usuário
+        SELECT id INTO id FROM tblusuario WHERE email = p_email;
+
+        -- Chama o procedimento de cadastro de paciente
+        CALL hospitalar.proc_cadastroPac(id, p_cpf, p_nome, p_sexo, p_data, p_tel);
+    END IF;
+
+END$$
+DELIMITER ;
+
+CALL hospitalar.proc_InsertTeste(
+    'Bianca',
+    'alencar@gmail.com',
+    '2006-05-01',
+    'F',
+    '11913399202',
+    '12345678910'
+);
+
+CALL hospitalar.proc_InsertTeste(
+    'Lala',
+    'lala@gmail.com',
+    '2006-09-17',
+    'F',
+    '11913399202',
+    '12345678910'
+);
+
+
+
+
+
+
+
