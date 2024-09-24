@@ -287,7 +287,7 @@ BEGIN
     -- Verifica o valor de retorno
     IF p_retorno = 1 THEN
         -- Obtém o ID do usuário
-        SELECT id INTO id FROM tblusuario WHERE email = p_email;
+        SET id = (select idUsuario FROM tblusuario WHERE email = p_email);
 
         -- Chama o procedimento de cadastro de paciente
         CALL hospitalar.proc_cadastroPac(id, p_cpf, p_nome, p_sexo, p_data, p_tel);
