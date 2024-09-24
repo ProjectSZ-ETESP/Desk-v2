@@ -344,13 +344,13 @@ DELIMITER ;
 -- Error Code: 1136. Column count doesn't match value count at row 1
 
 Insert into tblHospital VALUES( 
-'12345678910',
+'12345678910234',
 'Hospital Santa Jojo',
 'Luiz Ricardo',
 'poggers',
 'jojo@gmail.com',
 'Rua dos Bobos nº 0',
-'24H'
+'24H',
 '11913399202'
 );
 
