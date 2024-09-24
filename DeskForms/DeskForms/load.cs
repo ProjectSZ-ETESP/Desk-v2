@@ -50,12 +50,15 @@ namespace DeskForms
                     case true:
                         Principal principal = new Principal();
                         principal.ShowDialog();
+
                         break;
                     case false:
                         telaLog telaLog = new telaLog();
                         telaLog.ShowDialog();
+
                         break;
                 }
+                
             }
         }
 

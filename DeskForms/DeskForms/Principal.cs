@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -84,7 +85,7 @@ namespace DeskForms
 
        
         private string caminhoImagem = null;
-        string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
+        string stringConexão = "server=localhost;database=hospitalar;uid=root;pwd=etesp";
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -244,7 +245,16 @@ namespace DeskForms
                 DialogResult dialogResult = MessageBox.Show("🦋 Você está certo de suas escolhas?", "Registro", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    cadastrarUser();
+                    string sex;
+                    if (rdoFem.Checked)
+                    {
+                        sex = "F";
+                    }
+                    else
+                    {
+                        sex = "M";
+                    }
+                    cadastrarUser(txtEmail.Text, txtCPF.Text, txtNome.Text, sex, txtDataNasc.Text,txtTelefone.Text,txtSangue.Text,txtCondicao.Text) ;
 
                     MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
                     reset();
@@ -252,53 +262,13 @@ namespace DeskForms
             }
         }
 
-        private void cadastrarUser()
+        private void cadastrarUser(string email, string cpf, string nome, string sexo, string data, string numero, string sangue, string condicao)
         {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
+            DateTime dataPura = DateTime.Parse(data);
+            string tempoMenor = dataPura.ToString("yyyy-MM-dd");
 
-            sqlReturn($"call proc_cadastroPac()");
+            sqlReturn($"call proc_cadastroPac('{email}','{cpf}','{nome}','{sexo}','{tempoMenor}','{numero}','{sangue}','{condicao}')");
 
-            string query = "select @p_retorno;";
-
-            List<string> returns = new List<string>();
-                
-            clsConexão cls = new clsConexão();
-
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                myreader = cmd.ExecuteReader();
-                while (myreader.Read())
-                {
-                    returns.Add(Convert.ToString(myreader["@p_retorno"]));
-                }
-
-                string pass = returns[0];
-
-                if (pass == "1")
-                {
-                    cls.setEmail(txtEmail.Text);
-                    Principal frm = new Principal();
-                    this.Hide();
-                    frm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show($"XIHHHH", "uh oh");
-                }
-
-                conn.Close();
-            }
-            catch (Exception ep)
-            {
-                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
-            }
-            finally
-            {
-                conn.Close();
-            }
         }
 
         private List<string> sqlReturn(string query)
@@ -312,12 +282,8 @@ namespace DeskForms
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                myreader = cmd.ExecuteReader();
-                while (myreader.Read())
-                {
-                    returns.Add(Convert.ToString(myreader["email"]));
-                }
-
+                cmd.ExecuteNonQuery();
+                
                 conn.Close();
             }
             catch (Exception ep)

@@ -16,7 +16,7 @@ namespace DeskForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new load());
+            Application.Run(new Principal());
         }
     }
 }

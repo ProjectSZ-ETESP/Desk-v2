@@ -44,7 +44,6 @@
             // 
             // open
             // 
-            this.open.Enabled = true;
             this.open.Interval = 1000;
             this.open.Tick += new System.EventHandler(this.Open_Tick);
             // 

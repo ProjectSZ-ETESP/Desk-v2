@@ -151,7 +151,7 @@ DELIMITER;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroPac`(
-    IN p_idUsuario INT,
+    IN p_email VARCHAR(50),
     IN p_cpf CHAR(14),
     IN p_nome VARCHAR(50),
     IN p_sexo CHAR(1),
@@ -172,7 +172,7 @@ BEGIN
         tipoSanguineo,
         condicoesMedicas
     ) VALUES (
-        p_idUsuario, 
+        (Select idUsuario From tblUsuario Where p_email = email), 
         p_cpf, 
         p_nome, 
         p_sexo, 
@@ -365,8 +365,21 @@ CALL hospitalar.proc_InsertTeste(
     '11913399202'
 );
 
+CALL proc_cadastroPac(
+'bella@gmail.com',
+'2345678901',
+'Isabella',
+'F',
+'2007-11-12',
+'11913399202',
+'O+',
+'Homofobia Aguda'
+);
+
+
 select * from tblFuncionario;
 select * from tblUsuario
+select * from tblPaciente
 
 
 
