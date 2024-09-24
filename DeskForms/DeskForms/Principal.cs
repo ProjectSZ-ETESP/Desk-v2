@@ -19,16 +19,13 @@ namespace DeskForms
             InitializeComponent();
         }
 
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
             //Garante que o forms se feche por completo
         }
+
+        #region Botões de Navegação
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
@@ -52,6 +49,8 @@ namespace DeskForms
             abasPrincipal.SelectedTab = tabConfig;
 
         }
+
+        #endregion
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
@@ -343,15 +342,15 @@ namespace DeskForms
                             var label = control as Label;
                             if (label == null) continue;
                             label.ForeColor = Color.White;
-
                             Color dark = System.Drawing.ColorTranslator.FromHtml("#161817");
                             panelNav.BackColor = dark;
+                            rdoMasc.ForeColor = Color.White;
+                            rdoFem.ForeColor = Color.White;
+                            txtCPF.ForeColor = Color.White;
+
 
                             btnLogout.BackgroundImage = Properties.Resources.logout;
-
-
                             Properties.Settings.Default.theme = "Tema Escuro";
-
                             cboColor.SelectedIndex = 2;
                         }
                     }
@@ -370,12 +369,12 @@ namespace DeskForms
                             var label = control as Label;
                             if (label == null) continue;
                             label.ForeColor = back;
-
                             Color white = System.Drawing.ColorTranslator.FromHtml("#161817");
+                            rdoMasc.ForeColor = Color.Black;
+                            rdoFem.ForeColor = Color.Black;
+                            txtCPF.ForeColor = Color.Black;
                             panelNav.BackColor = white;
-
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
-
                             Properties.Settings.Default.theme = "Tema Claro"; 
                             cboColor.SelectedIndex = 1;
                         }

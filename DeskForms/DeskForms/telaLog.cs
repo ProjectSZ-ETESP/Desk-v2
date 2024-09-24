@@ -79,7 +79,7 @@ namespace DeskForms
         {
             MySqlConnection conn = new MySqlConnection(stringConexão);            
 
-            sqlReturn($"call proc_loginPac('{user}','{pw}', @p_retorno);");
+            sqlReturn($"call proc_loginFunc('{user}','{pw}', @p_retorno);");
 
             string query = "select @p_retorno;";
 
@@ -158,7 +158,10 @@ namespace DeskForms
 
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            txtPassword.PasswordChar = '*';
+            if(btnEye.Visible != true)
+            {
+                txtPassword.PasswordChar = '*';
+            }
             btnEye.Visible = true;
             if (e.KeyData == Keys.Enter)
             {
@@ -215,11 +218,6 @@ namespace DeskForms
         }
 
         private void CboRemember_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

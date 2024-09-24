@@ -148,8 +148,6 @@ BEGIN
 END$$
 DELIMITER;
 
-
-
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroPac`(
     IN p_idUsuario INT,
@@ -179,7 +177,54 @@ BEGIN
 END$$
 DELIMITER ;
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroFunc`(
+    IN p_idUsuario INT,
+    IN p_cpf CHAR(14),
+    IN p_nome VARCHAR(50),
+    IN p_sexo CHAR(1),
+    IN p_dataNasc DATE,
+    IN p_fone CHAR(15)
+)
+BEGIN
 
+    INSERT INTO tblPaciente (
+        idUsuario, 
+        cpfPaciente, 
+        nomePaciente, 
+        sexoPaciente, 
+        dataNascPaciente, 
+        fonePaciente
+    ) VALUES (
+        p_idUsuario, 
+        p_cpf, 
+        p_nome, 
+        p_sexo, 
+        p_dataNasc, 
+        p_fone
+    );
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_loginFunc`(
+    IN p_email VARCHAR(50),
+    IN p_senha VARCHAR(30),
+    OUT p_retorno INT
+)
+BEGIN
+    IF (SELECT COUNT(*) 
+        FROM tblUsuario 
+        WHERE email = p_email 
+          AND idUsuario IN (SELECT idUsuario FROM tblfuncionario)) > 0 THEN
+        SET p_retorno = (SELECT idUsuario 
+                         FROM tblUsuario 
+                         WHERE email = p_email);
+    ELSE
+        SET p_retorno = 0;
+    END IF;
+END$$
+DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_loginPac`(

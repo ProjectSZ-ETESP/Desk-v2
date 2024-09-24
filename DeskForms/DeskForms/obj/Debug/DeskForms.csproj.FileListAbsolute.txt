@@ -328,3 +328,13 @@ C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\AxIntero
 C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.ResolveComReference.cache
 C:\Users\Lab 23T\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.load.resources
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Interop.MSVidCtlLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\Interop.WMPLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\AxInterop.MSVidCtlLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\Interop.MSVidCtlLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\Interop.WMPLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\AxInterop.MSVidCtlLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.ResolveComReference.cache
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.load.resources
