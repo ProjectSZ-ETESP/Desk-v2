@@ -25,6 +25,14 @@ namespace DeskForms
             //Garante que o forms se feche por completo
         }
 
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            loadConfig();
+            maskCPF();
+            reset();
+        }
+
+
         #region Botões de Navegação
 
         private void btnRegistro_Click(object sender, EventArgs e)
@@ -50,7 +58,16 @@ namespace DeskForms
 
         }
 
+        private void PfpLateral_Click(object sender, EventArgs e)
+        {
+            abasPrincipal.SelectedTab = tabPerfil;
+
+        }
+
+
         #endregion
+
+        #region Perfil
 
         private void BtnLogout_Click(object sender, EventArgs e)
         {
@@ -65,12 +82,7 @@ namespace DeskForms
             log.ShowDialog();
         }
 
-        private void PfpLateral_Click(object sender, EventArgs e)
-        {
-            abasPrincipal.SelectedTab = tabPerfil;
-
-        }
-
+       
         private string caminhoImagem = null;
         string stringConexão = "server=localhost;database=testDB;uid=root;pwd=etesp";
 
@@ -188,10 +200,8 @@ namespace DeskForms
             return id;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
 
         private void BtnAddFoto_Click(object sender, EventArgs e)
         {
@@ -234,17 +244,61 @@ namespace DeskForms
                 DialogResult dialogResult = MessageBox.Show("🦋 Você está certo de suas escolhas?", "Registro", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    cadastrarUser();
+
                     MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
                     reset();
                 }
             }
         }
 
-        private void Principal_Load(object sender, EventArgs e)
+        private void cadastrarUser()
         {
-            loadConfig();
-            maskCPF();
-            reset();
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+
+            sqlReturn($"call proc_cadastroPac()");
+
+            string query = "select @p_retorno;";
+
+            List<string> returns = new List<string>();
+                
+            clsConexão cls = new clsConexão();
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    returns.Add(Convert.ToString(myreader["@p_retorno"]));
+                }
+
+                string pass = returns[0];
+
+                if (pass == "1")
+                {
+                    cls.setEmail(txtEmail.Text);
+                    Principal frm = new Principal();
+                    this.Hide();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show($"XIHHHH", "uh oh");
+                }
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private List<string> sqlReturn(string query)
@@ -277,12 +331,6 @@ namespace DeskForms
 
             return returns;
         }
-
-        private void dadosUser()
-        {
-
-        }
-
 
         private void maskCPF()
         {
@@ -386,28 +434,16 @@ namespace DeskForms
             Properties.Settings.Default.Save();
         }
 
-        private void BtnForum_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnConsulta_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CboColor_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox caixa = (sender as ComboBox);
-
             string theme = caixa.Text;
-
             changeTheme(theme);
         }
 
-        private void PanelNav_Paint(object sender, PaintEventArgs e)
+        private void TxtCPF_KeyDown(object sender, KeyEventArgs e)
         {
-
+         
         }
     }
 }

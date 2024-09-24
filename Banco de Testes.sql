@@ -1,4 +1,5 @@
 /*
+drop database hospitalar
 create database hospitalar;
 use hospitalar;
 */
@@ -155,7 +156,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroPac`(
     IN p_nome VARCHAR(50),
     IN p_sexo CHAR(1),
     IN p_dataNasc DATE,
-    IN p_fone CHAR(15)
+    IN p_fone CHAR(15),
+    IN p_tipoSanguineo varchar(3),
+	IN p_condicoesMedicas varchar(30)
 )
 BEGIN
 
@@ -165,43 +168,47 @@ BEGIN
         nomePaciente, 
         sexoPaciente, 
         dataNascPaciente, 
-        fonePaciente
+        fonePaciente,
+        tipoSanguineo,
+        condicoesMedicas
     ) VALUES (
         p_idUsuario, 
         p_cpf, 
         p_nome, 
         p_sexo, 
         p_dataNasc, 
-        p_fone
+        p_fone,
+        p_tipoSanguineo,
+        p_condicoesMedicas
     );
 END$$
 DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroFunc`(
-    IN p_idUsuario INT,
-    IN p_cpf CHAR(14),
-    IN p_nome VARCHAR(50),
-    IN p_sexo CHAR(1),
-    IN p_dataNasc DATE,
-    IN p_fone CHAR(15)
+    IN p_cpfFuncionario char(11),
+	IN p_idUsuario int,
+	IN p_cnpj char(14),
+	IN p_nomeFuncionario varchar(50),
+	IN p_sexoFuncionario char(1) ,
+	IN p_foneFuncionario char(11)
 )
 BEGIN
 
-    INSERT INTO tblPaciente (
+    INSERT INTO tblfuncionario (
+        cpfFuncionario, 
         idUsuario, 
-        cpfPaciente, 
-        nomePaciente, 
-        sexoPaciente, 
-        dataNascPaciente, 
-        fonePaciente
+        cnpj, 
+        nomeFuncionario, 
+        sexoFuncionario, 
+        foneFuncionario 
     ) VALUES (
-        p_idUsuario, 
-        p_cpf, 
-        p_nome, 
-        p_sexo, 
-        p_dataNasc, 
-        p_fone
+		p_cpfFuncionario,
+		p_idUsuario,
+		p_cnpj,
+		p_nomeFuncionario,
+		p_sexoFuncionario,
+		p_foneFuncionario 
     );
 END$$
 DELIMITER ;
@@ -313,52 +320,53 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_InsertTeste`(
-    IN p_nome VARCHAR(50),
-    IN p_email VARCHAR(50),
-    IN p_data DATE,
-    IN p_sexo CHAR(1),
-    IN p_tel CHAR(15),
-    IN p_cpf CHAR(14)
+    IN p_cpf char(11),
+	IN p_id int,
+	IN p_cnpj char(14),
+	IN p_nome varchar(50),
+    IN p_email varchar(50),
+    IN p_senha varchar(30),
+	IN p_sexo char(1) ,
+	IN p_fone char(11)
 )
 BEGIN
     DECLARE p_retorno INT;
     DECLARE id INT;
 
-    SET p_retorno = 0;
-
-    -- Chama o procedimento de cadastro de usuário
-    CALL hospitalar.proc_cadastroUser(p_email, '123', p_retorno);
-
+		
     -- Verifica o valor de retorno
-    IF p_retorno = 1 THEN
-        -- Obtém o ID do usuário
-        SET id = (select idUsuario FROM tblusuario WHERE email = p_email);
-
-        -- Chama o procedimento de cadastro de paciente
-        CALL hospitalar.proc_cadastroPac(id, p_cpf, p_nome, p_sexo, p_data, p_tel);
-    END IF;
-
+		CALL proc_cadastroUser(p_email,p_senha,p_retorno);
+    -- Chama o procedimento de cadastro de paciente
+        CALL hospitalar.proc_cadastroFunc(p_cpf, p_id, p_cnpj, p_nome, p_sexo, p_fone);
 END$$
 DELIMITER ;
 
+-- Error Code: 1136. Column count doesn't match value count at row 1
+
+Insert into tblHospital VALUES( 
+'12345678910',
+'Hospital Santa Jojo',
+'Luiz Ricardo',
+'poggers',
+'jojo@gmail.com',
+'Rua dos Bobos nº 0',
+'24H'
+'11913399202'
+);
+
 CALL hospitalar.proc_InsertTeste(
+    '12345678910',
+    1,
+    '12345678910234',
     'Bianca',
     'alencar@gmail.com',
-    '2006-05-01',
+    '123',
     'F',
-    '11913399202',
-    '12345678910'
+    '11913399202'
 );
 
-CALL hospitalar.proc_InsertTeste(
-    'Lala',
-    'lala@gmail.com',
-    '2006-09-17',
-    'F',
-    '11913399202',
-    '12345678910'
-);
-
+select * from tblFuncionario;
+select * from tblUsuario
 
 
 
