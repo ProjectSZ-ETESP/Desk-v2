@@ -31,8 +31,80 @@ namespace DeskForms
             loadConfig();
             maskCPF();
             reset();
+            if (Properties.Settings.Default.integer != 0)
+            {
+                loadInfo();
+            }
         }
 
+
+        private void loadInfo()
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string query = $"select * from tblFuncionario where idUsuario = {Properties.Settings.Default.integer}";
+            string hosp = "";
+                
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+
+                    string str = myreader["nomeFuncionario"].ToString();
+                    int index = str.IndexOf(' ');
+
+                    string result = str.Substring(0, index);
+
+                    lblNome.Text = result;
+                    lblNomeCompleto.Text = myreader["nomeFuncionario"].ToString();
+                    lblTelefone.Text = myreader["foneFuncionario"].ToString();
+                    lblEmail.Text = Properties.Settings.Default.user.ToString();
+                    hosp = myreader["cnpj"].ToString();
+                }       
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            lblHospital.Text = 
+           loadHospital(hosp);
+        }
+
+        private string loadHospital(string cnpj)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string query = $"select * from tblHospital where cnpj = {cnpj}";
+            string retorno = "";
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    retorno = myreader["nomeHosp"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return retorno;
+        }
 
         #region Botões de Navegação
 
@@ -83,126 +155,64 @@ namespace DeskForms
             log.ShowDialog();
         }
 
-       
-        private string caminhoImagem = null;
         string stringConexão = "server=localhost;database=hospitalar;uid=root;pwd=etesp";
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofl = new OpenFileDialog();
-            ofl.Title = "Adicionar Imagem";
-            ofl.Filter = "All files (*.*)|*.*";
-            if (ofl.ShowDialog() == DialogResult.OK)
+            MenuImagens mrh = new MenuImagens();
+            mrh.ShowDialog();
+            int index = Properties.Settings.Default.img;
+
+            Image img = Properties.Resources.dog;
+
+            switch (index)
             {
-                try
-                {
-                    imagePerfil.Image = new Bitmap(ofl.OpenFile());
-                    caminhoImagem = ofl.FileName;
-                    salvarFoto();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Falha ao carregar a imagem");
-                }
+                case 1:
+                    img = Properties.Resources._1;
+                    break;
+
+                case 2:
+                    img = Properties.Resources._2;
+
+                    break;
+
+                case 3:
+                    img = Properties.Resources._3;
+
+                    break;
+
+                case 4:
+                    img = Properties.Resources._4;
+
+                    break;
+
+                case 5:
+                    img = Properties.Resources._5;
+
+                    break;
+
+                case 6:
+                    img = Properties.Resources._6;
+
+                    break;
+
+                case 7:
+                    img = Properties.Resources._7;
+
+                    break;
+
+                case 8:
+                    img = Properties.Resources._8;
+
+                    break;
             }
-            ofl.Dispose();
+            imagePerfil.Image = img;
+            pfpLateral.Image = img;
         }
 
-        public static byte[] ImgToByte(string camImg) //converte a imagem em []bytes
-        {
-            FileStream fs = new FileStream(camImg, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            byte[] imgByte = br.ReadBytes((int)fs.Length);
-            br.Close();
-            fs.Close();
-            return imgByte;
-        }
-
-        private void salvarFoto()
-        {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
-            string id = getId();
-            byte[] imagem = ImgToByte(caminhoImagem);
-
-            try
-            {
-                using (var connection = new MySqlConnection(stringConexão))
-                {
-                    connection.Open();
-
-                    string query = $"call Img_Upload({id}, {imagem})";
-
-                    using (var command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@blobData", MySqlDbType.Blob);
-
-                        int result = command.ExecuteNonQuery();
-
-                    }
-                }
-            }
-            catch (Exception ep)
-            {
-                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-        }
-        MySqlDataReader myreader;
-
-        
-
-        private string getId()
-        {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
-
-            clsConexão cls = new clsConexão();
-
-            string id = "";
-            string email = cls.getEmail();
-            string query = $"Select id from tblCliente where email = '{email}' ";
-
-            List<string> strings = new List<string>();
-
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                myreader = cmd.ExecuteReader();
-                while (myreader.Read())
-                {
-                    strings.Add(Convert.ToString(myreader["id"]));
-                }
-
-                if (strings.Count() > 0)
-                {
-                    id = strings[0];
-                }
-                else
-                {
-                    MessageBox.Show($"XIHHHH", "uh oh");
-                }
-
-                conn.Close();
-            }
-            catch (Exception ep)
-            {
-                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return id;
-        }
+        MySqlDataReader myreader;     
 
         #endregion
-
 
         private void BtnAddFoto_Click(object sender, EventArgs e)
         {
@@ -230,12 +240,13 @@ namespace DeskForms
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == "" ||
+            if (    txtID.Text == "" ||
+                    txtNome.Text == "" ||
                     txtCPF.Text == "" ||
                     txtDataNasc.Text == "" ||
                     txtTelefone.Text == "" ||
-                    txtEmail.Text == "" ||
-                    !txtEmail.Text.Contains("@")
+                    txtEmail.Text == ""
+                    || !txtEmail.Text.Contains("@")
                     )
             {
                 MessageBox.Show("Dados inválidos ou não suficientes", "Erro!!");
@@ -254,21 +265,39 @@ namespace DeskForms
                     {
                         sex = "M";
                     }
-                    cadastrarUser(txtEmail.Text, txtCPF.Text, txtNome.Text, sex, txtDataNasc.Text,txtTelefone.Text,txtSangue.Text,txtCondicao.Text) ;
 
-                    MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
-                    reset();
+                    int idFunc = Properties.Settings.Default.integer;
+
+
+                    if (txtID.Text == idFunc + "")
+                    {
+                        MessageBox.Show("Você não pode se cadastrar como paciente oh zé!!", "PESSOAL O SOM");
+                    }
+                    else
+                    {
+                        cadastrarUser(txtID.Text,txtCPF.Text,txtNome.Text,sex,txtDataNasc.Text,txtTelefone.Text);
+                    }
                 }
             }
         }
 
-        private void cadastrarUser(string email, string cpf, string nome, string sexo, string data, string numero, string sangue, string condicao)
+        private void cadastrarUser(string id, string cpf, string nome, string sexo, string data, string numero)
         {
-            DateTime dataPura = DateTime.Parse(data);
-            string tempoMenor = dataPura.ToString("yyyy-MM-dd");
+            try
+            {
+                DateTime dataPura = DateTime.Parse(data);
+                string tempoMenor = dataPura.ToString("yyyy-MM-dd");
 
-            sqlReturn($"call proc_cadastroPac('{email}','{cpf}','{nome}','{sexo}','{tempoMenor}','{numero}','{sangue}','{condicao}')");
+                sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}')");
+                
+                MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
+                reset();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Pane no sistema, e nem foi a Pitty\n{e}", "Uh oh!!");
 
+            }
         }
 
         private List<string> sqlReturn(string query)
@@ -410,6 +439,11 @@ namespace DeskForms
         private void TxtCPF_KeyDown(object sender, KeyEventArgs e)
         {
          
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

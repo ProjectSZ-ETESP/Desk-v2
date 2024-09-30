@@ -99,8 +99,12 @@ namespace DeskForms
                 }
 
                 string pass = returns[0];
+                int id = int.Parse(pass);
 
-                if (pass == "1")
+                Properties.Settings.Default.integer = id;
+                Properties.Settings.Default.Save();
+
+                if (id > 0)
                 {
                     cls.setEmail(txtEmail.Text);
                     Principal frm = new Principal();
@@ -237,6 +241,11 @@ namespace DeskForms
         private void telaLog_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

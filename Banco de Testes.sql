@@ -359,8 +359,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-
-
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_consultaLoad`(
     IN p_id INT,
@@ -392,3 +390,25 @@ BEGIN
     WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
 END$$
 DELIMITER ;
+
+Insert into tblHospital VALUES(
+	'12345678910234',
+    'Santa Jojo',
+    'Luiz R.B Souza',
+    'Clínica de Dodoi',
+    'jojo@gmail.com',
+    'Rua dos Bobos nº 0',
+    '24/7',
+    '11964108090'
+);
+
+
+
+
+select * from tblFuncionario;
+select * from tblUsuario;
+select * from tblPaciente;
+select * from tblHospital;
+
+
+
