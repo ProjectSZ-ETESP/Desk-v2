@@ -4,6 +4,7 @@ create database hospitalar;
 use hospitalar;
 */
 
+
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
 email varchar(50) NOT NULL,
@@ -76,9 +77,9 @@ idConsulta int PRIMARY KEY AUTO_INCREMENT,
 cnpj char(14),
 crm char(6),
 idPaciente int,
+tipoConsulta varchar(50) NOT NULL,
 dataConsulta date NOT NULL,
 horaConsulta time NOT NULL,
-preConsulta varchar(256),
 
 CONSTRAINT fk_HospitalConsulta FOREIGN KEY (cnpj)
 	REFERENCES tblHospital (cnpj),
@@ -112,6 +113,7 @@ CREATE INDEX xNotificacao ON tblNotificacao (idNotificacao, idUsuario, cnpj, idC
 CREATE TABLE tblProntuario (
 idProntuario int PRIMARY KEY AUTO_INCREMENT,
 idConsulta int,
+tipoConsulta varchar(50) NOT NULL,
 descricao varchar(200) NOT NULL,
 receituario varchar(100) NOT NULL,
 
@@ -123,7 +125,7 @@ CREATE INDEX xProntuario ON tblProntuario (idProntuario, idConsulta);
 CREATE TABLE tblDisponibilidade (
 idDisponibilidade int PRIMARY KEY AUTO_INCREMENT,
 cnpj char(14),
-dataDisponivel date,
+dataIndisponivel date,
 descricao varchar(100) NOT NULL,
 
 CONSTRAINT fk_HospitalDisponibilidade FOREIGN KEY (cnpj)
@@ -147,18 +149,18 @@ BEGIN
         SET p_retorno = 0;
     END IF;
 END$$
-DELIMITER;
+DELIMITER ;
+
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroPac`(
-    IN p_email VARCHAR(50),
+    IN p_idUsuario INT,
     IN p_cpf CHAR(14),
     IN p_nome VARCHAR(50),
     IN p_sexo CHAR(1),
     IN p_dataNasc DATE,
-    IN p_fone CHAR(15),
-    IN p_tipoSanguineo varchar(3),
-	IN p_condicoesMedicas varchar(30)
+    IN p_fone CHAR(15)
 )
 BEGIN
 
@@ -168,70 +170,50 @@ BEGIN
         nomePaciente, 
         sexoPaciente, 
         dataNascPaciente, 
-        fonePaciente,
-        tipoSanguineo,
-        condicoesMedicas
+        fonePaciente
     ) VALUES (
-        (Select idUsuario From tblUsuario Where p_email = email), 
+        p_idUsuario, 
         p_cpf, 
         p_nome, 
         p_sexo, 
         p_dataNasc, 
-        p_fone,
-        p_tipoSanguineo,
-        p_condicoesMedicas
+        p_fone
     );
 END$$
 DELIMITER ;
 
+
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroFunc`(
-    IN p_cpfFuncionario char(11),
-	IN p_idUsuario int,
-	IN p_cnpj char(14),
-	IN p_nomeFuncionario varchar(50),
-	IN p_sexoFuncionario char(1) ,
-	IN p_foneFuncionario char(11)
+    IN p_cpf CHAR(14),
+    IN p_idUsuario INT,
+    IN p_cnpj VARCHAR(14),
+    IN p_nome VARCHAR(50),
+    IN p_sexo CHAR(1),
+    IN p_fone CHAR(15)
 )
 BEGIN
 
-    INSERT INTO tblfuncionario (
+    INSERT INTO tblFuncionario (
         cpfFuncionario, 
         idUsuario, 
         cnpj, 
         nomeFuncionario, 
         sexoFuncionario, 
-        foneFuncionario 
+        foneFuncionario
     ) VALUES (
-		p_cpfFuncionario,
-		p_idUsuario,
-		p_cnpj,
-		p_nomeFuncionario,
-		p_sexoFuncionario,
-		p_foneFuncionario 
+        p_cpf, 
+        p_idUsuario, 
+        p_cnpj, 
+        p_nome, 
+        p_sexo, 
+        p_fone
     );
 END$$
 DELIMITER ;
 
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_loginFunc`(
-    IN p_email VARCHAR(50),
-    IN p_senha VARCHAR(30),
-    OUT p_retorno INT
-)
-BEGIN
-    IF (SELECT COUNT(*) 
-        FROM tblUsuario 
-        WHERE email = p_email 
-          AND idUsuario IN (SELECT idUsuario FROM tblfuncionario)) > 0 THEN
-        SET p_retorno = (SELECT idUsuario 
-                         FROM tblUsuario 
-                         WHERE email = p_email);
-    ELSE
-        SET p_retorno = 0;
-    END IF;
-END$$
-DELIMITER ;
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_loginPac`(
@@ -253,6 +235,29 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_loginFunc`(
+    IN p_email VARCHAR(50),
+    IN p_senha VARCHAR(30),
+    OUT p_retorno INT
+)
+BEGIN
+    IF (SELECT COUNT(*) 
+        FROM tblUsuario 
+        WHERE email = p_email 
+          AND idUsuario IN (SELECT idUsuario FROM tblFuncionario)) > 0 THEN
+        SET p_retorno = (SELECT idUsuario 
+                         FROM tblUsuario 
+                         WHERE email = p_email);
+    ELSE
+        SET p_retorno = 0;
+    END IF;
+END$$
+DELIMITER ;
+
+
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_excluirPac`(
     IN p_id INT
@@ -263,8 +268,42 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_excluirFunc`(
+    IN p_id INT
+)
+BEGIN
+    DELETE FROM tblFuncionario WHERE idUsuario = p_id;
+    DELETE FROM tblUsuario WHERE idUsuario = p_id;
+END$$
+DELIMITER ;
+
+
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editPac`(
+    IN p_id INT,
+    IN p_nome VARCHAR(50),
+    IN p_email VARCHAR(50),
+    IN p_cpf CHAR(14),
+    IN p_cnpj VARCHAR(14),
+    IN p_sexo CHAR(1),
+    IN p_fone CHAR(15)
+)
+BEGIN
+    UPDATE tblUsuario SET email = p_email
+    WHERE idUsuario = p_id;
+    UPDATE tblFuncionario SET nomeFuncionario = p_nome, cpfFuncionario = p_cpf, cnpj = p_cnpj, sexoFuncionario = p_sexo, foneFuncionario = p_fone
+    WHERE idUsuario = p_id;
+END$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editFunc`(
     IN p_id INT,
     IN p_nome VARCHAR(50),
     IN p_email VARCHAR(50),
@@ -280,6 +319,8 @@ BEGIN
     WHERE idUsuario = p_id;
 END$$
 DELIMITER ;
+
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_baseLoad`(
@@ -318,71 +359,36 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_InsertTeste`(
-    IN p_cpf char(11),
-	IN p_id int,
-	IN p_cnpj char(14),
-	IN p_nome varchar(50),
-    IN p_email varchar(50),
-    IN p_senha varchar(30),
-	IN p_sexo char(1) ,
-	IN p_fone char(11)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_consultaLoad`(
+    IN p_id INT,
+    OUT p_data DATE,
+    OUT p_hora TIME,
+    OUT p_clinica VARCHAR(50),
+    OUT p_doutor VARCHAR(50),
+    OUT p_tipoConsulta VARCHAR(50)
 )
 BEGIN
-    DECLARE p_retorno INT;
-    DECLARE id INT;
+    SELECT dataConsulta INTO p_data
+    FROM tblConsulta
+    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    
+    SELECT horaConsulta INTO p_hora
+    FROM tblConsulta
+    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
 
-		
-    -- Verifica o valor de retorno
-		CALL proc_cadastroUser(p_email,p_senha,p_retorno);
-    -- Chama o procedimento de cadastro de paciente
-        CALL hospitalar.proc_cadastroFunc(p_cpf, p_id, p_cnpj, p_nome, p_sexo, p_fone);
+    SELECT cnpj INTO p_clinica
+    FROM tblConsulta
+    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+
+    SELECT crm INTO p_doutor
+    FROM tblConsulta
+    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+
+    SELECT tipoConsulta INTO p_tipoConsulta
+    FROM tblConsulta
+    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
 END$$
 DELIMITER ;
-
--- Error Code: 1136. Column count doesn't match value count at row 1
-
-Insert into tblHospital VALUES( 
-'12345678910234',
-'Hospital Santa Jojo',
-'Luiz Ricardo',
-'poggers',
-'jojo@gmail.com',
-'Rua dos Bobos nº 0',
-'24H',
-'11913399202'
-);
-
-CALL hospitalar.proc_InsertTeste(
-    '12345678910',
-    1,
-    '12345678910234',
-    'Bianca',
-    'alencar@gmail.com',
-    '123',
-    'F',
-    '11913399202'
-);
-
-CALL proc_cadastroPac(
-'bella@gmail.com',
-'2345678901',
-'Isabella',
-'F',
-'2007-11-12',
-'11913399202',
-'O+',
-'Homofobia Aguda'
-);
-
-
-select * from tblFuncionario;
-select * from tblUsuario
-select * from tblPaciente
-
-
-
-
-
-
