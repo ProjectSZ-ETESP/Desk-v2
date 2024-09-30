@@ -105,6 +105,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.pfpPaciente = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pnlPost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -127,6 +129,8 @@
             this.abasPrincipal.SuspendLayout();
             this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // label27
@@ -144,7 +148,7 @@
             // 
             this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrar.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(648, 423);
+            this.btnRegistrar.Location = new System.Drawing.Point(649, 438);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(135, 63);
             this.btnRegistrar.TabIndex = 11;
@@ -157,7 +161,7 @@
             this.rdoFem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoFem.AutoSize = true;
             this.rdoFem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoFem.Location = new System.Drawing.Point(60, 356);
+            this.rdoFem.Location = new System.Drawing.Point(61, 371);
             this.rdoFem.Name = "rdoFem";
             this.rdoFem.Size = new System.Drawing.Size(83, 21);
             this.rdoFem.TabIndex = 4;
@@ -170,7 +174,7 @@
             this.rdoMasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoMasc.AutoSize = true;
             this.rdoMasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoMasc.Location = new System.Drawing.Point(61, 325);
+            this.rdoMasc.Location = new System.Drawing.Point(62, 340);
             this.rdoMasc.Name = "rdoMasc";
             this.rdoMasc.Size = new System.Drawing.Size(89, 21);
             this.rdoMasc.TabIndex = 3;
@@ -182,7 +186,7 @@
             // 
             this.btnAddFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFoto.Location = new System.Drawing.Point(501, 84);
+            this.btnAddFoto.Location = new System.Drawing.Point(502, 99);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(135, 65);
             this.btnAddFoto.TabIndex = 7;
@@ -195,7 +199,7 @@
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefone.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(370, 251);
+            this.txtTelefone.Location = new System.Drawing.Point(371, 266);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PromptChar = ' ';
@@ -209,7 +213,7 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(365, 220);
+            this.label25.Location = new System.Drawing.Point(366, 235);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(86, 28);
             this.label25.TabIndex = 20;
@@ -220,7 +224,7 @@
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(44, 289);
+            this.label24.Location = new System.Drawing.Point(45, 304);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 28);
             this.label24.TabIndex = 18;
@@ -231,7 +235,7 @@
             this.txtDataNasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataNasc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDataNasc.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNasc.Location = new System.Drawing.Point(49, 423);
+            this.txtDataNasc.Location = new System.Drawing.Point(50, 438);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.PromptChar = ' ';
@@ -300,12 +304,11 @@
             // tabConsulta
             // 
             this.tabConsulta.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabConsulta.Location = new System.Drawing.Point(4, 25);
+            this.tabConsulta.Location = new System.Drawing.Point(4, 4);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(831, 565);
+            this.tabConsulta.Size = new System.Drawing.Size(832, 545);
             this.tabConsulta.TabIndex = 2;
-            this.tabConsulta.Text = "tabConsulta";
             // 
             // cboNotific
             // 
@@ -455,12 +458,11 @@
             this.tabConfig.Controls.Add(this.label3);
             this.tabConfig.Controls.Add(this.label2);
             this.tabConfig.Controls.Add(this.label1);
-            this.tabConfig.Location = new System.Drawing.Point(4, 25);
+            this.tabConfig.Location = new System.Drawing.Point(4, 4);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfig.Size = new System.Drawing.Size(831, 565);
+            this.tabConfig.Size = new System.Drawing.Size(832, 545);
             this.tabConfig.TabIndex = 4;
-            this.tabConfig.Text = "tabConfig";
             // 
             // label2
             // 
@@ -478,12 +480,11 @@
             this.tabForum.Controls.Add(this.pnlPost);
             this.tabForum.Controls.Add(this.panel2);
             this.tabForum.Controls.Add(this.pictureBox2);
-            this.tabForum.Location = new System.Drawing.Point(4, 25);
+            this.tabForum.Location = new System.Drawing.Point(4, 4);
             this.tabForum.Name = "tabForum";
             this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(831, 565);
+            this.tabForum.Size = new System.Drawing.Size(832, 545);
             this.tabForum.TabIndex = 3;
-            this.tabForum.Text = "tabForum";
             // 
             // panel2
             // 
@@ -542,7 +543,7 @@
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(42, 395);
+            this.label23.Location = new System.Drawing.Point(43, 410);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(180, 28);
             this.label23.TabIndex = 16;
@@ -565,12 +566,11 @@
             this.tabPerfil.Controls.Add(this.lblNome);
             this.tabPerfil.Controls.Add(this.btnEdit);
             this.tabPerfil.Controls.Add(this.imagePerfil);
-            this.tabPerfil.Location = new System.Drawing.Point(4, 25);
+            this.tabPerfil.Location = new System.Drawing.Point(4, 4);
             this.tabPerfil.Name = "tabPerfil";
             this.tabPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPerfil.Size = new System.Drawing.Size(831, 565);
+            this.tabPerfil.Size = new System.Drawing.Size(839, 591);
             this.tabPerfil.TabIndex = 0;
-            this.tabPerfil.Text = "tabPerfil";
             // 
             // lblTelefone
             // 
@@ -579,7 +579,7 @@
             this.lblTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblTelefone.Font = new System.Drawing.Font("Poppins Light", 14.25F);
-            this.lblTelefone.Location = new System.Drawing.Point(49, 391);
+            this.lblTelefone.Location = new System.Drawing.Point(57, 402);
             this.lblTelefone.Mask = "(99) 00000-0000";
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.PromptChar = ' ';
@@ -592,7 +592,7 @@
             // lblHospital
             // 
             this.lblHospital.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHospital.Location = new System.Drawing.Point(46, 469);
+            this.lblHospital.Location = new System.Drawing.Point(44, 468);
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(207, 34);
             this.lblHospital.TabIndex = 20;
@@ -602,7 +602,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(46, 435);
+            this.label19.Location = new System.Drawing.Point(43, 434);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(199, 34);
             this.label19.TabIndex = 19;
@@ -613,7 +613,7 @@
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(778, 502);
+            this.btnLogout.Location = new System.Drawing.Point(786, 528);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 8;
@@ -735,9 +735,9 @@
             this.panelNav.Controls.Add(this.btnForum);
             this.panelNav.Controls.Add(this.btnConsulta);
             this.panelNav.Controls.Add(this.btnRegistro);
-            this.panelNav.Location = new System.Drawing.Point(-1, 0);
+            this.panelNav.Location = new System.Drawing.Point(0, 33);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(49, 587);
+            this.panelNav.Size = new System.Drawing.Size(50, 593);
             this.panelNav.TabIndex = 2;
             // 
             // pfpLateral
@@ -757,7 +757,7 @@
             this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(11, 549);
+            this.btnConfig.Location = new System.Drawing.Point(12, 555);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(25, 25);
             this.btnConfig.TabIndex = 5;
@@ -766,36 +766,36 @@
             // 
             // btnForum
             // 
-            this.btnForum.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnForum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
             this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(11, 318);
+            this.btnForum.Location = new System.Drawing.Point(11, 321);
             this.btnForum.Name = "btnForum";
-            this.btnForum.Size = new System.Drawing.Size(25, 25);
+            this.btnForum.Size = new System.Drawing.Size(26, 25);
             this.btnForum.TabIndex = 4;
             this.btnForum.TabStop = false;
             this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
             // 
             // btnConsulta
             // 
-            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(11, 231);
+            this.btnConsulta.Location = new System.Drawing.Point(11, 234);
             this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(25, 25);
+            this.btnConsulta.Size = new System.Drawing.Size(26, 25);
             this.btnConsulta.TabIndex = 3;
             this.btnConsulta.TabStop = false;
             this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnRegistro
             // 
-            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
             this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistro.Location = new System.Drawing.Point(11, 143);
+            this.btnRegistro.Location = new System.Drawing.Point(11, 146);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(25, 25);
+            this.btnRegistro.Size = new System.Drawing.Size(26, 25);
             this.btnRegistro.TabIndex = 2;
             this.btnRegistro.TabStop = false;
             this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
@@ -803,21 +803,19 @@
             // abasPrincipal
             // 
             this.abasPrincipal.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.abasPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.abasPrincipal.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.abasPrincipal.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.abasPrincipal.Controls.Add(this.tabPerfil);
             this.abasPrincipal.Controls.Add(this.tabRegistro);
             this.abasPrincipal.Controls.Add(this.tabConsulta);
             this.abasPrincipal.Controls.Add(this.tabForum);
             this.abasPrincipal.Controls.Add(this.tabConfig);
-            this.abasPrincipal.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.abasPrincipal.Location = new System.Drawing.Point(44, 0);
+            this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
+            this.abasPrincipal.Location = new System.Drawing.Point(50, 35);
             this.abasPrincipal.Multiline = true;
             this.abasPrincipal.Name = "abasPrincipal";
+            this.abasPrincipal.Padding = new System.Drawing.Point(0, 0);
             this.abasPrincipal.SelectedIndex = 0;
-            this.abasPrincipal.Size = new System.Drawing.Size(839, 594);
+            this.abasPrincipal.Size = new System.Drawing.Size(847, 639);
             this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.abasPrincipal.TabIndex = 3;
             this.abasPrincipal.TabStop = false;
@@ -852,19 +850,18 @@
             this.tabRegistro.Controls.Add(this.label20);
             this.tabRegistro.Controls.Add(this.pfpPaciente);
             this.tabRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tabRegistro.Location = new System.Drawing.Point(4, 25);
+            this.tabRegistro.Location = new System.Drawing.Point(4, 4);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(831, 565);
+            this.tabRegistro.Size = new System.Drawing.Size(832, 545);
             this.tabRegistro.TabIndex = 1;
-            this.tabRegistro.Text = "tabProntuario";
             // 
             // txtCondicao
             // 
             this.txtCondicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCondicao.BackColor = System.Drawing.SystemColors.Window;
             this.txtCondicao.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCondicao.Location = new System.Drawing.Point(370, 345);
+            this.txtCondicao.Location = new System.Drawing.Point(371, 360);
             this.txtCondicao.MaxLength = 30;
             this.txtCondicao.Multiline = true;
             this.txtCondicao.Name = "txtCondicao";
@@ -876,7 +873,7 @@
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(365, 314);
+            this.label32.Location = new System.Drawing.Point(366, 329);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(155, 28);
             this.label32.TabIndex = 36;
@@ -888,7 +885,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(89, 289);
+            this.label31.Location = new System.Drawing.Point(90, 304);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(20, 28);
             this.label31.TabIndex = 35;
@@ -900,7 +897,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(214, 395);
+            this.label30.Location = new System.Drawing.Point(215, 410);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(20, 28);
             this.label30.TabIndex = 34;
@@ -912,7 +909,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(183, 222);
+            this.label26.Location = new System.Drawing.Point(184, 237);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(20, 28);
             this.label26.TabIndex = 33;
@@ -924,7 +921,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(78, 147);
+            this.label18.Location = new System.Drawing.Point(79, 162);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 28);
             this.label18.TabIndex = 32;
@@ -935,7 +932,7 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(547, 251);
+            this.txtEmail.Location = new System.Drawing.Point(548, 266);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(252, 31);
@@ -947,7 +944,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(542, 220);
+            this.label17.Location = new System.Drawing.Point(543, 235);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(158, 28);
             this.label17.TabIndex = 30;
@@ -958,7 +955,7 @@
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.BackColor = System.Drawing.SystemColors.Window;
             this.txtID.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(49, 112);
+            this.txtID.Location = new System.Drawing.Point(50, 127);
             this.txtID.MaxLength = 3;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(52, 31);
@@ -969,7 +966,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(46, 84);
+            this.label12.Location = new System.Drawing.Point(47, 99);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 28);
             this.label12.TabIndex = 28;
@@ -980,7 +977,7 @@
             this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCPF.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(48, 178);
+            this.txtCPF.Location = new System.Drawing.Point(49, 193);
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PromptChar = ' ';
@@ -996,7 +993,7 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(42, 151);
+            this.label22.Location = new System.Drawing.Point(43, 166);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 28);
             this.label22.TabIndex = 13;
@@ -1007,7 +1004,7 @@
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(48, 253);
+            this.txtNome.Location = new System.Drawing.Point(49, 268);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(252, 31);
@@ -1018,7 +1015,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(44, 225);
+            this.label21.Location = new System.Drawing.Point(45, 240);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(145, 28);
             this.label21.TabIndex = 11;
@@ -1029,7 +1026,7 @@
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(42, 23);
+            this.label20.Location = new System.Drawing.Point(43, 38);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(250, 29);
             this.label20.TabIndex = 10;
@@ -1041,24 +1038,60 @@
             this.pfpPaciente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pfpPaciente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pfpPaciente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pfpPaciente.Location = new System.Drawing.Point(370, 84);
+            this.pfpPaciente.Location = new System.Drawing.Point(371, 99);
             this.pfpPaciente.Name = "pfpPaciente";
             this.pfpPaciente.Size = new System.Drawing.Size(116, 106);
             this.pfpPaciente.TabIndex = 7;
             this.pfpPaciente.TabStop = false;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.BackgroundImage = global::DeskForms.Properties.Resources.close1;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(866, 9);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.BackgroundImage = global::DeskForms.Properties.Resources.min1;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Location = new System.Drawing.Point(840, 9);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox7.TabIndex = 8;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 586);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
+            this.ClientSize = new System.Drawing.Size(892, 627);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.abasPrincipal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(892, 625);
             this.Name = "Principal";
             this.Text = "Principal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
             this.pnlPost.ResumeLayout(false);
             this.pnlPost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
@@ -1086,7 +1119,10 @@
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1168,5 +1204,7 @@
         private System.Windows.Forms.TextBox txtCondicao;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.MaskedTextBox lblTelefone;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

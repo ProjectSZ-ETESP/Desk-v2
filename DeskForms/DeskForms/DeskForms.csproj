@@ -258,6 +258,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\min.png" />
+    <None Include="Resources\max.png" />
+    <None Include="Resources\min.svg" />
+    <None Include="Resources\max.svg" />
     <None Include="Resources\logoWhite.png" />
     <None Include="Resources\logoDark 1.ico" />
     <None Include="Resources\logDark.png" />
@@ -274,6 +278,8 @@
     <None Include="Resources\7.jpg" />
     <Content Include="Resources\arkham.gif" />
     <None Include="Resources\arkham1.gif" />
+    <None Include="Resources\close.svg" />
+    <None Include="Resources\close.png" />
     <Content Include="Resources\logoutClear.png" />
     <None Include="Resources\logoutClear1.png" />
   </ItemGroup>
