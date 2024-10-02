@@ -48,7 +48,7 @@ cnpj char(14),
 nomeFuncionario varchar(50) NOT NULL,
 sexoFuncionario char(1) NOT NULL,
 foneFuncionario char(11),
-fotoFuncionario varbinary(8000),
+fotoFuncionario int,
 
 CONSTRAINT fk_FuncionarioUsuario FOREIGN KEY (idUsuario)
 	REFERENCES tblUsuario (idUsuario),
@@ -402,13 +402,22 @@ Insert into tblHospital VALUES(
     '11964108090'
 );
 
+call proc_cadastroUser('alencar@gmail.com','123',@p_retorno);
 
-
+call proc_cadastroFunc('12345678910',
+'1',
+'12345678910234',
+'Bianca de Alencar e Silva',
+'F',
+'11913999202');
 
 select * from tblFuncionario;
 select * from tblUsuario;
 select * from tblPaciente;
 select * from tblHospital;
 
+update tblFuncionario
+set fotoFuncionario = 2
+where idUsuario = 1
 
 

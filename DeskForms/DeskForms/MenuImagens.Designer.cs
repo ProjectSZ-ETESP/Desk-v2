@@ -51,7 +51,7 @@ namespace DeskForms
             // btnMenos
             // 
             this.btnMenos.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenos.Font = new System.Drawing.Font("Monocraft", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenos.Location = new System.Drawing.Point(12, 132);
             this.btnMenos.Name = "btnMenos";
             this.btnMenos.Size = new System.Drawing.Size(40, 47);
@@ -63,7 +63,7 @@ namespace DeskForms
             // btnMais
             // 
             this.btnMais.BackColor = System.Drawing.Color.Transparent;
-            this.btnMais.Font = new System.Drawing.Font("Monocraft", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMais.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMais.Location = new System.Drawing.Point(294, 132);
             this.btnMais.Name = "btnMais";
             this.btnMais.Size = new System.Drawing.Size(40, 47);
@@ -75,7 +75,7 @@ namespace DeskForms
             // btnSelect
             // 
             this.btnSelect.BackColor = System.Drawing.Color.Transparent;
-            this.btnSelect.Font = new System.Drawing.Font("Monocraft", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Font = new System.Drawing.Font("Poppins Medium", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.Location = new System.Drawing.Point(58, 269);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(230, 47);

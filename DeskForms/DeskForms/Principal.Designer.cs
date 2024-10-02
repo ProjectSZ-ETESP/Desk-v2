@@ -192,7 +192,6 @@
             this.btnAddFoto.TabIndex = 7;
             this.btnAddFoto.Text = "Insira a foto \r\ndo paciente";
             this.btnAddFoto.UseVisualStyleBackColor = true;
-            this.btnAddFoto.Click += new System.EventHandler(this.BtnAddFoto_Click);
             // 
             // txtTelefone
             // 
@@ -307,7 +306,7 @@
             this.tabConsulta.Location = new System.Drawing.Point(4, 4);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(832, 545);
+            this.tabConsulta.Size = new System.Drawing.Size(839, 550);
             this.tabConsulta.TabIndex = 2;
             // 
             // cboNotific
@@ -461,7 +460,7 @@
             this.tabConfig.Location = new System.Drawing.Point(4, 4);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfig.Size = new System.Drawing.Size(832, 545);
+            this.tabConfig.Size = new System.Drawing.Size(839, 550);
             this.tabConfig.TabIndex = 4;
             // 
             // label2
@@ -483,7 +482,7 @@
             this.tabForum.Location = new System.Drawing.Point(4, 4);
             this.tabForum.Name = "tabForum";
             this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(832, 545);
+            this.tabForum.Size = new System.Drawing.Size(839, 550);
             this.tabForum.TabIndex = 3;
             // 
             // panel2
@@ -569,7 +568,7 @@
             this.tabPerfil.Location = new System.Drawing.Point(4, 4);
             this.tabPerfil.Name = "tabPerfil";
             this.tabPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPerfil.Size = new System.Drawing.Size(839, 591);
+            this.tabPerfil.Size = new System.Drawing.Size(839, 550);
             this.tabPerfil.TabIndex = 0;
             // 
             // lblTelefone
@@ -579,7 +578,7 @@
             this.lblTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblTelefone.Font = new System.Drawing.Font("Poppins Light", 14.25F);
-            this.lblTelefone.Location = new System.Drawing.Point(57, 402);
+            this.lblTelefone.Location = new System.Drawing.Point(57, 361);
             this.lblTelefone.Mask = "(99) 00000-0000";
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.PromptChar = ' ';
@@ -613,7 +612,7 @@
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(786, 528);
+            this.btnLogout.Location = new System.Drawing.Point(786, 487);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 8;
@@ -815,7 +814,7 @@
             this.abasPrincipal.Name = "abasPrincipal";
             this.abasPrincipal.Padding = new System.Drawing.Point(0, 0);
             this.abasPrincipal.SelectedIndex = 0;
-            this.abasPrincipal.Size = new System.Drawing.Size(847, 639);
+            this.abasPrincipal.Size = new System.Drawing.Size(847, 598);
             this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.abasPrincipal.TabIndex = 3;
             this.abasPrincipal.TabStop = false;
@@ -853,7 +852,7 @@
             this.tabRegistro.Location = new System.Drawing.Point(4, 4);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(832, 545);
+            this.tabRegistro.Size = new System.Drawing.Size(839, 591);
             this.tabRegistro.TabIndex = 1;
             // 
             // txtCondicao
@@ -1086,6 +1085,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(892, 625);
             this.Name = "Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Principal_Load);

@@ -44,6 +44,7 @@ namespace DeskForms
             MySqlConnection conn = new MySqlConnection(stringConexão);
             string query = $"select * from tblFuncionario where idUsuario = {Properties.Settings.Default.integer}";
             string hosp = "";
+            int fto = 1;
                 
             try
             {
@@ -64,6 +65,7 @@ namespace DeskForms
                     lblTelefone.Text = myreader["foneFuncionario"].ToString();
                     lblEmail.Text = Properties.Settings.Default.user.ToString();
                     hosp = myreader["cnpj"].ToString();
+                    fto = int.Parse(myreader["fotoFuncionario"].ToString());
                 }       
                 conn.Close();
             }
@@ -77,6 +79,11 @@ namespace DeskForms
             }
             lblHospital.Text = 
            loadHospital(hosp);
+
+            Image perfil = getImg(fto);
+
+            imagePerfil.Image = perfil;
+            pfpLateral.Image = perfil;
         }
 
         private string loadHospital(string cnpj)
@@ -158,12 +165,8 @@ namespace DeskForms
 
         string stringConexão = "server=localhost;database=hospitalar;uid=root;pwd=etesp";
 
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private Image getImg(int index)
         {
-            MenuImagens mrh = new MenuImagens();
-            mrh.ShowDialog();
-            int index = Properties.Settings.Default.img;
-
             Image img = Properties.Resources.dog;
 
             switch (index)
@@ -207,37 +210,27 @@ namespace DeskForms
 
                     break;
             }
-            imagePerfil.Image = img;
-            pfpLateral.Image = img;
+
+            return img;
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            MenuImagens mrh = new MenuImagens();
+            mrh.ShowDialog();
+            int index = Properties.Settings.Default.img;
+
+            sqlVoid($"Update tblFuncionario Set fotoFuncionario = {index} where idUsuario = {Properties.Settings.Default.integer}");
+
+            Image perfil = getImg(index);
+           
+            imagePerfil.Image = perfil;
+            pfpLateral.Image = perfil;
         }
 
         MySqlDataReader myreader;     
 
         #endregion
-
-        private void BtnAddFoto_Click(object sender, EventArgs e)
-        {
-            var dialog = new OpenFileDialog();
-
-            dialog.Title = "Abrir Imagem";
-            dialog.Filter = "Image Files (*.bmp; *.jpg; *.jpeg; *.png; *.gif)|*.bmp;*.jpg;*.jpeg;*.png;*.gif";
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    Image imagem = Image.FromFile(dialog.FileName);
-
-                    pfpPaciente.BackgroundImage = imagem;
-
-                    dialog.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocorreu um erro ao carregar a imagem: " + ex.Message);
-                }
-            }
-        }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
@@ -305,7 +298,6 @@ namespace DeskForms
         {
             MySqlConnection conn = new MySqlConnection(stringConexão);
             List<string> returns = new List<string>();
-            clsConexão cls = new clsConexão();
 
             try
             {
@@ -326,6 +318,30 @@ namespace DeskForms
             }
 
             return returns;
+        }
+
+        private void sqlVoid(string query)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         private void maskCPF()
@@ -418,11 +434,13 @@ namespace DeskForms
                             rdoMasc.ForeColor = Color.Black;
                             rdoFem.ForeColor = Color.Black;
                             txtCPF.ForeColor = Color.Black;
-                            panelNav.BackColor = white;
+                            
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
                             Properties.Settings.Default.theme = "Tema Claro"; 
                             cboColor.SelectedIndex = 1;
                         }
+                        //panelNav.BackColor = white;
+                        this.BackColor = System.Drawing.ColorTranslator.FromHtml("#161817");
                     }
                     break;
 
