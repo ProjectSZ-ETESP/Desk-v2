@@ -21,6 +21,8 @@ namespace DeskForms
             
         }
 
+
+
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -36,6 +38,7 @@ namespace DeskForms
             {
                 loadInfo();
             }
+            abasPrincipal.ItemSize = new Size(0, 1);
         }
 
 
@@ -399,15 +402,26 @@ namespace DeskForms
                         foreach (var control in tab.Controls)
                         {
 
+                            Color lightGreen = System.Drawing.ColorTranslator.FromHtml("#327960");
+
                             var label = control as Label;
-                            if (label == null) continue;
-                            label.ForeColor = Color.White;
+                            if (label != null)
+                            {
+                                label.ForeColor = lightGreen;
+                            }
+                            var tabBack = control as TabPage;
+                            if(tabBack != null)
+                            {
+                                tabBack.BackColor = System.Drawing.ColorTranslator.FromHtml("#2e3331");
+                            }
+  
+
+
                             Color dark = System.Drawing.ColorTranslator.FromHtml("#161817");
                             panelNav.BackColor = dark;
                             rdoMasc.ForeColor = Color.White;
                             rdoFem.ForeColor = Color.White;
                             txtCPF.ForeColor = Color.White;
-                            Principal frm = new Principal();
                             this.BackColor = dark;
 
                             btnLogout.BackgroundImage = Properties.Resources.logout;
@@ -425,12 +439,15 @@ namespace DeskForms
 
                         foreach (var control in tab.Controls)
                         {
+                            Color darkGreen = System.Drawing.ColorTranslator.FromHtml("#161817");
+                            Color lightGreen = System.Drawing.ColorTranslator.FromHtml("#327960");
 
-                            Color back = System.Drawing.ColorTranslator.FromHtml("#161817");
                             var label = control as Label;
-                            if (label == null) continue;
-                            label.ForeColor = back;
-                            Color white = System.Drawing.ColorTranslator.FromHtml("#161817");
+                            if (label != null)
+                            {
+                                label.ForeColor = darkGreen;
+                            }
+                            
                             rdoMasc.ForeColor = Color.Black;
                             rdoFem.ForeColor = Color.Black;
                             txtCPF.ForeColor = Color.Black;
@@ -438,9 +455,9 @@ namespace DeskForms
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
                             Properties.Settings.Default.theme = "Tema Claro"; 
                             cboColor.SelectedIndex = 1;
+                            panelNav.BackColor = lightGreen;
+                            this.BackColor = lightGreen;
                         }
-                        //panelNav.BackColor = white;
-                        this.BackColor = System.Drawing.ColorTranslator.FromHtml("#161817");
                     }
                     break;
 

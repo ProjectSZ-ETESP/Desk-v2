@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
-            this.label27 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.rdoFem = new System.Windows.Forms.RadioButton();
             this.rdoMasc = new System.Windows.Forms.RadioButton();
@@ -38,11 +37,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pnlPost = new System.Windows.Forms.Panel();
-            this.btnReport = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.tabConsulta = new System.Windows.Forms.TabPage();
             this.cboNotific = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,11 +54,6 @@
             this.tabConfig = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabForum = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
             this.lblTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -107,15 +96,8 @@
             this.pfpPaciente = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pnlPost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabConfig.SuspendLayout();
-            this.tabForum.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
@@ -131,24 +113,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label27
-            // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
-            this.label27.Location = new System.Drawing.Point(93, 40);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(82, 24);
-            this.label27.TabIndex = 17;
-            this.label27.Text = "Alencar";
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrar.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(649, 438);
+            this.btnRegistrar.Location = new System.Drawing.Point(659, 449);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(135, 63);
             this.btnRegistrar.TabIndex = 11;
@@ -161,7 +133,7 @@
             this.rdoFem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoFem.AutoSize = true;
             this.rdoFem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoFem.Location = new System.Drawing.Point(61, 371);
+            this.rdoFem.Location = new System.Drawing.Point(71, 382);
             this.rdoFem.Name = "rdoFem";
             this.rdoFem.Size = new System.Drawing.Size(83, 21);
             this.rdoFem.TabIndex = 4;
@@ -174,7 +146,7 @@
             this.rdoMasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoMasc.AutoSize = true;
             this.rdoMasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoMasc.Location = new System.Drawing.Point(62, 340);
+            this.rdoMasc.Location = new System.Drawing.Point(72, 351);
             this.rdoMasc.Name = "rdoMasc";
             this.rdoMasc.Size = new System.Drawing.Size(89, 21);
             this.rdoMasc.TabIndex = 3;
@@ -186,7 +158,7 @@
             // 
             this.btnAddFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFoto.Location = new System.Drawing.Point(502, 99);
+            this.btnAddFoto.Location = new System.Drawing.Point(512, 110);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(135, 65);
             this.btnAddFoto.TabIndex = 7;
@@ -198,7 +170,7 @@
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefone.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(371, 266);
+            this.txtTelefone.Location = new System.Drawing.Point(381, 277);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PromptChar = ' ';
@@ -212,7 +184,7 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(366, 235);
+            this.label25.Location = new System.Drawing.Point(376, 246);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(86, 28);
             this.label25.TabIndex = 20;
@@ -223,7 +195,7 @@
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(45, 304);
+            this.label24.Location = new System.Drawing.Point(55, 315);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 28);
             this.label24.TabIndex = 18;
@@ -234,7 +206,7 @@
             this.txtDataNasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataNasc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDataNasc.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNasc.Location = new System.Drawing.Point(50, 438);
+            this.txtDataNasc.Location = new System.Drawing.Point(60, 449);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.PromptChar = ' ';
@@ -244,69 +216,13 @@
             this.txtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // label29
-            // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label29.Location = new System.Drawing.Point(32, 97);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(433, 50);
-            this.label29.TabIndex = 19;
-            this.label29.Text = "Pessoal, alguém sabe um tratamento bom pra sindrome \r\ndo \"Tá legal beleza?\", tô p" +
-    "recisando, tá legal beleza?";
-            // 
-            // pnlPost
-            // 
-            this.pnlPost.Controls.Add(this.label29);
-            this.pnlPost.Controls.Add(this.btnReport);
-            this.pnlPost.Controls.Add(this.pictureBox4);
-            this.pnlPost.Controls.Add(this.label28);
-            this.pnlPost.Controls.Add(this.label27);
-            this.pnlPost.Location = new System.Drawing.Point(24, 259);
-            this.pnlPost.Name = "pnlPost";
-            this.pnlPost.Size = new System.Drawing.Size(698, 166);
-            this.pnlPost.TabIndex = 16;
-            // 
-            // btnReport
-            // 
-            this.btnReport.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
-            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReport.Location = new System.Drawing.Point(648, 15);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(35, 43);
-            this.btnReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReport.TabIndex = 15;
-            this.btnReport.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.BackgroundImage = global::DeskForms.Properties.Resources.amem;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 24);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.TabIndex = 16;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label28.Location = new System.Drawing.Point(190, 44);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(57, 20);
-            this.label28.TabIndex = 18;
-            this.label28.Text = "Há 2h";
-            // 
             // tabConsulta
             // 
             this.tabConsulta.BackColor = System.Drawing.Color.CadetBlue;
             this.tabConsulta.Location = new System.Drawing.Point(4, 4);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(839, 550);
+            this.tabConsulta.Size = new System.Drawing.Size(846, 591);
             this.tabConsulta.TabIndex = 2;
             // 
             // cboNotific
@@ -460,7 +376,7 @@
             this.tabConfig.Location = new System.Drawing.Point(4, 4);
             this.tabConfig.Name = "tabConfig";
             this.tabConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConfig.Size = new System.Drawing.Size(839, 550);
+            this.tabConfig.Size = new System.Drawing.Size(846, 590);
             this.tabConfig.TabIndex = 4;
             // 
             // label2
@@ -476,73 +392,18 @@
             // tabForum
             // 
             this.tabForum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
-            this.tabForum.Controls.Add(this.pnlPost);
-            this.tabForum.Controls.Add(this.panel2);
-            this.tabForum.Controls.Add(this.pictureBox2);
             this.tabForum.Location = new System.Drawing.Point(4, 4);
             this.tabForum.Name = "tabForum";
             this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(839, 550);
+            this.tabForum.Size = new System.Drawing.Size(846, 591);
             this.tabForum.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::DeskForms.Properties.Resources.recdiv;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(34, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(688, 159);
-            this.panel2.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::DeskForms.Properties.Resources.aviso;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(569, 101);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(74, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(98, 34);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(554, 61);
-            this.textBox1.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.dog;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DeskForms.Properties.Resources.Line_29;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(24, 431);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(698, 11);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
             // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(43, 410);
+            this.label23.Location = new System.Drawing.Point(53, 421);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(180, 28);
             this.label23.TabIndex = 16;
@@ -552,6 +413,7 @@
             // 
             this.tabPerfil.BackColor = System.Drawing.Color.White;
             this.tabPerfil.Controls.Add(this.lblTelefone);
+            this.tabPerfil.Controls.Add(this.btnConfig);
             this.tabPerfil.Controls.Add(this.lblHospital);
             this.tabPerfil.Controls.Add(this.label19);
             this.tabPerfil.Controls.Add(this.btnLogout);
@@ -568,17 +430,17 @@
             this.tabPerfil.Location = new System.Drawing.Point(4, 4);
             this.tabPerfil.Name = "tabPerfil";
             this.tabPerfil.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPerfil.Size = new System.Drawing.Size(839, 550);
+            this.tabPerfil.Size = new System.Drawing.Size(846, 590);
             this.tabPerfil.TabIndex = 0;
             // 
             // lblTelefone
             // 
-            this.lblTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTelefone.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTelefone.BackColor = System.Drawing.Color.White;
             this.lblTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblTelefone.Font = new System.Drawing.Font("Poppins Light", 14.25F);
-            this.lblTelefone.Location = new System.Drawing.Point(57, 361);
+            this.lblTelefone.Location = new System.Drawing.Point(53, 391);
             this.lblTelefone.Mask = "(99) 00000-0000";
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.PromptChar = ' ';
@@ -590,8 +452,9 @@
             // 
             // lblHospital
             // 
+            this.lblHospital.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHospital.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHospital.Location = new System.Drawing.Point(44, 468);
+            this.lblHospital.Location = new System.Drawing.Point(48, 468);
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(207, 34);
             this.lblHospital.TabIndex = 20;
@@ -612,7 +475,7 @@
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackgroundImage = global::DeskForms.Properties.Resources.logoutClear;
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Location = new System.Drawing.Point(786, 487);
+            this.btnLogout.Location = new System.Drawing.Point(793, 68);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(30, 30);
             this.btnLogout.TabIndex = 8;
@@ -644,8 +507,9 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblEmail.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(46, 320);
+            this.lblEmail.Location = new System.Drawing.Point(50, 320);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(352, 34);
             this.lblEmail.TabIndex = 15;
@@ -653,8 +517,9 @@
             // 
             // lblNomeCompleto
             // 
+            this.lblNomeCompleto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNomeCompleto.Font = new System.Drawing.Font("Poppins Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeCompleto.Location = new System.Drawing.Point(46, 249);
+            this.lblNomeCompleto.Location = new System.Drawing.Point(50, 249);
             this.lblNomeCompleto.Name = "lblNomeCompleto";
             this.lblNomeCompleto.Size = new System.Drawing.Size(324, 34);
             this.lblNomeCompleto.TabIndex = 14;
@@ -730,13 +595,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
             this.panelNav.Controls.Add(this.pfpLateral);
-            this.panelNav.Controls.Add(this.btnConfig);
             this.panelNav.Controls.Add(this.btnForum);
             this.panelNav.Controls.Add(this.btnConsulta);
             this.panelNav.Controls.Add(this.btnRegistro);
-            this.panelNav.Location = new System.Drawing.Point(0, 33);
+            this.panelNav.Location = new System.Drawing.Point(0, 29);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(50, 593);
+            this.panelNav.Size = new System.Drawing.Size(50, 605);
             this.panelNav.TabIndex = 2;
             // 
             // pfpLateral
@@ -754,11 +618,12 @@
             // btnConfig
             // 
             this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConfig.BackColor = System.Drawing.Color.Black;
             this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(12, 555);
+            this.btnConfig.Location = new System.Drawing.Point(800, 544);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(25, 25);
+            this.btnConfig.Size = new System.Drawing.Size(40, 40);
             this.btnConfig.TabIndex = 5;
             this.btnConfig.TabStop = false;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
@@ -768,7 +633,7 @@
             this.btnForum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
             this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(11, 321);
+            this.btnForum.Location = new System.Drawing.Point(11, 327);
             this.btnForum.Name = "btnForum";
             this.btnForum.Size = new System.Drawing.Size(26, 25);
             this.btnForum.TabIndex = 4;
@@ -780,7 +645,7 @@
             this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(11, 234);
+            this.btnConsulta.Location = new System.Drawing.Point(11, 240);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(26, 25);
             this.btnConsulta.TabIndex = 3;
@@ -792,7 +657,7 @@
             this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
             this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistro.Location = new System.Drawing.Point(11, 146);
+            this.btnRegistro.Location = new System.Drawing.Point(11, 152);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(26, 25);
             this.btnRegistro.TabIndex = 2;
@@ -809,12 +674,12 @@
             this.abasPrincipal.Controls.Add(this.tabForum);
             this.abasPrincipal.Controls.Add(this.tabConfig);
             this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
-            this.abasPrincipal.Location = new System.Drawing.Point(50, 35);
+            this.abasPrincipal.Location = new System.Drawing.Point(43, 22);
             this.abasPrincipal.Multiline = true;
             this.abasPrincipal.Name = "abasPrincipal";
             this.abasPrincipal.Padding = new System.Drawing.Point(0, 0);
             this.abasPrincipal.SelectedIndex = 0;
-            this.abasPrincipal.Size = new System.Drawing.Size(847, 598);
+            this.abasPrincipal.Size = new System.Drawing.Size(854, 638);
             this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.abasPrincipal.TabIndex = 3;
             this.abasPrincipal.TabStop = false;
@@ -852,7 +717,7 @@
             this.tabRegistro.Location = new System.Drawing.Point(4, 4);
             this.tabRegistro.Name = "tabRegistro";
             this.tabRegistro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistro.Size = new System.Drawing.Size(839, 591);
+            this.tabRegistro.Size = new System.Drawing.Size(846, 590);
             this.tabRegistro.TabIndex = 1;
             // 
             // txtCondicao
@@ -860,7 +725,7 @@
             this.txtCondicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCondicao.BackColor = System.Drawing.SystemColors.Window;
             this.txtCondicao.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCondicao.Location = new System.Drawing.Point(371, 360);
+            this.txtCondicao.Location = new System.Drawing.Point(381, 371);
             this.txtCondicao.MaxLength = 30;
             this.txtCondicao.Multiline = true;
             this.txtCondicao.Name = "txtCondicao";
@@ -872,7 +737,7 @@
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(366, 329);
+            this.label32.Location = new System.Drawing.Point(376, 340);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(155, 28);
             this.label32.TabIndex = 36;
@@ -884,7 +749,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(90, 304);
+            this.label31.Location = new System.Drawing.Point(100, 315);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(20, 28);
             this.label31.TabIndex = 35;
@@ -896,7 +761,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(215, 410);
+            this.label30.Location = new System.Drawing.Point(225, 421);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(20, 28);
             this.label30.TabIndex = 34;
@@ -908,7 +773,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(184, 237);
+            this.label26.Location = new System.Drawing.Point(194, 248);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(20, 28);
             this.label26.TabIndex = 33;
@@ -920,7 +785,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(79, 162);
+            this.label18.Location = new System.Drawing.Point(89, 173);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 28);
             this.label18.TabIndex = 32;
@@ -931,7 +796,7 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(548, 266);
+            this.txtEmail.Location = new System.Drawing.Point(558, 277);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(252, 31);
@@ -943,7 +808,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(543, 235);
+            this.label17.Location = new System.Drawing.Point(553, 246);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(158, 28);
             this.label17.TabIndex = 30;
@@ -954,7 +819,7 @@
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.BackColor = System.Drawing.SystemColors.Window;
             this.txtID.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(50, 127);
+            this.txtID.Location = new System.Drawing.Point(60, 138);
             this.txtID.MaxLength = 3;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(52, 31);
@@ -965,7 +830,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(47, 99);
+            this.label12.Location = new System.Drawing.Point(57, 110);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 28);
             this.label12.TabIndex = 28;
@@ -976,7 +841,7 @@
             this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCPF.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(49, 193);
+            this.txtCPF.Location = new System.Drawing.Point(59, 204);
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PromptChar = ' ';
@@ -992,7 +857,7 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(43, 166);
+            this.label22.Location = new System.Drawing.Point(53, 177);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 28);
             this.label22.TabIndex = 13;
@@ -1003,7 +868,7 @@
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(49, 268);
+            this.txtNome.Location = new System.Drawing.Point(59, 279);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(252, 31);
@@ -1014,7 +879,7 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(45, 240);
+            this.label21.Location = new System.Drawing.Point(55, 251);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(145, 28);
             this.label21.TabIndex = 11;
@@ -1025,7 +890,7 @@
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(43, 38);
+            this.label20.Location = new System.Drawing.Point(53, 49);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(250, 29);
             this.label20.TabIndex = 10;
@@ -1037,7 +902,7 @@
             this.pfpPaciente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pfpPaciente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pfpPaciente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pfpPaciente.Location = new System.Drawing.Point(371, 99);
+            this.pfpPaciente.Location = new System.Drawing.Point(381, 110);
             this.pfpPaciente.Name = "pfpPaciente";
             this.pfpPaciente.Size = new System.Drawing.Size(116, 106);
             this.pfpPaciente.TabIndex = 7;
@@ -1050,7 +915,7 @@
             this.pictureBox5.BackgroundImage = global::DeskForms.Properties.Resources.close1;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(866, 9);
+            this.pictureBox5.Location = new System.Drawing.Point(866, 11);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(20, 20);
             this.pictureBox5.TabIndex = 6;
@@ -1064,7 +929,7 @@
             this.pictureBox7.BackgroundImage = global::DeskForms.Properties.Resources.min1;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(840, 9);
+            this.pictureBox7.Location = new System.Drawing.Point(840, 11);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(20, 20);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -1072,14 +937,26 @@
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox7);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(897, 38);
+            this.panel1.TabIndex = 22;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
             this.ClientSize = new System.Drawing.Size(892, 627);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelNav);
             this.Controls.Add(this.abasPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1092,18 +969,8 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
-            this.pnlPost.ResumeLayout(false);
-            this.pnlPost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
-            this.tabForum.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPerfil.ResumeLayout(false);
             this.tabPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
@@ -1121,14 +988,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.RadioButton rdoFem;
         private System.Windows.Forms.RadioButton rdoMasc;
@@ -1138,15 +1004,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.PictureBox btnReport;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel pnlPost;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TabPage tabConsulta;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cboNotific;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboColor;
@@ -1162,7 +1020,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabConfig;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tabForum;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPerfil;
@@ -1190,7 +1047,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtEmail;
@@ -1206,5 +1062,6 @@
         private System.Windows.Forms.MaskedTextBox lblTelefone;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Panel panel1;
     }
 }

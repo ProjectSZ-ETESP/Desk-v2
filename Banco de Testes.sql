@@ -416,8 +416,4 @@ select * from tblUsuario;
 select * from tblPaciente;
 select * from tblHospital;
 
-update tblFuncionario
-set fotoFuncionario = 2
-where idUsuario = 1
-
 

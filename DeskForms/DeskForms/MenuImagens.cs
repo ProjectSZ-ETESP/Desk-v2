@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,12 @@ namespace DeskForms
         int max = 0;
         static int index = 0;
 
+
         private void MenuImagens_Load(object sender, EventArgs e)
         {
-            pctPerfil.Image = img.Images[0];
+            int sabao = int.Parse(Properties.Settings.Default.img.ToString());
+            pctPerfil.Image = img.Images[sabao-1];
+
             max = img.Images.Count;
         }
 

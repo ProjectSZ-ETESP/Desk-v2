@@ -394,3 +394,4 @@ C:\Users\Lab_ETESP\Desktop\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.cspro
 C:\Users\Lab_ETESP\Desktop\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.CopyComplete
 C:\Users\Lab_ETESP\Desktop\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.exe
 C:\Users\Lab_ETESP\Desktop\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.pdb
+C:\Users\Lab_ETESP\Documents\GitHub\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.MenuImagens.resources
