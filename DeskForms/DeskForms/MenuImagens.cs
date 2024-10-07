@@ -25,7 +25,7 @@ namespace DeskForms
         private void MenuImagens_Load(object sender, EventArgs e)
         {
             int sabao = int.Parse(Properties.Settings.Default.img.ToString());
-            pctPerfil.Image = img.Images[sabao-1];
+            pctPerfil.Image = img.Images[sabao-1]; /*ou será que não?*/
 
             max = img.Images.Count;
         }
@@ -33,6 +33,9 @@ namespace DeskForms
         private void btnSelect_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.img = index+1;
+            Properties.Settings.Default.imgPac = index + 1;
+            Properties.Settings.Default.imgPacEdit = index + 1;
+
             this.Close();
         }
 

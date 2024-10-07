@@ -81,7 +81,7 @@ namespace DeskForms
                 conn.Close();
             }
             lblHospital.Text = 
-           loadHospital(hosp);
+            loadHospital(hosp);
 
             Image perfil = getImg(fto);
 
@@ -126,8 +126,9 @@ namespace DeskForms
 
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            abasPrincipal.SelectedTab = tabConsulta;
-
+            abasPrincipal.SelectedTab = tabAcesso;
+            txtCPF_Pac.Text = "";
+            txtCPF_Pac.Focus();
         }
 
         private void btnForum_Click(object sender, EventArgs e)
@@ -158,7 +159,8 @@ namespace DeskForms
             Properties.Settings.Default.remember = false;
             Properties.Settings.Default.user = "";
             Properties.Settings.Default.pw = "";
-
+            Properties.Settings.Default.img = 0;
+            Properties.Settings.Default.integer = 0;
             Properties.Settings.Default.Save();
 
             DeskForms.telaLog log = new DeskForms.telaLog();
@@ -231,9 +233,11 @@ namespace DeskForms
             pfpLateral.Image = perfil;
         }
 
-        MySqlDataReader myreader;     
+        MySqlDataReader myreader;
 
         #endregion
+
+        int imgPac = 0;
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
@@ -242,8 +246,9 @@ namespace DeskForms
                     txtCPF.Text == "" ||
                     txtDataNasc.Text == "" ||
                     txtTelefone.Text == "" ||
-                    txtEmail.Text == ""
-                    || !txtEmail.Text.Contains("@")
+                    txtEmail.Text == "" ||
+                    !txtEmail.Text.Contains("@") ||
+                    Properties.Settings.Default.imgPac == 0
                     )
             {
                 MessageBox.Show("Dados inválidos ou não suficientes", "Erro!!");
@@ -272,20 +277,20 @@ namespace DeskForms
                     }
                     else
                     {
-                        cadastrarUser(txtID.Text,txtCPF.Text,txtNome.Text,sex,txtDataNasc.Text,txtTelefone.Text);
+                        cadastrarUser(txtID.Text,txtCPF.Text,txtNome.Text,sex,txtDataNasc.Text,txtTelefone.Text, Properties.Settings.Default.imgPac);
                     }
                 }
             }
         }
 
-        private void cadastrarUser(string id, string cpf, string nome, string sexo, string data, string numero)
+        private void cadastrarUser(string id, string cpf, string nome, string sexo, string data, string numero, int imgPac)
         {
             try
             {
                 DateTime dataPura = DateTime.Parse(data);
                 string tempoMenor = dataPura.ToString("yyyy-MM-dd");
 
-                sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}')");
+                sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}','{imgPac}')");
                 
                 MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
                 reset();
@@ -523,6 +528,126 @@ namespace DeskForms
         {
             WindowState = FormWindowState.Minimized;
 
+        }
+
+        private void BtnAddFoto_Click(object sender, EventArgs e)
+        {
+            MenuImagens mrh = new MenuImagens();
+            mrh.ShowDialog();
+            int garrafa = Properties.Settings.Default.imgPac;
+            pfpPaciente.BackgroundImage = getImg(garrafa);
+        }
+
+        private void BtnSearchPac_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string query = $"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'";
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                string idCli = "0";
+                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", emailPac = "", sex = "";
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    idCli = myreader["idPaciente"].ToString();
+                    if (idCli != "0")
+                    {
+                        cpf = myreader["cpfPaciente"].ToString();
+                        nomeCompleto = myreader["nomePaciente"].ToString();
+                        data = myreader["dataNascPaciente"].ToString();
+                        foto = Properties.Settings.Default.imgPac.ToString();
+                        sex = myreader["sexoPaciente"].ToString();
+                        telefone = myreader["fonePaciente"].ToString();
+                    }
+                }
+                conn.Close();
+
+                if (idCli != "0")
+                {
+                    abasPrincipal.SelectedTab = tabEdição;
+                    editID.Text = idCli;
+                    editCPF.Text = cpf;
+                    editNome.Text = nomeCompleto;
+                    editData.Text = data;
+                    editTelefone.Text = telefone;
+                    pcbEdit.BackgroundImage = getImg(int.Parse(foto));
+                    if(sex == "M"){ rdoEdit_M.Checked = true; }
+                    else { rdoEdit_F.Checked = true; }
+                }
+                else
+                {
+                    MessageBox.Show($"Esse CPF não está cadastrado em nosso sistema", "uh oh");
+
+                }
+
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select email from tblUsuario where idUsuario = '{editID.Text}'", conn);
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    editEmail.Text = myreader["email"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
+        }
+
+        private void TxtCPF_Pac_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void BtnChangePhoto_Click(object sender, EventArgs e)
+        {
+            MenuImagens mrh = new MenuImagens();
+            mrh.ShowDialog();
+            int garrafa = Properties.Settings.Default.imgPacEdit;
+            pcbEdit.BackgroundImage = getImg(garrafa);
+        }
+
+        private void BtnAlterarFoto_Click(object sender, EventArgs e)
+        {
+            string sex = "";
+            if (rdoEdit_M.Checked) {sex = "M";}
+            else {sex = "F";}
+
+            DateTime dataPura = DateTime.Parse(editData.Text);
+            string tempoMenor = dataPura.ToString("yyyy-MM-dd");
+            try
+            {
+                sqlReturn($"call proc_editPac({int.Parse(editID.Text)},'{editNome.Text}','{editEmail.Text}','{tempoMenor}','{sex}','{editTelefone.Text}','{editCPF.Text}')");
+            }
+            catch { }
+            MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
+        }
+
+        private void EditCPF_KeyDown(object sender, KeyEventArgs e)
+        {
+            btnChangePhoto.Text = editCPF.Text;
         }
     }
 }

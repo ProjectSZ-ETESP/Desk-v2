@@ -37,7 +37,32 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
-            this.tabConsulta = new System.Windows.Forms.TabPage();
+            this.tabEdição = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.editEmail = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.editID = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.btnAlterarFoto = new System.Windows.Forms.Button();
+            this.rdoEdit_F = new System.Windows.Forms.RadioButton();
+            this.rdoEdit_M = new System.Windows.Forms.RadioButton();
+            this.btnChangePhoto = new System.Windows.Forms.Button();
+            this.editTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.editData = new System.Windows.Forms.MaskedTextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.editCPF = new System.Windows.Forms.MaskedTextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.editNome = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.pcbEdit = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.cboNotific = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cboColor = new System.Windows.Forms.ComboBox();
@@ -57,6 +82,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
             this.lblTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.btnConfig = new System.Windows.Forms.PictureBox();
             this.lblHospital = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
@@ -72,7 +98,6 @@
             this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
             this.pfpLateral = new System.Windows.Forms.PictureBox();
-            this.btnConfig = new System.Windows.Forms.PictureBox();
             this.btnForum = new System.Windows.Forms.PictureBox();
             this.btnConsulta = new System.Windows.Forms.PictureBox();
             this.btnRegistro = new System.Windows.Forms.PictureBox();
@@ -94,23 +119,32 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.pfpPaciente = new System.Windows.Forms.PictureBox();
+            this.tabAcesso = new System.Windows.Forms.TabPage();
+            this.txtCPF_Pac = new System.Windows.Forms.MaskedTextBox();
+            this.btnSearchPac = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tabEdição.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).BeginInit();
             this.tabConfig.SuspendLayout();
             this.tabPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
             this.panelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnForum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
             this.abasPrincipal.SuspendLayout();
             this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).BeginInit();
+            this.tabAcesso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
@@ -158,12 +192,13 @@
             // 
             this.btnAddFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFoto.Location = new System.Drawing.Point(512, 110);
+            this.btnAddFoto.Location = new System.Drawing.Point(519, 123);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(135, 65);
             this.btnAddFoto.TabIndex = 7;
             this.btnAddFoto.Text = "Insira a foto \r\ndo paciente";
             this.btnAddFoto.UseVisualStyleBackColor = true;
+            this.btnAddFoto.Click += new System.EventHandler(this.BtnAddFoto_Click);
             // 
             // txtTelefone
             // 
@@ -216,14 +251,342 @@
             this.txtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
-            // tabConsulta
+            // tabEdição
             // 
-            this.tabConsulta.BackColor = System.Drawing.Color.CadetBlue;
-            this.tabConsulta.Location = new System.Drawing.Point(4, 4);
-            this.tabConsulta.Name = "tabConsulta";
-            this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConsulta.Size = new System.Drawing.Size(846, 591);
-            this.tabConsulta.TabIndex = 2;
+            this.tabEdição.BackColor = System.Drawing.Color.White;
+            this.tabEdição.Controls.Add(this.textBox1);
+            this.tabEdição.Controls.Add(this.label28);
+            this.tabEdição.Controls.Add(this.label29);
+            this.tabEdição.Controls.Add(this.label33);
+            this.tabEdição.Controls.Add(this.label34);
+            this.tabEdição.Controls.Add(this.label35);
+            this.tabEdição.Controls.Add(this.editEmail);
+            this.tabEdição.Controls.Add(this.label36);
+            this.tabEdição.Controls.Add(this.editID);
+            this.tabEdição.Controls.Add(this.label37);
+            this.tabEdição.Controls.Add(this.btnAlterarFoto);
+            this.tabEdição.Controls.Add(this.rdoEdit_F);
+            this.tabEdição.Controls.Add(this.rdoEdit_M);
+            this.tabEdição.Controls.Add(this.btnChangePhoto);
+            this.tabEdição.Controls.Add(this.editTelefone);
+            this.tabEdição.Controls.Add(this.label38);
+            this.tabEdição.Controls.Add(this.label39);
+            this.tabEdição.Controls.Add(this.editData);
+            this.tabEdição.Controls.Add(this.label40);
+            this.tabEdição.Controls.Add(this.editCPF);
+            this.tabEdição.Controls.Add(this.label41);
+            this.tabEdição.Controls.Add(this.editNome);
+            this.tabEdição.Controls.Add(this.label42);
+            this.tabEdição.Controls.Add(this.pcbEdit);
+            this.tabEdição.Controls.Add(this.label27);
+            this.tabEdição.Location = new System.Drawing.Point(4, 4);
+            this.tabEdição.Name = "tabEdição";
+            this.tabEdição.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEdição.Size = new System.Drawing.Size(846, 590);
+            this.tabEdição.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(377, 384);
+            this.textBox1.MaxLength = 30;
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(246, 133);
+            this.textBox1.TabIndex = 47;
+            // 
+            // label28
+            // 
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(372, 353);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(155, 28);
+            this.label28.TabIndex = 60;
+            this.label28.Text = "Condição Médica";
+            // 
+            // label29
+            // 
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(96, 328);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(20, 28);
+            this.label29.TabIndex = 59;
+            this.label29.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(221, 434);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(20, 28);
+            this.label33.TabIndex = 58;
+            this.label33.Text = "*";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(190, 261);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(20, 28);
+            this.label34.TabIndex = 57;
+            this.label34.Text = "*";
+            // 
+            // label35
+            // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Red;
+            this.label35.Location = new System.Drawing.Point(85, 186);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(20, 28);
+            this.label35.TabIndex = 56;
+            this.label35.Text = "*";
+            // 
+            // editEmail
+            // 
+            this.editEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editEmail.BackColor = System.Drawing.SystemColors.Window;
+            this.editEmail.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEmail.Location = new System.Drawing.Point(554, 290);
+            this.editEmail.MaxLength = 50;
+            this.editEmail.Name = "editEmail";
+            this.editEmail.Size = new System.Drawing.Size(252, 31);
+            this.editEmail.TabIndex = 46;
+            // 
+            // label36
+            // 
+            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(549, 259);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(158, 28);
+            this.label36.TabIndex = 55;
+            this.label36.Text = "Email do Paciente";
+            // 
+            // editID
+            // 
+            this.editID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editID.BackColor = System.Drawing.SystemColors.Window;
+            this.editID.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editID.Location = new System.Drawing.Point(56, 151);
+            this.editID.MaxLength = 3;
+            this.editID.Name = "editID";
+            this.editID.ReadOnly = true;
+            this.editID.Size = new System.Drawing.Size(52, 31);
+            this.editID.TabIndex = 37;
+            // 
+            // label37
+            // 
+            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(53, 123);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(104, 28);
+            this.label37.TabIndex = 54;
+            this.label37.Text = "[ID] Cliente";
+            // 
+            // btnAlterarFoto
+            // 
+            this.btnAlterarFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAlterarFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterarFoto.Location = new System.Drawing.Point(655, 462);
+            this.btnAlterarFoto.Name = "btnAlterarFoto";
+            this.btnAlterarFoto.Size = new System.Drawing.Size(135, 63);
+            this.btnAlterarFoto.TabIndex = 48;
+            this.btnAlterarFoto.Text = "Atualizar";
+            this.btnAlterarFoto.UseVisualStyleBackColor = true;
+            this.btnAlterarFoto.Click += new System.EventHandler(this.BtnAlterarFoto_Click);
+            // 
+            // rdoEdit_F
+            // 
+            this.rdoEdit_F.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdoEdit_F.AutoSize = true;
+            this.rdoEdit_F.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.rdoEdit_F.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoEdit_F.Location = new System.Drawing.Point(67, 395);
+            this.rdoEdit_F.Name = "rdoEdit_F";
+            this.rdoEdit_F.Size = new System.Drawing.Size(83, 21);
+            this.rdoEdit_F.TabIndex = 41;
+            this.rdoEdit_F.TabStop = true;
+            this.rdoEdit_F.Text = "Feminino";
+            this.rdoEdit_F.UseVisualStyleBackColor = true;
+            // 
+            // rdoEdit_M
+            // 
+            this.rdoEdit_M.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdoEdit_M.AutoSize = true;
+            this.rdoEdit_M.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.rdoEdit_M.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rdoEdit_M.Location = new System.Drawing.Point(68, 364);
+            this.rdoEdit_M.Name = "rdoEdit_M";
+            this.rdoEdit_M.Size = new System.Drawing.Size(89, 21);
+            this.rdoEdit_M.TabIndex = 40;
+            this.rdoEdit_M.TabStop = true;
+            this.rdoEdit_M.Text = "Masculino";
+            this.rdoEdit_M.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePhoto
+            // 
+            this.btnChangePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChangePhoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePhoto.Location = new System.Drawing.Point(515, 136);
+            this.btnChangePhoto.Name = "btnChangePhoto";
+            this.btnChangePhoto.Size = new System.Drawing.Size(135, 65);
+            this.btnChangePhoto.TabIndex = 43;
+            this.btnChangePhoto.Text = "Atualizar Fotos";
+            this.btnChangePhoto.UseVisualStyleBackColor = true;
+            this.btnChangePhoto.Click += new System.EventHandler(this.BtnChangePhoto_Click);
+            // 
+            // editTelefone
+            // 
+            this.editTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.editTelefone.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editTelefone.Location = new System.Drawing.Point(377, 290);
+            this.editTelefone.Mask = "(99) 00000-0000";
+            this.editTelefone.Name = "editTelefone";
+            this.editTelefone.PromptChar = ' ';
+            this.editTelefone.ResetOnPrompt = false;
+            this.editTelefone.Size = new System.Drawing.Size(134, 31);
+            this.editTelefone.TabIndex = 45;
+            this.editTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(372, 259);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(86, 28);
+            this.label38.TabIndex = 53;
+            this.label38.Text = "Telefone ";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(51, 328);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(51, 28);
+            this.label39.TabIndex = 52;
+            this.label39.Text = "Sexo";
+            // 
+            // editData
+            // 
+            this.editData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editData.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.editData.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editData.Location = new System.Drawing.Point(56, 462);
+            this.editData.Mask = "00/00/0000";
+            this.editData.Name = "editData";
+            this.editData.PromptChar = ' ';
+            this.editData.ResetOnPrompt = false;
+            this.editData.Size = new System.Drawing.Size(114, 31);
+            this.editData.TabIndex = 42;
+            this.editData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editData.ValidatingType = typeof(System.DateTime);
+            // 
+            // label40
+            // 
+            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(49, 434);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(180, 28);
+            this.label40.TabIndex = 51;
+            this.label40.Text = "Data de Nascimento";
+            // 
+            // editCPF
+            // 
+            this.editCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.editCPF.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editCPF.Location = new System.Drawing.Point(55, 217);
+            this.editCPF.Mask = "000.000.000-00";
+            this.editCPF.Name = "editCPF";
+            this.editCPF.PromptChar = ' ';
+            this.editCPF.ResetOnPrompt = false;
+            this.editCPF.Size = new System.Drawing.Size(139, 31);
+            this.editCPF.TabIndex = 38;
+            this.editCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.editCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.editCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditCPF_KeyDown);
+            // 
+            // label41
+            // 
+            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(49, 190);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(42, 28);
+            this.label41.TabIndex = 50;
+            this.label41.Text = "CPF";
+            // 
+            // editNome
+            // 
+            this.editNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editNome.BackColor = System.Drawing.SystemColors.Window;
+            this.editNome.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editNome.Location = new System.Drawing.Point(55, 292);
+            this.editNome.MaxLength = 50;
+            this.editNome.Name = "editNome";
+            this.editNome.Size = new System.Drawing.Size(252, 31);
+            this.editNome.TabIndex = 39;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(51, 264);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(145, 28);
+            this.label42.TabIndex = 49;
+            this.label42.Text = "Nome Completo";
+            // 
+            // pcbEdit
+            // 
+            this.pcbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbEdit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pcbEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcbEdit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pcbEdit.Location = new System.Drawing.Point(377, 123);
+            this.pcbEdit.Name = "pcbEdit";
+            this.pcbEdit.Size = new System.Drawing.Size(116, 106);
+            this.pcbEdit.TabIndex = 44;
+            this.pcbEdit.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Poppins SemiBold", 16F);
+            this.label27.Location = new System.Drawing.Point(34, 40);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(192, 39);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Edição de Ficha";
             // 
             // cboNotific
             // 
@@ -395,7 +758,7 @@
             this.tabForum.Location = new System.Drawing.Point(4, 4);
             this.tabForum.Name = "tabForum";
             this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(846, 591);
+            this.tabForum.Size = new System.Drawing.Size(846, 590);
             this.tabForum.TabIndex = 3;
             // 
             // label23
@@ -449,6 +812,19 @@
             this.lblTelefone.Size = new System.Drawing.Size(199, 29);
             this.lblTelefone.TabIndex = 21;
             this.lblTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConfig.BackColor = System.Drawing.Color.Black;
+            this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
+            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfig.Location = new System.Drawing.Point(806, 523);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(40, 40);
+            this.btnConfig.TabIndex = 5;
+            this.btnConfig.TabStop = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // lblHospital
             // 
@@ -615,25 +991,12 @@
             this.pfpLateral.TabStop = false;
             this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
             // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnConfig.BackColor = System.Drawing.Color.Black;
-            this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(800, 544);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(40, 40);
-            this.btnConfig.TabIndex = 5;
-            this.btnConfig.TabStop = false;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
             // btnForum
             // 
             this.btnForum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
             this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(11, 327);
+            this.btnForum.Location = new System.Drawing.Point(11, 267);
             this.btnForum.Name = "btnForum";
             this.btnForum.Size = new System.Drawing.Size(26, 25);
             this.btnForum.TabIndex = 4;
@@ -645,7 +1008,7 @@
             this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(11, 240);
+            this.btnConsulta.Location = new System.Drawing.Point(11, 210);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(26, 25);
             this.btnConsulta.TabIndex = 3;
@@ -670,7 +1033,8 @@
             this.abasPrincipal.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.abasPrincipal.Controls.Add(this.tabPerfil);
             this.abasPrincipal.Controls.Add(this.tabRegistro);
-            this.abasPrincipal.Controls.Add(this.tabConsulta);
+            this.abasPrincipal.Controls.Add(this.tabAcesso);
+            this.abasPrincipal.Controls.Add(this.tabEdição);
             this.abasPrincipal.Controls.Add(this.tabForum);
             this.abasPrincipal.Controls.Add(this.tabConfig);
             this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
@@ -908,6 +1272,68 @@
             this.pfpPaciente.TabIndex = 7;
             this.pfpPaciente.TabStop = false;
             // 
+            // tabAcesso
+            // 
+            this.tabAcesso.Controls.Add(this.txtCPF_Pac);
+            this.tabAcesso.Controls.Add(this.btnSearchPac);
+            this.tabAcesso.Controls.Add(this.pictureBox2);
+            this.tabAcesso.Controls.Add(this.label43);
+            this.tabAcesso.Location = new System.Drawing.Point(4, 4);
+            this.tabAcesso.Name = "tabAcesso";
+            this.tabAcesso.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAcesso.Size = new System.Drawing.Size(846, 590);
+            this.tabAcesso.TabIndex = 5;
+            this.tabAcesso.Text = "tabPage1";
+            this.tabAcesso.UseVisualStyleBackColor = true;
+            // 
+            // txtCPF_Pac
+            // 
+            this.txtCPF_Pac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCPF_Pac.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCPF_Pac.Font = new System.Drawing.Font("Poppins Light", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF_Pac.Location = new System.Drawing.Point(253, 270);
+            this.txtCPF_Pac.Mask = "000.000.000-00";
+            this.txtCPF_Pac.Name = "txtCPF_Pac";
+            this.txtCPF_Pac.PromptChar = ' ';
+            this.txtCPF_Pac.ResetOnPrompt = false;
+            this.txtCPF_Pac.Size = new System.Drawing.Size(337, 39);
+            this.txtCPF_Pac.TabIndex = 59;
+            this.txtCPF_Pac.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCPF_Pac.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.txtCPF_Pac.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCPF_Pac_KeyDown);
+            // 
+            // btnSearchPac
+            // 
+            this.btnSearchPac.Location = new System.Drawing.Point(370, 364);
+            this.btnSearchPac.Name = "btnSearchPac";
+            this.btnSearchPac.Size = new System.Drawing.Size(105, 45);
+            this.btnSearchPac.TabIndex = 58;
+            this.btnSearchPac.Text = "Buscar";
+            this.btnSearchPac.UseVisualStyleBackColor = true;
+            this.btnSearchPac.Click += new System.EventHandler(this.BtnSearchPac_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(596, 274);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 57;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(326, 213);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(206, 28);
+            this.label43.TabIndex = 56;
+            this.label43.Text = "Insira o CPF do Paciente";
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -969,16 +1395,19 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
+            this.tabEdição.ResumeLayout(false);
+            this.tabEdição.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).EndInit();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
             this.tabPerfil.ResumeLayout(false);
             this.tabPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
             this.panelNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnForum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
@@ -986,6 +1415,9 @@
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).EndInit();
+            this.tabAcesso.ResumeLayout(false);
+            this.tabAcesso.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -1004,7 +1436,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.MaskedTextBox txtDataNasc;
-        private System.Windows.Forms.TabPage tabConsulta;
+        private System.Windows.Forms.TabPage tabEdição;
         private System.Windows.Forms.ComboBox cboNotific;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboColor;
@@ -1063,5 +1495,35 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox editEmail;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox editID;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Button btnAlterarFoto;
+        private System.Windows.Forms.RadioButton rdoEdit_F;
+        private System.Windows.Forms.RadioButton rdoEdit_M;
+        private System.Windows.Forms.Button btnChangePhoto;
+        private System.Windows.Forms.MaskedTextBox editTelefone;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.MaskedTextBox editData;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.MaskedTextBox editCPF;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox editNome;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.PictureBox pcbEdit;
+        private System.Windows.Forms.TabPage tabAcesso;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnSearchPac;
+        private System.Windows.Forms.MaskedTextBox txtCPF_Pac;
     }
 }

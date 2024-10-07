@@ -28,13 +28,9 @@ namespace DeskForms
         {
             if (cboRemember.Checked)
             {
-                Properties.Settings.Default.remember = true;
-                Properties.Settings.Default.user = txtEmail.Text;
-                Properties.Settings.Default.pw = txtPassword.Text;
-
-                Properties.Settings.Default.Save();
+                Properties.Settings.Default.remember = true;                
             }
-
+            
             logIn(txtEmail.Text, txtPassword.Text);
         }
 
@@ -46,7 +42,6 @@ namespace DeskForms
         {
             MySqlConnection conn = new MySqlConnection(stringConexão);
             List<string> returns = new List<string>();
-            clsConexão cls = new clsConexão();
 
             try
             {
@@ -82,9 +77,7 @@ namespace DeskForms
             sqlReturn($"call proc_loginFunc('{user}','{pw}', @p_retorno);");
 
             string query = "select @p_retorno;";
-
             List<string> returns = new List<string>();
-
             clsConexão cls = new clsConexão();
 
             try
@@ -94,18 +87,56 @@ namespace DeskForms
 
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
-                {
+                {                    
                     returns.Add(Convert.ToString(myreader["@p_retorno"]));                    
                 }
 
                 string pass = returns[0];
                 int id = int.Parse(pass);
 
-                Properties.Settings.Default.integer = id;
-                Properties.Settings.Default.Save();
+                if (id > 0)
+                {
+                    Properties.Settings.Default.user = txtEmail.Text;
+                    Properties.Settings.Default.pw = txtPassword.Text;
+                    Properties.Settings.Default.integer = id;
+                    Properties.Settings.Default.Save();
+                    cls.setEmail(txtEmail.Text);
+                }
+                else
+                {
+                    MessageBox.Show($"XIHHHH", "uh oh");
+                }
+
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from tblFuncionario where idUsuario = (select idUsuario from tblUsuario where email = '{user}')", conn);
+                int photo = 1;
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    photo = int.Parse(myreader["fotoFuncionario"].ToString());
+                }
+
+                string pass = returns[0];
+                int id = int.Parse(pass);
 
                 if (id > 0)
                 {
+                    Properties.Settings.Default.integer = id;
+                    Properties.Settings.Default.img = photo;
+                    Properties.Settings.Default.Save();
                     cls.setEmail(txtEmail.Text);
                     Principal frm = new Principal();
                     this.Hide();
@@ -113,7 +144,6 @@ namespace DeskForms
                 }
                 else
                 {
-                    MessageBox.Show($"XIHHHH", "uh oh");
                 }
 
                 conn.Close();
@@ -162,7 +192,9 @@ namespace DeskForms
 
         private void TxtPassword_KeyDown(object sender, KeyEventArgs e)
         {
-            if(btnEye.Visible != true)
+            TextBox textBox = sender as TextBox;
+            textBox.ForeColor = Color.White;
+            if (btnEye.Visible != true)
             {
                 txtPassword.PasswordChar = '*';
             }
