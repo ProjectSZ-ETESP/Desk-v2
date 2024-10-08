@@ -4,7 +4,6 @@ create database hospitalar;
 use hospitalar;
 */
 
-
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
 email varchar(50) NOT NULL,
@@ -34,7 +33,7 @@ dataNascPaciente date NOT NULL,
 tipoSanguineo varchar(3),
 condicoesMedicas varchar(30),
 fonePaciente char(11),
-fotoPaciente varbinary(8000),
+fotoPaciente char(1),
 
 CONSTRAINT fk_PacienteUsuario FOREIGN KEY (idUsuario)
 	REFERENCES tblUsuario (idUsuario)
@@ -48,7 +47,7 @@ cnpj char(14),
 nomeFuncionario varchar(50) NOT NULL,
 sexoFuncionario char(1) NOT NULL,
 foneFuncionario char(11),
-fotoFuncionario int,
+fotoFuncionario char(1),
 
 CONSTRAINT fk_FuncionarioUsuario FOREIGN KEY (idUsuario)
 	REFERENCES tblUsuario (idUsuario),
@@ -160,7 +159,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_cadastroPac`(
     IN p_nome VARCHAR(50),
     IN p_sexo CHAR(1),
     IN p_dataNasc DATE,
-    IN p_fone CHAR(15)
+    IN p_fone CHAR(15),
+    IN p_photo CHAR(1)
 )
 BEGIN
 
@@ -170,14 +170,16 @@ BEGIN
         nomePaciente, 
         sexoPaciente, 
         dataNascPaciente, 
-        fonePaciente
+        fonePaciente,
+        fotoPaciente
     ) VALUES (
         p_idUsuario, 
         p_cpf, 
         p_nome, 
         p_sexo, 
         p_dataNasc, 
-        p_fone
+        p_fone,
+        p_photo
     );
 END$$
 DELIMITER ;
@@ -283,7 +285,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editPac`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editFunc`(
     IN p_id INT,
     IN p_nome VARCHAR(50),
     IN p_email VARCHAR(50),
@@ -303,7 +305,7 @@ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editFunc`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editPac`(
     IN p_id INT,
     IN p_nome VARCHAR(50),
     IN p_email VARCHAR(50),
@@ -359,6 +361,8 @@ BEGIN
 END$$
 DELIMITER ;
 
+
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_consultaLoad`(
     IN p_id INT,
@@ -402,13 +406,15 @@ Insert into tblHospital VALUES(
     '11964108090'
 );
 
-call proc_cadastroUser('alencar@gmail.com','123',@p_retorno);
+call proc_cadastroUser('alencar@gmail','123',@p_retorno);
+call proc_cadastroUser('Lais@gmail.com','123',@p_retorno);
+call proc_cadastroUser('pedro@gmail.com','123',@p_retorno);
 
 call proc_cadastroFunc('12345678910',
 '1',
 '12345678910234',
-'Bianca de Alencar e Silva',
-'F',
+'Nicholas de Alencar e Silva',
+'M',
 '11913999202');
 
 select * from tblFuncionario;
@@ -416,4 +422,5 @@ select * from tblUsuario;
 select * from tblPaciente;
 select * from tblHospital;
 
+delete from tblPaciente where idUsuario = 3
 

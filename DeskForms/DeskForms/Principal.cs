@@ -18,7 +18,7 @@ namespace DeskForms
         public Principal()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -39,6 +39,19 @@ namespace DeskForms
                 loadInfo();
             }
             abasPrincipal.ItemSize = new Size(0, 1);
+
+            kurtCorners(pfpLateral);
+            kurtCorners(imagePerfil);
+            kurtCorners(pfpPaciente);
+
+        }
+
+        private void kurtCorners(PictureBox picture)
+        {
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, picture.Width - 3, picture.Height - 3);
+            Region rg = new Region(gp);
+            picture.Region = rg;
         }
 
 
@@ -48,7 +61,7 @@ namespace DeskForms
             string query = $"select * from tblFuncionario where idUsuario = {Properties.Settings.Default.integer}";
             string hosp = "";
             int fto = 1;
-                
+
             try
             {
                 conn.Open();
@@ -68,8 +81,12 @@ namespace DeskForms
                     lblTelefone.Text = myreader["foneFuncionario"].ToString();
                     lblEmail.Text = Properties.Settings.Default.user.ToString();
                     hosp = myreader["cnpj"].ToString();
-                    fto = int.Parse(myreader["fotoFuncionario"].ToString());
-                }       
+                    try
+                    {
+                        fto = int.Parse(myreader["fotoFuncionario"].ToString());
+                    }
+                    catch { }
+                }
                 conn.Close();
             }
             catch (Exception ep)
@@ -80,7 +97,7 @@ namespace DeskForms
             {
                 conn.Close();
             }
-            lblHospital.Text = 
+            lblHospital.Text =
             loadHospital(hosp);
 
             Image perfil = getImg(fto);
@@ -133,7 +150,7 @@ namespace DeskForms
 
         private void btnForum_Click(object sender, EventArgs e)
         {
-            abasPrincipal.SelectedTab = tabForum;
+            abasPrincipal.SelectedTab = tabRegistroHosp;
 
         }
 
@@ -228,7 +245,7 @@ namespace DeskForms
             sqlVoid($"Update tblFuncionario Set fotoFuncionario = {index} where idUsuario = {Properties.Settings.Default.integer}");
 
             Image perfil = getImg(index);
-           
+
             imagePerfil.Image = perfil;
             pfpLateral.Image = perfil;
         }
@@ -237,17 +254,13 @@ namespace DeskForms
 
         #endregion
 
-        int imgPac = 0;
-
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            if (    txtID.Text == "" ||
+            if (txtID.Text == "" ||
                     txtNome.Text == "" ||
                     txtCPF.Text == "" ||
                     txtDataNasc.Text == "" ||
                     txtTelefone.Text == "" ||
-                    txtEmail.Text == "" ||
-                    !txtEmail.Text.Contains("@") ||
                     Properties.Settings.Default.imgPac == 0
                     )
             {
@@ -255,31 +268,29 @@ namespace DeskForms
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("🦋 Você está certo de suas escolhas?", "Registro", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+
+                string sex;
+                if (rdoFem.Checked)
                 {
-                    string sex;
-                    if (rdoFem.Checked)
-                    {
-                        sex = "F";
-                    }
-                    else
-                    {
-                        sex = "M";
-                    }
-
-                    int idFunc = Properties.Settings.Default.integer;
-
-
-                    if (txtID.Text == idFunc + "")
-                    {
-                        MessageBox.Show("Você não pode se cadastrar como paciente oh zé!!", "PESSOAL O SOM");
-                    }
-                    else
-                    {
-                        cadastrarUser(txtID.Text,txtCPF.Text,txtNome.Text,sex,txtDataNasc.Text,txtTelefone.Text, Properties.Settings.Default.imgPac);
-                    }
+                    sex = "F";
                 }
+                else
+                {
+                    sex = "M";
+                }
+
+                int idFunc = Properties.Settings.Default.integer;
+
+
+                if (txtID.Text == idFunc + "")
+                {
+                    MessageBox.Show("Você não pode se cadastrar como paciente oh zé!!", "PESSOAL O SOM");
+                }
+                else
+                {
+                    cadastrarUser(txtID.Text, txtCPF.Text, txtNome.Text, sex, txtDataNasc.Text, txtTelefone.Text, Properties.Settings.Default.imgPac);
+                }
+
             }
         }
 
@@ -289,9 +300,15 @@ namespace DeskForms
             {
                 DateTime dataPura = DateTime.Parse(data);
                 string tempoMenor = dataPura.ToString("yyyy-MM-dd");
+                try
+                {
+                    sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}','{imgPac}')");
+                }
+                catch
+                {
+                    throw new Exception();
+                }
 
-                sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}','{imgPac}')");
-                
                 MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
                 reset();
             }
@@ -313,7 +330,7 @@ namespace DeskForms
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 cmd.ExecuteNonQuery();
-                
+
                 conn.Close();
             }
             catch (Exception ep)
@@ -386,7 +403,6 @@ namespace DeskForms
             txtCPF.Text = "";
             txtDataNasc.Text = "";
             txtTelefone.Text = "";
-            txtEmail.Text = "";
             rdoMasc.Checked = true;
             pfpPaciente.BackgroundImage = null;
             txtNome.Focus();
@@ -394,7 +410,8 @@ namespace DeskForms
 
         private void changeTheme(String version)
         {
-
+            Color darkGreen = System.Drawing.ColorTranslator.FromHtml("#161817");
+            Color lightGreen = System.Drawing.ColorTranslator.FromHtml("#327960");
             switch (version)
             {
 
@@ -404,31 +421,26 @@ namespace DeskForms
                     {
                         tab.BackColor = Color.Black;
 
-                        foreach (var control in tab.Controls)
+                        foreach (Control ctrl in tab.Controls)
                         {
 
-                            Color lightGreen = System.Drawing.ColorTranslator.FromHtml("#327960");
-
-                            var label = control as Label;
-                            if (label != null)
+                            if (!(ctrl.Tag == null))
                             {
-                                label.ForeColor = lightGreen;
+                                switch (ctrl.Tag.ToString())
+                                {
+                                    case "label":
+                                        ctrl.ForeColor = Color.White;
+                                        ctrl.BackColor = Color.Black;
+                                    break;
+                                    case "title":
+                                        ctrl.ForeColor = lightGreen;
+                                    break;
+                                }
                             }
-                            var tabBack = control as TabPage;
-                            if(tabBack != null)
-                            {
-                                tabBack.BackColor = System.Drawing.ColorTranslator.FromHtml("#2e3331");
-                            }
-  
+                            panelNav.BackColor = darkGreen;
+                            this.BackColor = darkGreen;
 
-
-                            Color dark = System.Drawing.ColorTranslator.FromHtml("#161817");
-                            panelNav.BackColor = dark;
-                            rdoMasc.ForeColor = Color.White;
-                            rdoFem.ForeColor = Color.White;
-                            txtCPF.ForeColor = Color.White;
-                            this.BackColor = dark;
-
+                            btnConfig.BackgroundImage = Properties.Resources.configBlack;
                             btnLogout.BackgroundImage = Properties.Resources.logout;
                             Properties.Settings.Default.theme = "Tema Escuro";
                             cboColor.SelectedIndex = 2;
@@ -442,26 +454,27 @@ namespace DeskForms
                     {
                         tab.BackColor = Color.White;
 
-                        foreach (var control in tab.Controls)
+                        foreach (Control ctrl in tab.Controls)
                         {
-                            Color darkGreen = System.Drawing.ColorTranslator.FromHtml("#161817");
-                            Color lightGreen = System.Drawing.ColorTranslator.FromHtml("#327960");
-
-                            var label = control as Label;
-                            if (label != null)
+                            if (!(ctrl.Tag == null))
                             {
-                                label.ForeColor = darkGreen;
+                                switch (ctrl.Tag.ToString())
+                                {
+                                    case "label":
+                                        ctrl.ForeColor = Color.Black;
+                                        ctrl.BackColor = Color.White;
+                                        break;
+                                    case "title":
+                                        ctrl.ForeColor = darkGreen;
+                                        break;
+                                }
                             }
-                            
-                            rdoMasc.ForeColor = Color.Black;
-                            rdoFem.ForeColor = Color.Black;
-                            txtCPF.ForeColor = Color.Black;
-                            
-                            btnLogout.BackgroundImage = Properties.Resources.logoutClear;
-                            Properties.Settings.Default.theme = "Tema Claro"; 
-                            cboColor.SelectedIndex = 1;
                             panelNav.BackColor = lightGreen;
                             this.BackColor = lightGreen;
+                            btnConfig.BackgroundImage = Properties.Resources.configWhite;
+                            btnLogout.BackgroundImage = Properties.Resources.logoutClear;
+                            Properties.Settings.Default.theme = "Tema Claro";
+                            cboColor.SelectedIndex = 1;
                         }
                     }
                     break;
@@ -480,7 +493,7 @@ namespace DeskForms
 
         private void TxtCPF_KeyDown(object sender, KeyEventArgs e)
         {
-         
+
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -547,7 +560,7 @@ namespace DeskForms
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 string idCli = "0";
-                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", emailPac = "", sex = "";
+                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", sex = "";
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
@@ -573,7 +586,7 @@ namespace DeskForms
                     editData.Text = data;
                     editTelefone.Text = telefone;
                     pcbEdit.BackgroundImage = getImg(int.Parse(foto));
-                    if(sex == "M"){ rdoEdit_M.Checked = true; }
+                    if (sex == "M") { rdoEdit_M.Checked = true; }
                     else { rdoEdit_F.Checked = true; }
                 }
                 else
@@ -632,8 +645,8 @@ namespace DeskForms
         private void BtnAlterarFoto_Click(object sender, EventArgs e)
         {
             string sex = "";
-            if (rdoEdit_M.Checked) {sex = "M";}
-            else {sex = "F";}
+            if (rdoEdit_M.Checked) { sex = "M"; }
+            else { sex = "F"; }
 
             DateTime dataPura = DateTime.Parse(editData.Text);
             string tempoMenor = dataPura.ToString("yyyy-MM-dd");
@@ -645,9 +658,38 @@ namespace DeskForms
             MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
         }
 
-        private void EditCPF_KeyDown(object sender, KeyEventArgs e)
+        private void btnExcluirFicha_Click(object sender, EventArgs e)
         {
-            btnChangePhoto.Text = editCPF.Text;
+            DialogResult dialogResult = MessageBox.Show("Você deseja MESMO deletar essa ficha\n(Ação Irreversível)", "Registro", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    sqlVoid($"delete from tblPaciente where idUsuario = {editID.Text}");
+                    MessageBox.Show("Dados do paciente apagados", "BANIDO!!");
+                    foreach(Control control in tabEdição.Controls)
+                    {
+                        if(control is TextBox || control is MaskedTextBox)
+                        {
+                            control.Text = "";
+                            rdoEdit_M.Checked = true;
+                            editID.Focus();
+                        }
+                    }
+                }
+                catch { }
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            abasPrincipal.SelectedTab = tabRegistroHosp;
+
+        }
+
+        private void btnRegFunc_Click(object sender, EventArgs e)
+        {
+            abasPrincipal.SelectedTab = tabRegistroFunc;
         }
     }
 }

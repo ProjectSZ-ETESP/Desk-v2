@@ -280,6 +280,8 @@
     <None Include="Resources\arkham1.gif" />
     <None Include="Resources\close.svg" />
     <None Include="Resources\close.png" />
+    <None Include="Resources\configWhite.png" />
+    <None Include="Resources\configBlack.png" />
     <Content Include="Resources\logoutClear.png" />
     <None Include="Resources\logoutClear1.png" />
   </ItemGroup>

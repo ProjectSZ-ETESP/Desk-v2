@@ -96,7 +96,10 @@ namespace DeskForms
 
                 if (id > 0)
                 {
-                    Properties.Settings.Default.user = txtEmail.Text;
+                    if (!txtEmail.Text.StartsWith("Insira"))
+                    {
+                        Properties.Settings.Default.user = txtEmail.Text;
+                    }
                     Properties.Settings.Default.pw = txtPassword.Text;
                     Properties.Settings.Default.integer = id;
                     Properties.Settings.Default.Save();
@@ -126,9 +129,11 @@ namespace DeskForms
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
-                    photo = int.Parse(myreader["fotoFuncionario"].ToString());
+                    try {
+                        photo = int.Parse(myreader["fotoFuncionario"].ToString());
+                    }
+                    catch { }
                 }
-
                 string pass = returns[0];
                 int id = int.Parse(pass);
 

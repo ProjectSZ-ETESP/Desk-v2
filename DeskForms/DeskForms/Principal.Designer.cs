@@ -38,6 +38,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.tabEdição = new System.Windows.Forms.TabPage();
+            this.btnExcluirFicha = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.btnAlterarFoto = new System.Windows.Forms.Button();
             this.rdoEdit_F = new System.Windows.Forms.RadioButton();
             this.rdoEdit_M = new System.Windows.Forms.RadioButton();
-            this.btnChangePhoto = new System.Windows.Forms.Button();
             this.editTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -78,7 +79,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabConfig = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabForum = new System.Windows.Forms.TabPage();
+            this.tabRegistroHosp = new System.Windows.Forms.TabPage();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
             this.lblTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -98,7 +99,6 @@
             this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
             this.pfpLateral = new System.Windows.Forms.PictureBox();
-            this.btnForum = new System.Windows.Forms.PictureBox();
             this.btnConsulta = new System.Windows.Forms.PictureBox();
             this.btnRegistro = new System.Windows.Forms.PictureBox();
             this.abasPrincipal = new System.Windows.Forms.TabControl();
@@ -109,8 +109,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -127,9 +125,15 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnHospital = new System.Windows.Forms.PictureBox();
+            this.btnRegFunc = new System.Windows.Forms.PictureBox();
+            this.tabRegistroFunc = new System.Windows.Forms.TabPage();
             this.tabEdição.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).BeginInit();
             this.tabConfig.SuspendLayout();
+            this.tabRegistroHosp.SuspendLayout();
             this.tabPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
@@ -137,7 +141,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
             this.panelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnForum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
             this.abasPrincipal.SuspendLayout();
@@ -148,13 +151,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrar.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(659, 449);
+            this.btnRegistrar.Location = new System.Drawing.Point(668, 439);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(135, 63);
             this.btnRegistrar.TabIndex = 11;
@@ -167,11 +172,12 @@
             this.rdoFem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoFem.AutoSize = true;
             this.rdoFem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoFem.Location = new System.Drawing.Point(71, 382);
+            this.rdoFem.Location = new System.Drawing.Point(80, 372);
             this.rdoFem.Name = "rdoFem";
             this.rdoFem.Size = new System.Drawing.Size(83, 21);
             this.rdoFem.TabIndex = 4;
             this.rdoFem.TabStop = true;
+            this.rdoFem.Tag = "label";
             this.rdoFem.Text = "Feminino";
             this.rdoFem.UseVisualStyleBackColor = true;
             // 
@@ -180,11 +186,12 @@
             this.rdoMasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.rdoMasc.AutoSize = true;
             this.rdoMasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rdoMasc.Location = new System.Drawing.Point(72, 351);
+            this.rdoMasc.Location = new System.Drawing.Point(81, 341);
             this.rdoMasc.Name = "rdoMasc";
             this.rdoMasc.Size = new System.Drawing.Size(89, 21);
             this.rdoMasc.TabIndex = 3;
             this.rdoMasc.TabStop = true;
+            this.rdoMasc.Tag = "label";
             this.rdoMasc.Text = "Masculino";
             this.rdoMasc.UseVisualStyleBackColor = true;
             // 
@@ -192,7 +199,7 @@
             // 
             this.btnAddFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFoto.Location = new System.Drawing.Point(519, 123);
+            this.btnAddFoto.Location = new System.Drawing.Point(528, 113);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(135, 65);
             this.btnAddFoto.TabIndex = 7;
@@ -205,13 +212,14 @@
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTelefone.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(381, 277);
+            this.txtTelefone.Location = new System.Drawing.Point(390, 267);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PromptChar = ' ';
             this.txtTelefone.ResetOnPrompt = false;
             this.txtTelefone.Size = new System.Drawing.Size(134, 31);
             this.txtTelefone.TabIndex = 8;
+            this.txtTelefone.Tag = "text";
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label25
@@ -219,10 +227,11 @@
             this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(376, 246);
+            this.label25.Location = new System.Drawing.Point(385, 236);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(86, 28);
             this.label25.TabIndex = 20;
+            this.label25.Tag = "title";
             this.label25.Text = "Telefone ";
             // 
             // label24
@@ -230,10 +239,11 @@
             this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(55, 315);
+            this.label24.Location = new System.Drawing.Point(64, 305);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 28);
             this.label24.TabIndex = 18;
+            this.label24.Tag = "title";
             this.label24.Text = "Sexo";
             // 
             // txtDataNasc
@@ -241,19 +251,22 @@
             this.txtDataNasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataNasc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDataNasc.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNasc.Location = new System.Drawing.Point(60, 449);
+            this.txtDataNasc.Location = new System.Drawing.Point(69, 439);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.PromptChar = ' ';
             this.txtDataNasc.ResetOnPrompt = false;
             this.txtDataNasc.Size = new System.Drawing.Size(114, 31);
             this.txtDataNasc.TabIndex = 6;
+            this.txtDataNasc.Tag = "text";
             this.txtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDataNasc.ValidatingType = typeof(System.DateTime);
             // 
             // tabEdição
             // 
             this.tabEdição.BackColor = System.Drawing.Color.White;
+            this.tabEdição.Controls.Add(this.btnExcluirFicha);
+            this.tabEdição.Controls.Add(this.pictureBox1);
             this.tabEdição.Controls.Add(this.textBox1);
             this.tabEdição.Controls.Add(this.label28);
             this.tabEdição.Controls.Add(this.label29);
@@ -267,7 +280,6 @@
             this.tabEdição.Controls.Add(this.btnAlterarFoto);
             this.tabEdição.Controls.Add(this.rdoEdit_F);
             this.tabEdição.Controls.Add(this.rdoEdit_M);
-            this.tabEdição.Controls.Add(this.btnChangePhoto);
             this.tabEdição.Controls.Add(this.editTelefone);
             this.tabEdição.Controls.Add(this.label38);
             this.tabEdição.Controls.Add(this.label39);
@@ -284,6 +296,31 @@
             this.tabEdição.Padding = new System.Windows.Forms.Padding(3);
             this.tabEdição.Size = new System.Drawing.Size(846, 590);
             this.tabEdição.TabIndex = 2;
+            this.tabEdição.Click += new System.EventHandler(this.BtnChangePhoto_Click);
+            // 
+            // btnExcluirFicha
+            // 
+            this.btnExcluirFicha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcluirFicha.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirFicha.Location = new System.Drawing.Point(656, 462);
+            this.btnExcluirFicha.Name = "btnExcluirFicha";
+            this.btnExcluirFicha.Size = new System.Drawing.Size(135, 63);
+            this.btnExcluirFicha.TabIndex = 62;
+            this.btnExcluirFicha.Text = "Deletar Ficha";
+            this.btnExcluirFicha.UseVisualStyleBackColor = true;
+            this.btnExcluirFicha.Click += new System.EventHandler(this.btnExcluirFicha_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.edit__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(476, 213);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 61;
+            this.pictureBox1.TabStop = false;
             // 
             // textBox1
             // 
@@ -295,7 +332,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(246, 133);
+            this.textBox1.Size = new System.Drawing.Size(246, 141);
             this.textBox1.TabIndex = 47;
             // 
             // label28
@@ -307,6 +344,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(155, 28);
             this.label28.TabIndex = 60;
+            this.label28.Tag = "title";
             this.label28.Text = "Condição Médica";
             // 
             // label29
@@ -377,6 +415,7 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(158, 28);
             this.label36.TabIndex = 55;
+            this.label36.Tag = "title";
             this.label36.Text = "Email do Paciente";
             // 
             // editID
@@ -400,13 +439,14 @@
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(104, 28);
             this.label37.TabIndex = 54;
+            this.label37.Tag = "title";
             this.label37.Text = "[ID] Cliente";
             // 
             // btnAlterarFoto
             // 
             this.btnAlterarFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAlterarFoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterarFoto.Location = new System.Drawing.Point(655, 462);
+            this.btnAlterarFoto.Location = new System.Drawing.Point(656, 384);
             this.btnAlterarFoto.Name = "btnAlterarFoto";
             this.btnAlterarFoto.Size = new System.Drawing.Size(135, 63);
             this.btnAlterarFoto.TabIndex = 48;
@@ -442,18 +482,6 @@
             this.rdoEdit_M.Text = "Masculino";
             this.rdoEdit_M.UseVisualStyleBackColor = true;
             // 
-            // btnChangePhoto
-            // 
-            this.btnChangePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangePhoto.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePhoto.Location = new System.Drawing.Point(515, 136);
-            this.btnChangePhoto.Name = "btnChangePhoto";
-            this.btnChangePhoto.Size = new System.Drawing.Size(135, 65);
-            this.btnChangePhoto.TabIndex = 43;
-            this.btnChangePhoto.Text = "Atualizar Fotos";
-            this.btnChangePhoto.UseVisualStyleBackColor = true;
-            this.btnChangePhoto.Click += new System.EventHandler(this.BtnChangePhoto_Click);
-            // 
             // editTelefone
             // 
             this.editTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -477,6 +505,7 @@
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(86, 28);
             this.label38.TabIndex = 53;
+            this.label38.Tag = "title";
             this.label38.Text = "Telefone ";
             // 
             // label39
@@ -488,6 +517,7 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(51, 28);
             this.label39.TabIndex = 52;
+            this.label39.Tag = "title";
             this.label39.Text = "Sexo";
             // 
             // editData
@@ -514,6 +544,7 @@
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(180, 28);
             this.label40.TabIndex = 51;
+            this.label40.Tag = "title";
             this.label40.Text = "Data de Nascimento";
             // 
             // editCPF
@@ -530,7 +561,6 @@
             this.editCPF.TabIndex = 38;
             this.editCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.editCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.editCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditCPF_KeyDown);
             // 
             // label41
             // 
@@ -541,6 +571,7 @@
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(42, 28);
             this.label41.TabIndex = 50;
+            this.label41.Tag = "title";
             this.label41.Text = "CPF";
             // 
             // editNome
@@ -563,6 +594,7 @@
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(145, 28);
             this.label42.TabIndex = 49;
+            this.label42.Tag = "title";
             this.label42.Text = "Nome Completo";
             // 
             // pcbEdit
@@ -586,6 +618,7 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(192, 39);
             this.label27.TabIndex = 11;
+            this.label27.Tag = "label";
             this.label27.Text = "Edição de Ficha";
             // 
             // cboNotific
@@ -606,6 +639,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(256, 13);
             this.label10.TabIndex = 12;
+            this.label10.Tag = "label";
             this.label10.Text = "Lorem ipsum dolor sit amet consectetur adipiscing elit";
             // 
             // cboColor
@@ -627,6 +661,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(161, 20);
             this.label11.TabIndex = 10;
+            this.label11.Tag = "title";
             this.label11.Text = "Esquema de Cores";
             // 
             // label9
@@ -637,6 +672,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(309, 26);
             this.label9.TabIndex = 9;
+            this.label9.Tag = "title";
             this.label9.Text = "Configurações do Aplicativo";
             // 
             // label7
@@ -647,6 +683,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(256, 13);
             this.label7.TabIndex = 8;
+            this.label7.Tag = "label";
             this.label7.Text = "Lorem ipsum dolor sit amet consectetur adipiscing elit";
             // 
             // cboLanguage
@@ -667,6 +704,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(204, 20);
             this.label8.TabIndex = 6;
+            this.label8.Tag = "title";
             this.label8.Text = "Linguagem do Aplicativo";
             // 
             // label5
@@ -677,6 +715,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(159, 13);
             this.label5.TabIndex = 5;
+            this.label5.Tag = "label";
             this.label5.Text = "Alterado pela ultima vez a [] dias";
             // 
             // label6
@@ -687,6 +726,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 20);
             this.label6.TabIndex = 4;
+            this.label6.Tag = "title";
             this.label6.Text = "Configurar notificações";
             // 
             // label4
@@ -697,6 +737,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(159, 13);
             this.label4.TabIndex = 3;
+            this.label4.Tag = "label";
             this.label4.Text = "Alterado pela ultima vez a [] dias";
             // 
             // label3
@@ -707,6 +748,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 2;
+            this.label3.Tag = "title";
             this.label3.Text = "Alterar";
             // 
             // label1
@@ -717,6 +759,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 26);
             this.label1.TabIndex = 0;
+            this.label1.Tag = "title";
             this.label1.Text = "Configurações de Conta";
             // 
             // tabConfig
@@ -750,26 +793,29 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 1;
+            this.label2.Tag = "title";
             this.label2.Text = "Alterar senha";
             // 
-            // tabForum
+            // tabRegistroHosp
             // 
-            this.tabForum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
-            this.tabForum.Location = new System.Drawing.Point(4, 4);
-            this.tabForum.Name = "tabForum";
-            this.tabForum.Padding = new System.Windows.Forms.Padding(3);
-            this.tabForum.Size = new System.Drawing.Size(846, 590);
-            this.tabForum.TabIndex = 3;
+            this.tabRegistroHosp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
+            this.tabRegistroHosp.Controls.Add(this.label17);
+            this.tabRegistroHosp.Location = new System.Drawing.Point(4, 4);
+            this.tabRegistroHosp.Name = "tabRegistroHosp";
+            this.tabRegistroHosp.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistroHosp.Size = new System.Drawing.Size(846, 590);
+            this.tabRegistroHosp.TabIndex = 3;
             // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(53, 421);
+            this.label23.Location = new System.Drawing.Point(62, 411);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(180, 28);
             this.label23.TabIndex = 16;
+            this.label23.Tag = "title";
             this.label23.Text = "Data de Nascimento";
             // 
             // tabPerfil
@@ -811,15 +857,16 @@
             this.lblTelefone.ResetOnPrompt = false;
             this.lblTelefone.Size = new System.Drawing.Size(199, 29);
             this.lblTelefone.TabIndex = 21;
+            this.lblTelefone.Tag = "label";
             this.lblTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // btnConfig
             // 
             this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnConfig.BackColor = System.Drawing.Color.Black;
-            this.btnConfig.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfig.BackgroundImage")));
+            this.btnConfig.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfig.BackgroundImage = global::DeskForms.Properties.Resources.configWhite;
             this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(806, 523);
+            this.btnConfig.Location = new System.Drawing.Point(783, 507);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(40, 40);
             this.btnConfig.TabIndex = 5;
@@ -834,7 +881,8 @@
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(207, 34);
             this.lblHospital.TabIndex = 20;
-            this.lblHospital.Text = "Jair";
+            this.lblHospital.Tag = "label";
+            this.lblHospital.Text = "ah";
             // 
             // label19
             // 
@@ -844,6 +892,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(199, 34);
             this.label19.TabIndex = 19;
+            this.label19.Tag = "title";
             this.label19.Text = "Hospital Associado";
             // 
             // btnLogout
@@ -866,6 +915,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(102, 26);
             this.label16.TabIndex = 18;
+            this.label16.Tag = "label";
             this.label16.Text = "Alterado pela ultima \r\nvez a [] dias";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -889,6 +939,7 @@
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(352, 34);
             this.lblEmail.TabIndex = 15;
+            this.lblEmail.Tag = "label";
             this.lblEmail.Text = "bombom.etec@gmail.com";
             // 
             // lblNomeCompleto
@@ -899,6 +950,7 @@
             this.lblNomeCompleto.Name = "lblNomeCompleto";
             this.lblNomeCompleto.Size = new System.Drawing.Size(324, 34);
             this.lblNomeCompleto.TabIndex = 14;
+            this.lblNomeCompleto.Tag = "label";
             this.lblNomeCompleto.Text = "Luiz Ricardo de Souza";
             // 
             // label15
@@ -909,6 +961,7 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 34);
             this.label15.TabIndex = 12;
+            this.label15.Tag = "title";
             this.label15.Text = "Telefone";
             // 
             // label14
@@ -919,6 +972,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 34);
             this.label14.TabIndex = 11;
+            this.label14.Tag = "title";
             this.label14.Text = "Email";
             // 
             // label13
@@ -929,16 +983,18 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 34);
             this.label13.TabIndex = 10;
+            this.label13.Tag = "title";
             this.label13.Text = "Nome";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(339, 65);
+            this.lblNome.Font = new System.Drawing.Font("Poppins SemiBold", 24F);
+            this.lblNome.Location = new System.Drawing.Point(315, 64);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(214, 37);
+            this.lblNome.Size = new System.Drawing.Size(247, 56);
             this.lblNome.TabIndex = 9;
+            this.lblNome.Tag = "title";
             this.lblNome.Text = "Olá, Bombom";
             // 
             // btnEdit
@@ -956,7 +1012,7 @@
             // 
             // imagePerfil
             // 
-            this.imagePerfil.BackgroundImage = global::DeskForms.Properties.Resources.dog;
+            this.imagePerfil.BackgroundImage = global::DeskForms.Properties.Resources._3;
             this.imagePerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imagePerfil.Location = new System.Drawing.Point(184, 33);
             this.imagePerfil.Name = "imagePerfil";
@@ -970,8 +1026,9 @@
             this.panelNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
+            this.panelNav.Controls.Add(this.btnRegFunc);
+            this.panelNav.Controls.Add(this.btnHospital);
             this.panelNav.Controls.Add(this.pfpLateral);
-            this.panelNav.Controls.Add(this.btnForum);
             this.panelNav.Controls.Add(this.btnConsulta);
             this.panelNav.Controls.Add(this.btnRegistro);
             this.panelNav.Location = new System.Drawing.Point(0, 29);
@@ -991,24 +1048,12 @@
             this.pfpLateral.TabStop = false;
             this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
             // 
-            // btnForum
-            // 
-            this.btnForum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnForum.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForum.BackgroundImage")));
-            this.btnForum.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnForum.Location = new System.Drawing.Point(11, 267);
-            this.btnForum.Name = "btnForum";
-            this.btnForum.Size = new System.Drawing.Size(26, 25);
-            this.btnForum.TabIndex = 4;
-            this.btnForum.TabStop = false;
-            this.btnForum.Click += new System.EventHandler(this.btnForum_Click);
-            // 
             // btnConsulta
             // 
             this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
             this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(11, 210);
+            this.btnConsulta.Location = new System.Drawing.Point(11, 206);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(26, 25);
             this.btnConsulta.TabIndex = 3;
@@ -1035,8 +1080,9 @@
             this.abasPrincipal.Controls.Add(this.tabRegistro);
             this.abasPrincipal.Controls.Add(this.tabAcesso);
             this.abasPrincipal.Controls.Add(this.tabEdição);
-            this.abasPrincipal.Controls.Add(this.tabForum);
+            this.abasPrincipal.Controls.Add(this.tabRegistroHosp);
             this.abasPrincipal.Controls.Add(this.tabConfig);
+            this.abasPrincipal.Controls.Add(this.tabRegistroFunc);
             this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
             this.abasPrincipal.Location = new System.Drawing.Point(43, 22);
             this.abasPrincipal.Multiline = true;
@@ -1058,8 +1104,6 @@
             this.tabRegistro.Controls.Add(this.label30);
             this.tabRegistro.Controls.Add(this.label26);
             this.tabRegistro.Controls.Add(this.label18);
-            this.tabRegistro.Controls.Add(this.txtEmail);
-            this.tabRegistro.Controls.Add(this.label17);
             this.tabRegistro.Controls.Add(this.txtID);
             this.tabRegistro.Controls.Add(this.label12);
             this.tabRegistro.Controls.Add(this.btnRegistrar);
@@ -1089,22 +1133,24 @@
             this.txtCondicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCondicao.BackColor = System.Drawing.SystemColors.Window;
             this.txtCondicao.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCondicao.Location = new System.Drawing.Point(381, 371);
+            this.txtCondicao.Location = new System.Drawing.Point(390, 361);
             this.txtCondicao.MaxLength = 30;
             this.txtCondicao.Multiline = true;
             this.txtCondicao.Name = "txtCondicao";
             this.txtCondicao.Size = new System.Drawing.Size(246, 133);
             this.txtCondicao.TabIndex = 10;
+            this.txtCondicao.Tag = "text";
             // 
             // label32
             // 
             this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(376, 340);
+            this.label32.Location = new System.Drawing.Point(385, 330);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(155, 28);
             this.label32.TabIndex = 36;
+            this.label32.Tag = "title";
             this.label32.Text = "Condição Médica";
             // 
             // label31
@@ -1113,7 +1159,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(100, 315);
+            this.label31.Location = new System.Drawing.Point(109, 305);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(20, 28);
             this.label31.TabIndex = 35;
@@ -1125,7 +1171,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(225, 421);
+            this.label30.Location = new System.Drawing.Point(234, 411);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(20, 28);
             this.label30.TabIndex = 34;
@@ -1137,7 +1183,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(194, 248);
+            this.label26.Location = new System.Drawing.Point(203, 238);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(20, 28);
             this.label26.TabIndex = 33;
@@ -1149,55 +1195,34 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(89, 173);
+            this.label18.Location = new System.Drawing.Point(98, 163);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(20, 28);
             this.label18.TabIndex = 32;
             this.label18.Text = "*";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(558, 277);
-            this.txtEmail.MaxLength = 50;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(252, 31);
-            this.txtEmail.TabIndex = 9;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(553, 246);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(158, 28);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "Email do Paciente";
             // 
             // txtID
             // 
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.BackColor = System.Drawing.SystemColors.Window;
             this.txtID.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(60, 138);
+            this.txtID.Location = new System.Drawing.Point(69, 128);
             this.txtID.MaxLength = 3;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(52, 31);
             this.txtID.TabIndex = 0;
+            this.txtID.Tag = "text";
             // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(57, 110);
+            this.label12.Location = new System.Drawing.Point(66, 100);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 28);
             this.label12.TabIndex = 28;
+            this.label12.Tag = "title";
             this.label12.Text = "[ID] Cliente";
             // 
             // txtCPF
@@ -1205,13 +1230,14 @@
             this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCPF.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCPF.Location = new System.Drawing.Point(59, 204);
+            this.txtCPF.Location = new System.Drawing.Point(68, 194);
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PromptChar = ' ';
             this.txtCPF.ResetOnPrompt = false;
             this.txtCPF.Size = new System.Drawing.Size(139, 31);
             this.txtCPF.TabIndex = 1;
+            this.txtCPF.Tag = "text";
             this.txtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             this.txtCPF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCPF_KeyDown);
@@ -1221,10 +1247,11 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(53, 177);
+            this.label22.Location = new System.Drawing.Point(62, 167);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(42, 28);
             this.label22.TabIndex = 13;
+            this.label22.Tag = "title";
             this.label22.Text = "CPF";
             // 
             // txtNome
@@ -1232,32 +1259,35 @@
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(59, 279);
+            this.txtNome.Location = new System.Drawing.Point(68, 269);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(252, 31);
             this.txtNome.TabIndex = 2;
+            this.txtNome.Tag = "text";
             // 
             // label21
             // 
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(55, 251);
+            this.label21.Location = new System.Drawing.Point(64, 241);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(145, 28);
             this.label21.TabIndex = 11;
+            this.label21.Tag = "title";
             this.label21.Text = "Nome Completo";
             // 
             // label20
             // 
             this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(53, 49);
+            this.label20.Font = new System.Drawing.Font("Poppins SemiBold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(30, 25);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(250, 29);
+            this.label20.Size = new System.Drawing.Size(351, 53);
             this.label20.TabIndex = 10;
+            this.label20.Tag = "label";
             this.label20.Text = "Registro de Pacientes";
             // 
             // pfpPaciente
@@ -1265,8 +1295,7 @@
             this.pfpPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pfpPaciente.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pfpPaciente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pfpPaciente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pfpPaciente.Location = new System.Drawing.Point(381, 110);
+            this.pfpPaciente.Location = new System.Drawing.Point(390, 100);
             this.pfpPaciente.Name = "pfpPaciente";
             this.pfpPaciente.Size = new System.Drawing.Size(116, 106);
             this.pfpPaciente.TabIndex = 7;
@@ -1304,7 +1333,7 @@
             // 
             // btnSearchPac
             // 
-            this.btnSearchPac.Location = new System.Drawing.Point(370, 364);
+            this.btnSearchPac.Location = new System.Drawing.Point(371, 353);
             this.btnSearchPac.Name = "btnSearchPac";
             this.btnSearchPac.Size = new System.Drawing.Size(105, 45);
             this.btnSearchPac.TabIndex = 58;
@@ -1332,6 +1361,7 @@
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(206, 28);
             this.label43.TabIndex = 56;
+            this.label43.Tag = "label";
             this.label43.Text = "Insira o CPF do Paciente";
             // 
             // pictureBox5
@@ -1376,6 +1406,52 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
             // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(247, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(342, 53);
+            this.label17.TabIndex = 11;
+            this.label17.Tag = "label";
+            this.label17.Text = "Registro de Hospitais";
+            // 
+            // btnHospital
+            // 
+            this.btnHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHospital.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHospital.BackgroundImage")));
+            this.btnHospital.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHospital.Location = new System.Drawing.Point(11, 307);
+            this.btnHospital.Name = "btnHospital";
+            this.btnHospital.Size = new System.Drawing.Size(26, 25);
+            this.btnHospital.TabIndex = 7;
+            this.btnHospital.TabStop = false;
+            this.btnHospital.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // btnRegFunc
+            // 
+            this.btnRegFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegFunc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegFunc.BackgroundImage")));
+            this.btnRegFunc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegFunc.Location = new System.Drawing.Point(11, 256);
+            this.btnRegFunc.Name = "btnRegFunc";
+            this.btnRegFunc.Size = new System.Drawing.Size(26, 25);
+            this.btnRegFunc.TabIndex = 8;
+            this.btnRegFunc.TabStop = false;
+            this.btnRegFunc.Click += new System.EventHandler(this.btnRegFunc_Click);
+            // 
+            // tabRegistroFunc
+            // 
+            this.tabRegistroFunc.Location = new System.Drawing.Point(4, 4);
+            this.tabRegistroFunc.Name = "tabRegistroFunc";
+            this.tabRegistroFunc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistroFunc.Size = new System.Drawing.Size(846, 590);
+            this.tabRegistroFunc.TabIndex = 6;
+            this.tabRegistroFunc.Text = "tabPage1";
+            this.tabRegistroFunc.UseVisualStyleBackColor = true;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1397,9 +1473,12 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
             this.tabEdição.ResumeLayout(false);
             this.tabEdição.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).EndInit();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
+            this.tabRegistroHosp.ResumeLayout(false);
+            this.tabRegistroHosp.PerformLayout();
             this.tabPerfil.ResumeLayout(false);
             this.tabPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
@@ -1408,7 +1487,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
             this.panelNav.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnForum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
             this.abasPrincipal.ResumeLayout(false);
@@ -1422,6 +1500,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1452,7 +1532,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabConfig;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabPage tabForum;
+        private System.Windows.Forms.TabPage tabRegistroHosp;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TabPage tabPerfil;
         private System.Windows.Forms.Label label16;
@@ -1469,7 +1549,6 @@
         private System.Windows.Forms.PictureBox btnLogout;
         private System.Windows.Forms.PictureBox pfpLateral;
         private System.Windows.Forms.PictureBox btnConfig;
-        private System.Windows.Forms.PictureBox btnForum;
         private System.Windows.Forms.PictureBox btnConsulta;
         private System.Windows.Forms.PictureBox btnRegistro;
         private System.Windows.Forms.TabControl abasPrincipal;
@@ -1481,8 +1560,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblHospital;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label30;
@@ -1502,14 +1579,11 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox editEmail;
-        private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox editID;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btnAlterarFoto;
         private System.Windows.Forms.RadioButton rdoEdit_F;
         private System.Windows.Forms.RadioButton rdoEdit_M;
-        private System.Windows.Forms.Button btnChangePhoto;
         private System.Windows.Forms.MaskedTextBox editTelefone;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
@@ -1525,5 +1599,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSearchPac;
         private System.Windows.Forms.MaskedTextBox txtCPF_Pac;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExcluirFicha;
+        private System.Windows.Forms.TextBox editEmail;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.PictureBox btnHospital;
+        private System.Windows.Forms.PictureBox btnRegFunc;
+        private System.Windows.Forms.TabPage tabRegistroFunc;
     }
 }
