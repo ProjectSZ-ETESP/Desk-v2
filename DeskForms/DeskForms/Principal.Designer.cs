@@ -80,6 +80,7 @@
             this.tabConfig = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabRegistroHosp = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
             this.lblTelefone = new System.Windows.Forms.MaskedTextBox();
@@ -98,6 +99,8 @@
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.imagePerfil = new System.Windows.Forms.PictureBox();
             this.panelNav = new System.Windows.Forms.Panel();
+            this.btnRegFunc = new System.Windows.Forms.PictureBox();
+            this.btnHospital = new System.Windows.Forms.PictureBox();
             this.pfpLateral = new System.Windows.Forms.PictureBox();
             this.btnConsulta = new System.Windows.Forms.PictureBox();
             this.btnRegistro = new System.Windows.Forms.PictureBox();
@@ -122,13 +125,10 @@
             this.btnSearchPac = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label43 = new System.Windows.Forms.Label();
+            this.tabRegistroFunc = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.btnHospital = new System.Windows.Forms.PictureBox();
-            this.btnRegFunc = new System.Windows.Forms.PictureBox();
-            this.tabRegistroFunc = new System.Windows.Forms.TabPage();
             this.tabEdição.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).BeginInit();
@@ -140,6 +140,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
             this.panelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
@@ -151,8 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -806,6 +806,18 @@
             this.tabRegistroHosp.Size = new System.Drawing.Size(846, 590);
             this.tabRegistroHosp.TabIndex = 3;
             // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(247, 25);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(342, 53);
+            this.label17.TabIndex = 11;
+            this.label17.Tag = "label";
+            this.label17.Text = "Registro de Hospitais";
+            // 
             // label23
             // 
             this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1035,6 +1047,30 @@
             this.panelNav.Name = "panelNav";
             this.panelNav.Size = new System.Drawing.Size(50, 605);
             this.panelNav.TabIndex = 2;
+            // 
+            // btnRegFunc
+            // 
+            this.btnRegFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegFunc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegFunc.BackgroundImage")));
+            this.btnRegFunc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegFunc.Location = new System.Drawing.Point(11, 256);
+            this.btnRegFunc.Name = "btnRegFunc";
+            this.btnRegFunc.Size = new System.Drawing.Size(26, 25);
+            this.btnRegFunc.TabIndex = 8;
+            this.btnRegFunc.TabStop = false;
+            this.btnRegFunc.Click += new System.EventHandler(this.btnRegFunc_Click);
+            // 
+            // btnHospital
+            // 
+            this.btnHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHospital.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHospital.BackgroundImage")));
+            this.btnHospital.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHospital.Location = new System.Drawing.Point(11, 307);
+            this.btnHospital.Name = "btnHospital";
+            this.btnHospital.Size = new System.Drawing.Size(26, 25);
+            this.btnHospital.TabIndex = 7;
+            this.btnHospital.TabStop = false;
+            this.btnHospital.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pfpLateral
             // 
@@ -1364,6 +1400,16 @@
             this.label43.Tag = "label";
             this.label43.Text = "Insira o CPF do Paciente";
             // 
+            // tabRegistroFunc
+            // 
+            this.tabRegistroFunc.Location = new System.Drawing.Point(4, 4);
+            this.tabRegistroFunc.Name = "tabRegistroFunc";
+            this.tabRegistroFunc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistroFunc.Size = new System.Drawing.Size(846, 590);
+            this.tabRegistroFunc.TabIndex = 6;
+            this.tabRegistroFunc.Text = "tabPage1";
+            this.tabRegistroFunc.UseVisualStyleBackColor = true;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -1406,52 +1452,6 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
             // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Poppins SemiBold", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(247, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(342, 53);
-            this.label17.TabIndex = 11;
-            this.label17.Tag = "label";
-            this.label17.Text = "Registro de Hospitais";
-            // 
-            // btnHospital
-            // 
-            this.btnHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHospital.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHospital.BackgroundImage")));
-            this.btnHospital.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHospital.Location = new System.Drawing.Point(11, 307);
-            this.btnHospital.Name = "btnHospital";
-            this.btnHospital.Size = new System.Drawing.Size(26, 25);
-            this.btnHospital.TabIndex = 7;
-            this.btnHospital.TabStop = false;
-            this.btnHospital.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // btnRegFunc
-            // 
-            this.btnRegFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegFunc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegFunc.BackgroundImage")));
-            this.btnRegFunc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegFunc.Location = new System.Drawing.Point(11, 256);
-            this.btnRegFunc.Name = "btnRegFunc";
-            this.btnRegFunc.Size = new System.Drawing.Size(26, 25);
-            this.btnRegFunc.TabIndex = 8;
-            this.btnRegFunc.TabStop = false;
-            this.btnRegFunc.Click += new System.EventHandler(this.btnRegFunc_Click);
-            // 
-            // tabRegistroFunc
-            // 
-            this.tabRegistroFunc.Location = new System.Drawing.Point(4, 4);
-            this.tabRegistroFunc.Name = "tabRegistroFunc";
-            this.tabRegistroFunc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistroFunc.Size = new System.Drawing.Size(846, 590);
-            this.tabRegistroFunc.TabIndex = 6;
-            this.tabRegistroFunc.Text = "tabPage1";
-            this.tabRegistroFunc.UseVisualStyleBackColor = true;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1486,6 +1486,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
             this.panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
@@ -1500,8 +1502,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).EndInit();
             this.ResumeLayout(false);
 
         }
