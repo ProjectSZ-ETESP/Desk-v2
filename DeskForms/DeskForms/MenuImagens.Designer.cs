@@ -88,13 +88,14 @@ namespace DeskForms
             // 
             this.img.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img.ImageStream")));
             this.img.TransparentColor = System.Drawing.Color.Transparent;
-            this.img.Images.SetKeyName(0, "perfil1.png");
-            this.img.Images.SetKeyName(1, "perfil2.png");
-            this.img.Images.SetKeyName(2, "perfil3.png");
-            this.img.Images.SetKeyName(3, "perfil4.png");
-            this.img.Images.SetKeyName(4, "perfil5.png");
-            this.img.Images.SetKeyName(5, "perfil6.png");
-            this.img.Images.SetKeyName(6, "perfil7.png");
+            this.img.Images.SetKeyName(0, "1.jpg");
+            this.img.Images.SetKeyName(1, "2.jpg");
+            this.img.Images.SetKeyName(2, "3.jpg");
+            this.img.Images.SetKeyName(3, "4.jpg");
+            this.img.Images.SetKeyName(4, "5.jpg");
+            this.img.Images.SetKeyName(5, "6.jpg");
+            this.img.Images.SetKeyName(6, "7.jpg");
+            this.img.Images.SetKeyName(7, "8.jpg");
             // 
             // MenuImagens
             // 

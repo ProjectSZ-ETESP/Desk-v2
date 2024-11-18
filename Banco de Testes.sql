@@ -1,7 +1,7 @@
 /*
 drop database hospitalar
-create database hospitalar
-use hospitalar
+create database hospitalar;
+use hospitalar;
 */
 
 CREATE TABLE tblUsuario (
@@ -506,5 +506,15 @@ BEGIN
 END$$
 DELIMITER ;
 
+select * from tblUsuario;
 select * from tblFuncionario;
-select * from tblUsuario
+select * from tblPaciente;
+select * from tblHospital;
+select * from tblConsulta;
+select * from tblNotificacao;
+
+/*
+delete from tblPaciente where idUsuario = 3;
+delete from tblConsulta where idPaciente = 3;
+delete from tblNotificacao where idConsulta = (select idPaciente from tblConsulta where idPaciente = 3)
+*/

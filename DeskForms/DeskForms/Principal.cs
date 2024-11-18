@@ -43,8 +43,8 @@ namespace DeskForms
             kurtCorners(pfpLateral);
             kurtCorners(imagePerfil);
             kurtCorners(pfpPaciente);
-            kurtCorners(pcbEditPhoto);
-            //kurtCorners(pcbEdit);
+            kurtCorners(editEditarrs);
+            kurtCorners(pcbEdit);
         }
 
         private void kurtCorners(PictureBox picture)
@@ -74,11 +74,15 @@ namespace DeskForms
 
                     string str = myreader["nomeFuncionario"].ToString();
                     int index = str.IndexOf(' ');
+
+                    lblNome.Text = str;
+
                     if (index >= 0)
                     {
                         string result = str.Substring(0, index);
                         lblNome.Text = result;
                     }
+
                     lblNomeCompleto.Text = myreader["nomeFuncionario"].ToString();
                     lblTelefone.Text = myreader["foneFuncionario"].ToString();
                     lblEmail.Text = Properties.Settings.Default.user.ToString();
@@ -196,36 +200,41 @@ namespace DeskForms
             switch (index)
             {
                 case 1:
-                    img = Properties.Resources.perfil1;
+                    img = Properties.Resources._1;
                     break;
 
                 case 2:
-                    img = Properties.Resources.perfil2;
+                    img = Properties.Resources._2;
 
                     break;
 
                 case 3:
-                    img = Properties.Resources.perfil3;
+                    img = Properties.Resources._3;
 
                     break;
 
                 case 4:
-                    img = Properties.Resources.perfil4;
+                    img = Properties.Resources._4;
 
                     break;
 
                 case 5:
-                    img = Properties.Resources.perfil5;
+                    img = Properties.Resources._5;
 
                     break;
 
                 case 6:
-                    img = Properties.Resources.perfil6;
+                    img = Properties.Resources._6;
 
                     break;
 
                 case 7:
-                    img = Properties.Resources.perfil7;
+                    img = Properties.Resources._7;
+
+                    break;
+
+                case 8:
+                    img = Properties.Resources._8;
 
                     break;
             }
@@ -439,7 +448,7 @@ namespace DeskForms
 
                             btnConfig.BackgroundImage = Properties.Resources.configBlack;
                             btnLogout.BackgroundImage = Properties.Resources.logout;
-                            pcbEdit.BackColor = Color.Black;
+                            btnBack.BackgroundImage = Properties.Resources.arrowWhite;
                             Properties.Settings.Default.theme = "Tema Escuro";
                             cboColor.SelectedIndex = 2;
                         }
@@ -471,7 +480,7 @@ namespace DeskForms
                             this.BackColor = lightGreen;
                             btnConfig.BackgroundImage = Properties.Resources.configWhite;
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
-                            pcbEdit.BackColor = Color.White;
+                            btnBack.BackgroundImage = Properties.Resources.arrowBlack;
                             Properties.Settings.Default.theme = "Tema Claro";
                             cboColor.SelectedIndex = 1;
                         }
@@ -552,14 +561,20 @@ namespace DeskForms
 
         private void BtnSearchPac_Click(object sender, EventArgs e)
         {
+
+            UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+
+        }
+
+        private void UpdateEdicao(String query)        {
+
             MySqlConnection conn = new MySqlConnection(stringConexão);
-            string query = $"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'";
             try
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 string idCli = "0";
-                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", sex = "",condicoes = "";
+                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", sex = "", condicao = "", sangue = "";
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
@@ -569,10 +584,11 @@ namespace DeskForms
                         cpf = myreader["cpfPaciente"].ToString();
                         nomeCompleto = myreader["nomePaciente"].ToString();
                         data = myreader["dataNascPaciente"].ToString();
-                        foto = Properties.Settings.Default.imgPac.ToString();
+                        foto = myreader["fotoPaciente"].ToString();
                         sex = myreader["sexoPaciente"].ToString();
                         telefone = myreader["fonePaciente"].ToString();
-                        condicoes = myreader["condicoesMedicas"].ToString();
+                        condicao = myreader["condicoesMedicas"].ToString();
+                        sangue = myreader["tipoSanguineo"].ToString();
                     }
                 }
                 conn.Close();
@@ -585,7 +601,8 @@ namespace DeskForms
                     editNome.Text = nomeCompleto;
                     editData.Text = data;
                     editTelefone.Text = telefone;
-                    editCondicoes.Text = condicoes;
+                    editCondicao.Text = condicao;
+                    editSangue.Text = sangue;
                     pcbEdit.BackgroundImage = getImg(int.Parse(foto));
                     if (sex == "M") { rdoEdit_M.Checked = true; }
                     else { rdoEdit_F.Checked = true; }
@@ -626,13 +643,14 @@ namespace DeskForms
                 conn.Close();
             }
 
-
-
         }
 
         private void TxtCPF_Pac_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyData == Keys.Enter)
+            {
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+            }
         }
 
         private void BtnChangePhoto_Click(object sender, EventArgs e)
@@ -645,32 +663,38 @@ namespace DeskForms
 
         private void BtnAlterarFoto_Click(object sender, EventArgs e)
         {
-
-            foreach (Control ctrl in tabEdição.Controls)
-            {
-
-                if (ctrl.Tag != null && ctrl.Tag.ToString() == "bizoiar")
-                {
-                    if (ctrl.Text == "")
-                    {
-                        MessageBox.Show($"O campo {ctrl.Name + ""} está vazio, não deixe ele assim!!", "Opa, pera lá!!", MessageBoxButtons.OK);
-                        return;
-                    }
-                }
-
-            }
             string sex = "";
+            DateTime dataPura = DateTime.Parse(editData.Text);
+            string tempoMenor = dataPura.ToString("yyyy-MM-dd");
+            string temp = editSangue.Text;
+            string[] tiposSanguineos = new string[]
+            {
+                "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
+            };            
+
             if (rdoEdit_M.Checked) { sex = "M"; }
             else { sex = "F"; }
 
-            DateTime dataPura = DateTime.Parse(editData.Text);
-            string tempoMenor = dataPura.ToString("yyyy-MM-dd");
             try
             {
+                if (!tiposSanguineos.Contains(editSangue.Text))
+                { throw new Exception(); }
+
+                foreach(TextBox txt in tabEdição.Controls)
+                {
+                    if(txt.Text == "")
+                    {
+                        throw new Exception($"{txt.Name} está vazio");
+                    }
+                }
+
                 sqlReturn($"call proc_editPac({int.Parse(editID.Text)},'{editNome.Text}','{editEmail.Text}','{tempoMenor}','{sex}','{editTelefone.Text}','{editCPF.Text}')");
                 MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
             }
-            catch { }
+            catch(Exception ex){
+                MessageBox.Show($"How unfortunate!!\n{ex}", "Uh Oh");
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+            }
         }
 
         private void btnExcluirFicha_Click(object sender, EventArgs e)
@@ -705,6 +729,11 @@ namespace DeskForms
         private void btnRegFunc_Click(object sender, EventArgs e)
         {
             abasPrincipal.SelectedTab = tabRegistroFunc;
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            abasPrincipal.SelectedTab = tabAcesso;
         }
     }
 }

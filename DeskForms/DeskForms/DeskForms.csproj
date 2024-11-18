@@ -258,13 +258,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\perfil4.png" />
-    <None Include="Resources\perfil5.png" />
-    <None Include="Resources\perfil6.png" />
-    <None Include="Resources\perfil7.png" />
-    <None Include="Resources\perfil1.png" />
-    <None Include="Resources\perfil3.png" />
-    <None Include="Resources\perfil2.png" />
     <None Include="Resources\min.png" />
     <None Include="Resources\max.png" />
     <None Include="Resources\min.svg" />
@@ -289,6 +282,8 @@
     <None Include="Resources\close.png" />
     <None Include="Resources\configWhite.png" />
     <None Include="Resources\configBlack.png" />
+    <None Include="Resources\arrowBlack.png" />
+    <None Include="Resources\arrowWhite.png" />
     <Content Include="Resources\logoutClear.png" />
     <None Include="Resources\logoutClear1.png" />
   </ItemGroup>
