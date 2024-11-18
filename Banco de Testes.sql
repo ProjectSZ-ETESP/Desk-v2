@@ -3,7 +3,6 @@ drop database hospitalar
 create database hospitalar;
 use hospitalar;
 */
-
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
 email varchar(50) NOT NULL,
@@ -88,6 +87,21 @@ CONSTRAINT fk_idPacienteConsulta FOREIGN KEY (idPaciente)
 	REFERENCES tblPaciente (idPaciente)
 );
 CREATE INDEX xConsulta ON tblConsulta (idConsulta, cnpj, crm, idPaciente);
+
+CREATE TABLE tblPendente (
+idPendente int PRIMARY KEY AUTO_INCREMENT,
+idPaciente int,
+cnpj char(14),
+dataPendente date,
+horaPendente time,
+descPaciente varchar(500),
+
+CONSTRAINT fk_PacientePendente FOREIGN KEY (idPaciente)
+	REFERENCES tblPaciente (idPaciente),
+CONSTRAINT fk_HospitalPendente FOREIGN KEY (cnpj)
+	REFERENCES tblHospital (cnpj)
+);
+CREATE INDEX xPendente ON tblPendente (idPendente, idPaciente, cnpj);
 
 CREATE TABLE tblNotificacao (
 idNotificacao int PRIMARY KEY AUTO_INCREMENT,
@@ -283,14 +297,16 @@ BEGIN
         nomePaciente, 
         sexoPaciente, 
         dataNascPaciente, 
-        fonePaciente
+        fonePaciente,
+	fotoPaciente
     ) VALUES (
         p_idUsuario, 
         p_cpf, 
         p_nome, 
         p_sexo, 
         p_dataNasc, 
-        p_fone
+        p_fone,
+	'1'
     );
 END$$
 DELIMITER ;
@@ -338,7 +354,8 @@ BEGIN
     IF (SELECT COUNT(*) 
         FROM tblUsuario 
         WHERE email = p_email 
-          AND idUsuario IN (SELECT idUsuario FROM tblPaciente)) > 0 THEN
+	    AND senha = p_senha
+            AND idUsuario IN (SELECT idUsuario FROM tblPaciente)) > 0 THEN
         SET p_retorno = (SELECT idUsuario 
                          FROM tblUsuario 
                          WHERE email = p_email);
@@ -423,12 +440,13 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editPac`(
     IN p_date DATE,
     IN p_sexo CHAR(1),
     IN p_tel CHAR(15),
-    IN p_cpf CHAR(14)
+    IN p_cpf CHAR(14),
+    IN p_foto CHAR(1)
 )
 BEGIN
     UPDATE tblUsuario SET email = p_email
     WHERE idUsuario = p_id;
-    UPDATE tblPaciente SET nomePaciente = p_nome, dataNascPaciente = p_date, sexoPaciente = p_sexo, fonePaciente = p_tel, cpfPaciente = p_cpf
+    UPDATE tblPaciente SET nomePaciente = p_nome, dataNascPaciente = p_date, sexoPaciente = p_sexo, fonePaciente = p_tel, cpfPaciente = p_cpf, fotoPaciente = p_foto
     WHERE idUsuario = p_id;
 END$$
 DELIMITER ;
@@ -443,7 +461,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_baseLoad`(
     OUT p_data DATE,
     OUT p_sexo CHAR(1),
     OUT p_tel CHAR(15),
-    OUT p_cpf CHAR(14)
+    OUT p_cpf CHAR(14),
+    OUT p_foto CHAR(1)
 )
 BEGIN
     SELECT nomePaciente INTO p_nome
@@ -469,6 +488,10 @@ BEGIN
     SELECT cpfPaciente INTO p_cpf
     FROM tblPaciente
     WHERE idUsuario = p_id;
+
+    SELECT fotoPaciente INTO p_foto
+    FROM tblPaciente
+    WHERE idUsuario = p_id;
 END$$
 DELIMITER ;
 
@@ -477,34 +500,46 @@ DELIMITER ;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_consultaLoad`(
     IN p_id INT,
-    OUT p_data DATE,
-    OUT p_hora TIME,
-    OUT p_clinica VARCHAR(50),
-    OUT p_doutor VARCHAR(50),
-    OUT p_tipoConsulta VARCHAR(50)
+    OUT p_data VARCHAR(1000),
+    OUT p_hora VARCHAR(1000),
+    OUT p_clinica VARCHAR(1000),
+    OUT p_doutor VARCHAR(1000),
+    OUT p_tipoConsulta VARCHAR(1000),
+    OUT p_descricao VARCHAR(10000)
 )
 BEGIN
-    SELECT dataConsulta INTO p_data
+
+    SELECT CAST(GROUP_CONCAT(dataConsulta SEPARATOR ',') AS CHAR) INTO p_data
     FROM tblConsulta
-    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    WHERE idPaciente IN (SELECT idPaciente FROM tblPaciente WHERE idPaciente = p_id) AND
+    idConsulta IN (SELECT idConsulta FROM tblProntuario);
     
-    SELECT horaConsulta INTO p_hora
+    SELECT CAST(GROUP_CONCAT(horaConsulta SEPARATOR ',') AS CHAR) INTO p_hora
     FROM tblConsulta
-    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    WHERE idPaciente IN (SELECT idPaciente FROM tblPaciente WHERE idPaciente = p_id) AND
+    idConsulta IN (SELECT idConsulta FROM tblProntuario);
 
-    SELECT cnpj INTO p_clinica
-    FROM tblConsulta
-    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    SELECT GROUP_CONCAT(nomeHosp) INTO p_clinica
+    FROM tblHospital
+    WHERE cnpj IN (SELECT cnpj FROM tblConsulta WHERE idPaciente = p_id AND
+    idConsulta IN (SELECT idConsulta FROM tblProntuario));
 
-    SELECT crm INTO p_doutor
-    FROM tblConsulta
-    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    SELECT GROUP_CONCAT(nomeMedico) INTO p_doutor
+    FROM tblMedico
+    WHERE crm IN (SELECT crm FROM tblConsulta WHERE idPaciente = p_id AND
+    idConsulta IN (SELECT idConsulta FROM tblProntuario));
 
-    SELECT tipoConsulta INTO p_tipoConsulta
+    SELECT GROUP_CONCAT(tipoConsulta) INTO p_tipoConsulta
     FROM tblConsulta
-    WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
+    WHERE idPaciente IN (SELECT idPaciente FROM tblPaciente WHERE idPaciente = p_id) AND
+    idConsulta IN (SELECT idConsulta FROM tblProntuario);
+
+    SELECT GROUP_CONCAT(descricao) INTO p_descricao
+    FROM tblProntuario
+    WHERE idConsulta IN (SELECT idConsulta FROM tblConsulta WHERE idPaciente = p_id);
 END$$
 DELIMITER ;
+
 
 select * from tblUsuario;
 select * from tblFuncionario;
