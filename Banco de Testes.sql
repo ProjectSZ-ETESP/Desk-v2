@@ -1,3 +1,9 @@
+/*
+drop database hospitalar
+create database hospitalar
+use hospitalar
+*/
+
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
 email varchar(50) NOT NULL,
