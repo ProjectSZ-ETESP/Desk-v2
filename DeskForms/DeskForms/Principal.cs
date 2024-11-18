@@ -43,7 +43,8 @@ namespace DeskForms
             kurtCorners(pfpLateral);
             kurtCorners(imagePerfil);
             kurtCorners(pfpPaciente);
-
+            kurtCorners(pcbEditPhoto);
+            //kurtCorners(pcbEdit);
         }
 
         private void kurtCorners(PictureBox picture)
@@ -73,10 +74,11 @@ namespace DeskForms
 
                     string str = myreader["nomeFuncionario"].ToString();
                     int index = str.IndexOf(' ');
-
-                    string result = str.Substring(0, index);
-
-                    lblNome.Text = result;
+                    if (index >= 0)
+                    {
+                        string result = str.Substring(0, index);
+                        lblNome.Text = result;
+                    }
                     lblNomeCompleto.Text = myreader["nomeFuncionario"].ToString();
                     lblTelefone.Text = myreader["foneFuncionario"].ToString();
                     lblEmail.Text = Properties.Settings.Default.user.ToString();
@@ -194,41 +196,36 @@ namespace DeskForms
             switch (index)
             {
                 case 1:
-                    img = Properties.Resources._1;
+                    img = Properties.Resources.perfil1;
                     break;
 
                 case 2:
-                    img = Properties.Resources._2;
+                    img = Properties.Resources.perfil2;
 
                     break;
 
                 case 3:
-                    img = Properties.Resources._3;
+                    img = Properties.Resources.perfil3;
 
                     break;
 
                 case 4:
-                    img = Properties.Resources._4;
+                    img = Properties.Resources.perfil4;
 
                     break;
 
                 case 5:
-                    img = Properties.Resources._5;
+                    img = Properties.Resources.perfil5;
 
                     break;
 
                 case 6:
-                    img = Properties.Resources._6;
+                    img = Properties.Resources.perfil6;
 
                     break;
 
                 case 7:
-                    img = Properties.Resources._7;
-
-                    break;
-
-                case 8:
-                    img = Properties.Resources._8;
+                    img = Properties.Resources.perfil7;
 
                     break;
             }
@@ -442,6 +439,7 @@ namespace DeskForms
 
                             btnConfig.BackgroundImage = Properties.Resources.configBlack;
                             btnLogout.BackgroundImage = Properties.Resources.logout;
+                            pcbEdit.BackColor = Color.Black;
                             Properties.Settings.Default.theme = "Tema Escuro";
                             cboColor.SelectedIndex = 2;
                         }
@@ -473,6 +471,7 @@ namespace DeskForms
                             this.BackColor = lightGreen;
                             btnConfig.BackgroundImage = Properties.Resources.configWhite;
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
+                            pcbEdit.BackColor = Color.White;
                             Properties.Settings.Default.theme = "Tema Claro";
                             cboColor.SelectedIndex = 1;
                         }
@@ -560,7 +559,7 @@ namespace DeskForms
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 string idCli = "0";
-                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", sex = "";
+                string cpf = "", nomeCompleto = "", data = "", foto = "", telefone = "", sex = "",condicoes = "";
                 myreader = cmd.ExecuteReader();
                 while (myreader.Read())
                 {
@@ -573,6 +572,7 @@ namespace DeskForms
                         foto = Properties.Settings.Default.imgPac.ToString();
                         sex = myreader["sexoPaciente"].ToString();
                         telefone = myreader["fonePaciente"].ToString();
+                        condicoes = myreader["condicoesMedicas"].ToString();
                     }
                 }
                 conn.Close();
@@ -585,6 +585,7 @@ namespace DeskForms
                     editNome.Text = nomeCompleto;
                     editData.Text = data;
                     editTelefone.Text = telefone;
+                    editCondicoes.Text = condicoes;
                     pcbEdit.BackgroundImage = getImg(int.Parse(foto));
                     if (sex == "M") { rdoEdit_M.Checked = true; }
                     else { rdoEdit_F.Checked = true; }
@@ -644,6 +645,20 @@ namespace DeskForms
 
         private void BtnAlterarFoto_Click(object sender, EventArgs e)
         {
+
+            foreach (Control ctrl in tabEdição.Controls)
+            {
+
+                if (ctrl.Tag != null && ctrl.Tag.ToString() == "bizoiar")
+                {
+                    if (ctrl.Text == "")
+                    {
+                        MessageBox.Show($"O campo {ctrl.Name + ""} está vazio, não deixe ele assim!!", "Opa, pera lá!!", MessageBoxButtons.OK);
+                        return;
+                    }
+                }
+
+            }
             string sex = "";
             if (rdoEdit_M.Checked) { sex = "M"; }
             else { sex = "F"; }
@@ -653,9 +668,9 @@ namespace DeskForms
             try
             {
                 sqlReturn($"call proc_editPac({int.Parse(editID.Text)},'{editNome.Text}','{editEmail.Text}','{tempoMenor}','{sex}','{editTelefone.Text}','{editCPF.Text}')");
+                MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
             }
             catch { }
-            MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
         }
 
         private void btnExcluirFicha_Click(object sender, EventArgs e)

@@ -39,8 +39,8 @@
             this.txtDataNasc = new System.Windows.Forms.MaskedTextBox();
             this.tabEdição = new System.Windows.Forms.TabPage();
             this.btnExcluirFicha = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pcbEditPhoto = new System.Windows.Forms.PictureBox();
+            this.editCondicoes = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabEdição.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEditPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).BeginInit();
             this.tabConfig.SuspendLayout();
             this.tabRegistroHosp.SuspendLayout();
@@ -266,8 +266,8 @@
             // 
             this.tabEdição.BackColor = System.Drawing.Color.White;
             this.tabEdição.Controls.Add(this.btnExcluirFicha);
-            this.tabEdição.Controls.Add(this.pictureBox1);
-            this.tabEdição.Controls.Add(this.textBox1);
+            this.tabEdição.Controls.Add(this.pcbEditPhoto);
+            this.tabEdição.Controls.Add(this.editCondicoes);
             this.tabEdição.Controls.Add(this.label28);
             this.tabEdição.Controls.Add(this.label29);
             this.tabEdição.Controls.Add(this.label33);
@@ -296,7 +296,6 @@
             this.tabEdição.Padding = new System.Windows.Forms.Padding(3);
             this.tabEdição.Size = new System.Drawing.Size(846, 590);
             this.tabEdição.TabIndex = 2;
-            this.tabEdição.Click += new System.EventHandler(this.BtnChangePhoto_Click);
             // 
             // btnExcluirFicha
             // 
@@ -310,30 +309,32 @@
             this.btnExcluirFicha.UseVisualStyleBackColor = true;
             this.btnExcluirFicha.Click += new System.EventHandler(this.btnExcluirFicha_Click);
             // 
-            // pictureBox1
+            // pcbEditPhoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::DeskForms.Properties.Resources.edit__1_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(476, 213);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
+            this.pcbEditPhoto.BackColor = System.Drawing.Color.Transparent;
+            this.pcbEditPhoto.BackgroundImage = global::DeskForms.Properties.Resources.edit__1_;
+            this.pcbEditPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbEditPhoto.Location = new System.Drawing.Point(476, 213);
+            this.pcbEditPhoto.Name = "pcbEditPhoto";
+            this.pcbEditPhoto.Size = new System.Drawing.Size(35, 35);
+            this.pcbEditPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcbEditPhoto.TabIndex = 61;
+            this.pcbEditPhoto.TabStop = false;
+            this.pcbEditPhoto.Click += new System.EventHandler(this.BtnChangePhoto_Click);
             // 
-            // textBox1
+            // editCondicoes
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(377, 384);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(246, 141);
-            this.textBox1.TabIndex = 47;
+            this.editCondicoes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editCondicoes.BackColor = System.Drawing.SystemColors.Window;
+            this.editCondicoes.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editCondicoes.Location = new System.Drawing.Point(377, 384);
+            this.editCondicoes.MaxLength = 30;
+            this.editCondicoes.Multiline = true;
+            this.editCondicoes.Name = "editCondicoes";
+            this.editCondicoes.ReadOnly = true;
+            this.editCondicoes.Size = new System.Drawing.Size(246, 141);
+            this.editCondicoes.TabIndex = 47;
+            this.editCondicoes.Tag = "bizoiar";
             // 
             // label28
             // 
@@ -397,6 +398,7 @@
             // 
             // editEmail
             // 
+            this.editEmail.AccessibleName = "Email";
             this.editEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editEmail.BackColor = System.Drawing.SystemColors.Window;
             this.editEmail.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -405,6 +407,7 @@
             this.editEmail.Name = "editEmail";
             this.editEmail.Size = new System.Drawing.Size(252, 31);
             this.editEmail.TabIndex = 46;
+            this.editEmail.Tag = "bizoiar";
             // 
             // label36
             // 
@@ -429,6 +432,7 @@
             this.editID.ReadOnly = true;
             this.editID.Size = new System.Drawing.Size(52, 31);
             this.editID.TabIndex = 37;
+            this.editID.Tag = "bizoiar";
             // 
             // label37
             // 
@@ -484,6 +488,7 @@
             // 
             // editTelefone
             // 
+            this.editTelefone.AccessibleName = "Telefone";
             this.editTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.editTelefone.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -494,6 +499,7 @@
             this.editTelefone.ResetOnPrompt = false;
             this.editTelefone.Size = new System.Drawing.Size(134, 31);
             this.editTelefone.TabIndex = 45;
+            this.editTelefone.Tag = "bizoiar";
             this.editTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label38
@@ -522,6 +528,7 @@
             // 
             // editData
             // 
+            this.editData.AccessibleName = "Data de Nascimento";
             this.editData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editData.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.editData.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -532,6 +539,7 @@
             this.editData.ResetOnPrompt = false;
             this.editData.Size = new System.Drawing.Size(114, 31);
             this.editData.TabIndex = 42;
+            this.editData.Tag = "bizoiar";
             this.editData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.editData.ValidatingType = typeof(System.DateTime);
             // 
@@ -549,6 +557,7 @@
             // 
             // editCPF
             // 
+            this.editCPF.AccessibleName = "CPF";
             this.editCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.editCPF.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -559,6 +568,7 @@
             this.editCPF.ResetOnPrompt = false;
             this.editCPF.Size = new System.Drawing.Size(139, 31);
             this.editCPF.TabIndex = 38;
+            this.editCPF.Tag = "bizoiar";
             this.editCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.editCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
@@ -576,6 +586,7 @@
             // 
             // editNome
             // 
+            this.editNome.AccessibleName = "Nome ";
             this.editNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editNome.BackColor = System.Drawing.SystemColors.Window;
             this.editNome.Font = new System.Drawing.Font("Poppins Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -584,6 +595,7 @@
             this.editNome.Name = "editNome";
             this.editNome.Size = new System.Drawing.Size(252, 31);
             this.editNome.TabIndex = 39;
+            this.editNome.Tag = "bizoiar";
             // 
             // label42
             // 
@@ -600,12 +612,12 @@
             // pcbEdit
             // 
             this.pcbEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbEdit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pcbEdit.BackColor = System.Drawing.Color.Black;
             this.pcbEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pcbEdit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pcbEdit.Location = new System.Drawing.Point(377, 123);
             this.pcbEdit.Name = "pcbEdit";
             this.pcbEdit.Size = new System.Drawing.Size(116, 106);
+            this.pcbEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbEdit.TabIndex = 44;
             this.pcbEdit.TabStop = false;
             // 
@@ -1473,7 +1485,7 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
             this.tabEdição.ResumeLayout(false);
             this.tabEdição.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEditPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).EndInit();
             this.tabConfig.ResumeLayout(false);
             this.tabConfig.PerformLayout();
@@ -1573,7 +1585,7 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox editCondicoes;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label33;
@@ -1599,7 +1611,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSearchPac;
         private System.Windows.Forms.MaskedTextBox txtCPF_Pac;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbEditPhoto;
         private System.Windows.Forms.Button btnExcluirFicha;
         private System.Windows.Forms.TextBox editEmail;
         private System.Windows.Forms.Label label36;

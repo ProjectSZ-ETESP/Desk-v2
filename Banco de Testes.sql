@@ -505,3 +505,6 @@ BEGIN
     WHERE idPaciente IN (SELECT idPaciente FROM tblUsuario WHERE idUsuario = p_id);
 END$$
 DELIMITER ;
+
+select * from tblFuncionario;
+select * from tblUsuario
