@@ -256,4 +256,25 @@
   <data name="arrowWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrowWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="perfil1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="perfil7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\perfil7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,6 +46,10 @@ namespace DeskForms
             kurtCorners(pfpPaciente);
             kurtCorners(editEditarrs);
             kurtCorners(pcbEdit);
+            kurtCorners(btnEditRegistro);
+            kurtCorners(editEditarrs);
+            
+
         }
 
         private void kurtCorners(PictureBox picture)
@@ -150,8 +155,8 @@ namespace DeskForms
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             abasPrincipal.SelectedTab = tabAcesso;
-            txtCPF_Pac.Text = "";
-            txtCPF_Pac.Focus();
+            txtCampo_Pac.Text = "";
+            txtCampo_Pac.Focus();
         }
 
         private void btnForum_Click(object sender, EventArgs e)
@@ -200,41 +205,36 @@ namespace DeskForms
             switch (index)
             {
                 case 1:
-                    img = Properties.Resources._1;
+                    img = Properties.Resources.perfil1;
                     break;
 
                 case 2:
-                    img = Properties.Resources._2;
+                    img = Properties.Resources.perfil2;
 
                     break;
 
                 case 3:
-                    img = Properties.Resources._3;
+                    img = Properties.Resources.perfil3;
 
                     break;
 
                 case 4:
-                    img = Properties.Resources._4;
+                    img = Properties.Resources.perfil4;
 
                     break;
 
                 case 5:
-                    img = Properties.Resources._5;
+                    img = Properties.Resources.perfil5;
 
                     break;
 
                 case 6:
-                    img = Properties.Resources._6;
+                    img = Properties.Resources.perfil6;
 
                     break;
 
                 case 7:
-                    img = Properties.Resources._7;
-
-                    break;
-
-                case 8:
-                    img = Properties.Resources._8;
+                    img = Properties.Resources.perfil7;
 
                     break;
             }
@@ -561,9 +561,100 @@ namespace DeskForms
 
         private void BtnSearchPac_Click(object sender, EventArgs e)
         {
+            if(checkCPF.Checked == true)
+            {
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
+            }
+            else if(checkCNPJ.Checked == true)
+            {
+                UpdateHospital($"select * from tblHospital where cnpj = '{txtCampo_Pac.Text}'");
+            }
 
-            UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+        }
+        
+        private void UpdateHospital(string query)
+        {
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                myreader = cmd.ExecuteReader();
 
+                string cnpj = "", nomeHosp = "", direcao = "", descricaoHosp = "", emailHosp = "", endereco = "", horarioHosp = "", foneHosp = "";
+
+                while (myreader.Read())
+                {
+                    cnpj = myreader["cnpj"].ToString();
+                    nomeHosp = myreader["nomeHosp"].ToString();
+                    direcao = myreader["direcao"].ToString();
+                    descricaoHosp = myreader["descricaoHosp"].ToString();
+                    emailHosp = myreader["emailHosp"].ToString();
+                    endereco = myreader["endereco"].ToString();
+                    horarioHosp = myreader["horarioHosp"].ToString();
+                    foneHosp = myreader["foneHosp"].ToString();
+                }
+
+                mskTelefone.Mask = "(00) 0000-0000";
+                mskCNPJ.Mask = "00.000.000/0000-00";
+
+                mskCNPJ.Text = cnpj;
+                mskNomeHospital.Text = nomeHosp;
+                mskDiretor.Text = direcao;
+                mskDirecao.Text = descricaoHosp;
+                mskEmail.Text = emailHosp;
+                mskEndereco.Text = endereco;
+                mskTelefone.Text = foneHosp;
+                FillCheckedItemsFromSchedule(horarioHosp);
+
+                abasPrincipal.SelectedTab = tabEdicaoHosp;
+
+            }
+            catch { 
+            }
+        }
+
+        private void FillCheckedItemsFromSchedule(string input)
+        {
+            // Desmarca todos os itens antes de preencher
+            for (int i = 0; i < checkListDias.Items.Count; i++)
+            {
+                checkListDias.SetItemChecked(i, false);
+            }
+
+            // Expressão regular para identificar o intervalo de dias e o horário
+            var regex = new Regex(@"([a-z]+)\s*à\s*([a-z]+):\s*(\d{2}:\d{2})-(\d{2}:\d{2})", RegexOptions.IgnoreCase);
+            var match = regex.Match(input);
+
+            if (match.Success)
+            {
+                // Extrai os valores capturados
+                string startDay = match.Groups[1].Value.ToLower();
+                string endDay = match.Groups[2].Value.ToLower();
+                string startTime = match.Groups[3].Value;
+                string endTime = match.Groups[4].Value;
+
+                // Obtém os índices dos dias na lista
+                int startDayIndex = diasDaSemana.IndexOf(startDay);
+                int endDayIndex = diasDaSemana.IndexOf(endDay);
+
+                if (startDayIndex != -1 && endDayIndex != -1)
+                {
+                    // Marcar os dias consecutivos
+                    for (int i = startDayIndex; i <= endDayIndex; i++)
+                    {
+                        checkListDias.SetItemChecked(i, true);
+                    }
+                }
+
+                // Aqui você pode manipular os horários (caso precise usar em algum outro contexto)
+                // Exemplo: Você pode usar `startTime` e `endTime` para validar ou exibir os horários em um campo adicional
+                MessageBox.Show($"Horário de funcionamento: {startTime} até {endTime}", "Horário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Formato de entrada inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UpdateEdicao(String query)        {
@@ -610,7 +701,8 @@ namespace DeskForms
                 else
                 {
                     MessageBox.Show($"Esse CPF não está cadastrado em nosso sistema", "uh oh");
-
+                    txtCampo_Pac.Text = "";
+                    txtCampo_Pac.Focus();
                 }
 
             }
@@ -647,9 +739,18 @@ namespace DeskForms
 
         private void TxtCPF_Pac_KeyDown(object sender, KeyEventArgs e)
         {
+            if (checkCPF.Checked == true)
+            {
+                txtCampo_Pac.Mask = "000.000.000-00";
+            }
+            else if (checkCNPJ.Checked == true)
+            {
+                txtCampo_Pac.Mask = "00.000.000 / 0000 - 00";
+            }
+
             if (e.KeyData == Keys.Enter)
             {
-                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
             }
         }
 
@@ -666,7 +767,6 @@ namespace DeskForms
             string sex = "";
             DateTime dataPura = DateTime.Parse(editData.Text);
             string tempoMenor = dataPura.ToString("yyyy-MM-dd");
-            string temp = editSangue.Text;
             string[] tiposSanguineos = new string[]
             {
                 "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"
@@ -678,22 +778,25 @@ namespace DeskForms
             try
             {
                 if (!tiposSanguineos.Contains(editSangue.Text))
-                { throw new Exception(); }
+                { throw new Exception("Esse tipo sanguíneo NÃO existe!!"); }
 
-                foreach(TextBox txt in tabEdição.Controls)
+                foreach(Control ctrl in tabEdição.Controls)
                 {
-                    if(txt.Text == "")
+                    if(ctrl is TextBox)
                     {
-                        throw new Exception($"{txt.Name} está vazio");
-                    }
+                        if (ctrl.Text == "")
+                        {
+                            throw new Exception($"{ctrl.Name} está vazio");
+                        }
+                    }                    
                 }
 
-                sqlReturn($"call proc_editPac({int.Parse(editID.Text)},'{editNome.Text}','{editEmail.Text}','{tempoMenor}','{sex}','{editTelefone.Text}','{editCPF.Text}')");
+                sqlReturn($"call proc_editPac({int.Parse(editID.Text)},'{editNome.Text}','{editEmail.Text}','{tempoMenor}','{sex}','{editTelefone.Text}','{editCPF.Text}','{Properties.Settings.Default.imgPacEdit}')");
                 MessageBox.Show("Dados do paciente atualizados", "Sucesso!!");
             }
             catch(Exception ex){
-                MessageBox.Show($"How unfortunate!!\n{ex}", "Uh Oh");
-                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCPF_Pac.Text}'");
+                MessageBox.Show($"Erro!!\n\n{ex.Message}\n Mudanças não salvas serão apagadas", "Uh Oh");
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
             }
         }
 
@@ -728,12 +831,176 @@ namespace DeskForms
 
         private void btnRegFunc_Click(object sender, EventArgs e)
         {
-            abasPrincipal.SelectedTab = tabRegistroFunc;
+
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
             abasPrincipal.SelectedTab = tabAcesso;
+            txtCampo_Pac.Focus();
+        }
+
+        private void telHospital_KeyDown(object sender, KeyEventArgs e)
+        {
+            telHospital.Mask = "(00) 0000-0000";
+        }
+
+        private void cnpjHospital_KeyDown(object sender, KeyEventArgs e)
+        {
+            cnpjHospital.Mask = "00.000.000/0000-00";
+        }
+
+        private readonly List<string> diasDaSemana = new List<string>
+        {
+            "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"
+        };
+
+        private void btnRegistroHospital_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (Control ctrl in tabRegistroHosp.Controls)
+                {
+                    if (ctrl is TextBox || ctrl is MaskedTextBox)
+                    {
+                        if (ctrl.Text == "")
+                        {
+                            throw new Exception($"{ctrl.Name} está vazio!!");
+                        }
+                    }
+                }
+
+                List<int> checkedIndices = new List<int>();
+
+                foreach (int index in checkListDias.CheckedIndices)
+                {
+                    checkedIndices.Add(index);
+                }
+                checkedIndices.Sort();
+                string result = GetConsecutiveDays(checkedIndices);
+
+                string horasA = horaAbertura.Text;
+                string horasF = horaFechamento.Text;
+                string tudo = $"{result}:{horasA}-{horasF}";
+
+
+                string query = $"Insert into tblHospital values ('{cnpjHospital.Text}','{nomeHospital.Text}','{nomeDiretor.Text}','{descHospital.Text}','{emailHospital.Text}','{enderecoHospital.Text}','{tudo}','{telHospital.Text}')";
+
+                MySqlConnection conn = new MySqlConnection(stringConexão);
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                }
+                catch (Exception ep)
+                {
+                    MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                MessageBox.Show("Hospital Cadastrado!!", "Nicee");
+
+                foreach (Control ctrl in tabRegistroHosp.Controls)
+                {
+                    if (ctrl is TextBox || ctrl is MaskedTextBox)
+                    {
+                        ctrl.Text = "";
+                    }
+                }
+                for(int i = 0; i < checkListDias.Items.Count; i++)
+                {
+                    checkListDias.SetItemChecked(i, false);
+                }
+                horaAbertura.Text = "00:00";
+                horaFechamento.Text = "00:00";
+                cnpjHospital.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"erro!!\n{ex.Message}","vishh");
+            }
+            
+
+        }
+
+        private string GetConsecutiveDays(List<int> indices)
+        {
+            if (indices.Count == 0)
+            {
+                return "Nenhum dia selecionado";
+            }
+
+            List<string> result = new List<string>();
+
+            int start = indices[0];
+            int end = indices[0];
+
+            for (int i = 1; i < indices.Count; i++)
+            {
+                if (indices[i] == end + 1)
+                {
+                    end = indices[i];
+                }
+                else
+                {
+                    result.Add(FormatDays(start, end));
+                    start = indices[i];
+                    end = indices[i];
+                }
+            }
+
+            result.Add(FormatDays(start, end));
+
+            return string.Join(", ", result);
+        }
+
+        private string FormatDays(int start, int end)
+        {
+            if (start == end)
+            {
+                return diasDaSemana[start];
+            }
+            else
+            {
+                return $"{diasDaSemana[start]} à {diasDaSemana[end]}";
+            }
+        }
+
+        private void label43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkCPF_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void checkCNPJ_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void checkChanged(object sender, EventArgs e)
+        {
+            txtCampo_Pac.Text = "";
+            txtCampo_Pac.Focus();
+        }
+
+        private void btnDeleteHospital_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateHospital_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

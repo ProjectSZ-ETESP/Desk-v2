@@ -543,7 +543,7 @@ DELIMITER ;
 
 select * from tblUsuario;
 select * from tblFuncionario;
-select * from tblPaciente;
+
 select * from tblHospital;
 select * from tblConsulta;
 select * from tblNotificacao;
