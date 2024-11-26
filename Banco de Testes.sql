@@ -3,6 +3,7 @@ drop database hospitalar
 create database hospitalar;
 use hospitalar;
 */
+
 CREATE TABLE tblUsuario (
 idUsuario int PRIMARY KEY AUTO_INCREMENT,
 email varchar(50) NOT NULL,
@@ -130,7 +131,7 @@ receituario varchar(100) NOT NULL,
 CONSTRAINT fk_ConsultaProntuario FOREIGN KEY (idConsulta)
 	REFERENCES tblConsulta (idConsulta)
 );
-CREATE INDEX xProntuario ON tblProntuario (idProntuario, idConsulta);
+	CREATE INDEX xProntuario ON tblProntuario (idProntuario, idConsulta);
 
 CREATE TABLE tblDisponibilidade (
 idDisponibilidade int PRIMARY KEY AUTO_INCREMENT,
@@ -180,10 +181,10 @@ INSERT INTO tblHospital VALUES
 INSERT INTO tblPaciente (idUsuario, cpfPaciente, nomePaciente, sexoPaciente, dataNascPaciente, tipoSanguineo, condicoesMedicas, fonePaciente, fotoPaciente) VALUES
     (1, '11111111111', 'Pacio Primeiro I', 'm', '2000-01-01', 'A+', 'virose', '11111111110', '1'),
     (2, '22222222222', 'Pacia Segunda II', 'f', '2000-01-01', 'B+', 'TDAH', '22222222220', '2'),
-    (3, '33333333333', 'Pacio Terceiro III', 'm', '2000-01-01', 'AB', 'hemorragia interna pulmonar', '33333333330', '1'),
+    (3, '33333333333', 'Pacio Terceiro III', 'm', '2000-01-01', 'AB-', 'hemorragia interna pulmonar', '33333333330', '1'),
     (4, '44444444444', 'Pacia Quarta IV', 'f', '2000-01-01', 'A-', 'punturas na região do estômago', '44444444440', '3'),
-    (5, '55555555555', 'Pacie Quinto V', 'm', '2000-01-01', 'A', 'fratura da clavícula', '55555555550', '4'),
-    (6, '66666666666', 'Pacio Sexto VI', 'm', '2000-01-01', 'B', 'autismo', '66666666660', '1'),
+    (5, '55555555555', 'Pacie Quinto V', 'm', '2000-01-01', 'A-', 'fratura da clavícula', '55555555550', '4'),
+    (6, '66666666666', 'Pacio Sexto VI', 'm', '2000-01-01', 'B+', 'autismo', '66666666660', '1'),
     (7, '77777777777', 'Pacio Sétimo VII', 'm', '2000-01-01', 'A-', 'tumor no cérebro', '77777777770', '2'),
     (8, '88888888888', 'Pacia Oitava VIII', 'f', '2000-01-01', 'A+', 'dengue', '88888888880', '2'),
     (9, '99999999999', 'Pacia Nona IX', 'f', '2000-01-01', 'B+', 'amnésia leve', '99999999990', '1'),
@@ -229,11 +230,11 @@ INSERT INTO tblNotificacao (idUsuario, idConsulta, tipoNotificacao, textoNotific
     (11, 1, 'Agendamento efetuado', 'Exame psicotécnico', '2004-01-01', '23:59:59', 0),
     (9, 2, 'Agendamento efetuado', 'Cirurgia cerebral', '2004-01-01', '23:59:59', 1),
     (9, 2, 'Agendamento atualizado', 'Cirurgia cerebral', '2004-01-02', '23:59:59', 1),
-    (4, 3, 'Agendamento efetuado', 'Teste do pezinho', '2004-01-01', '23:59:59', 1),
+    (3, 3, 'Agendamento efetuado', 'Teste do pezinho', '2004-01-01', '23:59:59', 1),
     (1, 4, 'Agendamento efetuado', 'Cirurgia cardíaca', '2004-01-01', '23:59:59', 0),
-    (1, 5, 'Agendamento efetuado', 'Triagem: exame geral', '2004-01-01', '23:59:59', 1),
+    (5, 5, 'Agendamento efetuado', 'Triagem: exame geral', '2004-01-01', '23:59:59', 1),
     (6, 6, 'Agendamento efetuado', 'Exame psicológico', '2004-01-01', '23:59:59', 1),
-    (4, 7, 'Agendamento efetuado', 'Cirurgia de remoção do apêndice', '2004-01-01', '23:59:59', 1),
+    (7, 7, 'Agendamento efetuado', 'Cirurgia de remoção do apêndice', '2004-01-01', '23:59:59', 1),
     (20, 8, 'Agendamento efetuado', 'Exame cerebral', '2004-01-01', '23:59:59', 0),
     (17, 9, 'Agendamento efetuado', 'Exame de sangue', '2004-01-01', '23:59:59', 0),
     (15, 10, 'Agendamento efetuado', 'Cirurgia de parto', '2004-01-01', '23:59:59', 1);
@@ -410,8 +411,6 @@ BEGIN
 END$$
 DELIMITER ;
 
-
-
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_editFunc`(
     IN p_id INT,
@@ -543,10 +542,29 @@ DELIMITER ;
 
 select * from tblUsuario;
 select * from tblFuncionario;
+	
+INSERT INTO tblPendente (idPaciente, cnpj, dataPendente, horaPendente, descPaciente)
+VALUES
+(1, '10101010101010', '2024-11-25', '08:30:00', 'Paciente aguardando autorização para cirurgia.'),
+(2, '11111111111111', '2024-11-24', '09:45:00', 'Paciente em análise para exame de imagem.'),
+(3, '22222222222222', '2024-11-23', '10:15:00', 'Aguardando laudo médico.'),
+(4, '33333333333333', '2024-11-22', '11:00:00', 'Paciente aguardando disponibilidade de leito.'),
+(5, '44444444444444', '2024-11-21', '14:30:00', 'Exame laboratorial pendente.'),
+(6, '55555555555555', '2024-11-20', '16:00:00', 'Autorização de plano de saúde pendente.'),
+(7, '66666666666666', '2024-11-19', '17:45:00', 'Consulta agendada sem confirmação do paciente.'),
+(8, '77777777777777', '2024-11-18', '18:20:00', 'Pendência na documentação do paciente.'),
+(9, '88888888888888', '2024-11-17', '19:00:00', 'Aguardando vaga para internação.'),
+(10, '99999999999999', '2024-11-16', '20:15:00', 'Paciente aguardando liberação de medicamentos.');
 
+    
 select * from tblHospital;
 select * from tblConsulta;
 select * from tblNotificacao;
+Select * from tblPendente;
+Select * from tblPaciente;
+Select * from tblProntuario;
+
+
 
 /*
 delete from tblPaciente where idUsuario = 3;

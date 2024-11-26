@@ -505,3 +505,9 @@ F:\Axis\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.CopyComplete
 F:\Axis\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.exe
 F:\Axis\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.pdb
 E:\Axis\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.csproj.AssemblyReference.cache
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\Droitech.TextFont.dll
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.CheckPendente.resources
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\DeskForms.exe.manifest
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\bin\Debug\DeskForms.application
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.exe.manifest
+C:\Users\alenc\Music\Desk-v2\DeskForms\DeskForms\obj\Debug\DeskForms.application

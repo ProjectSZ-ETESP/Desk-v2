@@ -107,7 +107,7 @@ namespace DeskForms
                 }
                 else
                 {
-                    MessageBox.Show($"XIHHHH", "uh oh");
+                    MessageBox.Show($"Dados Incorretos\nVerifique os dados inseridos", "Atenção");
                 }
 
                 conn.Close();

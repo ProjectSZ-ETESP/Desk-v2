@@ -107,9 +107,23 @@
             this.label47 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.panelNav = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.btnConfig = new System.Windows.Forms.PictureBox();
+            this.btnHospital = new System.Windows.Forms.PictureBox();
+            this.btnConsulta = new System.Windows.Forms.PictureBox();
+            this.btnRegistro = new System.Windows.Forms.PictureBox();
+            this.pfpLateral = new System.Windows.Forms.PictureBox();
+            this.abasPrincipal = new System.Windows.Forms.TabControl();
+            this.tabHome = new System.Windows.Forms.TabPage();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.flwPendentes = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblAgendamentos = new System.Windows.Forms.Label();
             this.tabPerfil = new System.Windows.Forms.TabPage();
             this.lblTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.btnConfig = new System.Windows.Forms.PictureBox();
             this.lblHospital = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.PictureBox();
@@ -123,13 +137,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.PictureBox();
             this.imagePerfil = new System.Windows.Forms.PictureBox();
-            this.panelNav = new System.Windows.Forms.Panel();
-            this.btnRegFunc = new System.Windows.Forms.PictureBox();
-            this.btnHospital = new System.Windows.Forms.PictureBox();
-            this.pfpLateral = new System.Windows.Forms.PictureBox();
-            this.btnConsulta = new System.Windows.Forms.PictureBox();
-            this.btnRegistro = new System.Windows.Forms.PictureBox();
-            this.abasPrincipal = new System.Windows.Forms.TabControl();
             this.tabRegistro = new System.Windows.Forms.TabPage();
             this.btnEditRegistro = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -149,66 +156,39 @@
             this.label20 = new System.Windows.Forms.Label();
             this.pfpPaciente = new System.Windows.Forms.PictureBox();
             this.tabAcesso = new System.Windows.Forms.TabPage();
-            this.checkCNPJ = new System.Windows.Forms.RadioButton();
-            this.checkCPF = new System.Windows.Forms.RadioButton();
             this.txtCampo_Pac = new System.Windows.Forms.MaskedTextBox();
             this.btnSearchPac = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabEdicaoHosp = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
-            this.btnUpdateHospital = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.dateFechamentoEdi = new System.Windows.Forms.DateTimePicker();
-            this.dateAberturaEdi = new System.Windows.Forms.DateTimePicker();
-            this.checkListEdicao = new System.Windows.Forms.CheckedListBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.mskEndereco = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.mskEmail = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.mskDirecao = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.mskDiretor = new System.Windows.Forms.TextBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.mskNomeHospital = new System.Windows.Forms.TextBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.mskCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.btnDeleteHospital = new System.Windows.Forms.Button();
             this.tabEdição.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editEditarrs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEdit)).BeginInit();
             this.tabConfig.SuspendLayout();
             this.tabRegistroHosp.SuspendLayout();
-            this.tabPerfil.SuspendLayout();
+            this.panelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
+            this.abasPrincipal.SuspendLayout();
+            this.tabHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
+            this.tabPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).BeginInit();
-            this.panelNav.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).BeginInit();
-            this.abasPrincipal.SuspendLayout();
             this.tabRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditRegistro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pfpPaciente)).BeginInit();
             this.tabAcesso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabEdicaoHosp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,13 +236,13 @@
             // 
             this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefone.Location = new System.Drawing.Point(427, 269);
             this.txtTelefone.Mask = "(99) 00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.PromptChar = ' ';
             this.txtTelefone.ResetOnPrompt = false;
-            this.txtTelefone.Size = new System.Drawing.Size(134, 26);
+            this.txtTelefone.Size = new System.Drawing.Size(134, 31);
             this.txtTelefone.TabIndex = 8;
             this.txtTelefone.Tag = "text";
             this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
@@ -295,13 +275,13 @@
             // 
             this.txtDataNasc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDataNasc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataNasc.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataNasc.Location = new System.Drawing.Point(69, 439);
             this.txtDataNasc.Mask = "00/00/0000";
             this.txtDataNasc.Name = "txtDataNasc";
             this.txtDataNasc.PromptChar = ' ';
             this.txtDataNasc.ResetOnPrompt = false;
-            this.txtDataNasc.Size = new System.Drawing.Size(114, 26);
+            this.txtDataNasc.Size = new System.Drawing.Size(114, 31);
             this.txtDataNasc.TabIndex = 6;
             this.txtDataNasc.Tag = "text";
             this.txtDataNasc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -640,6 +620,7 @@
             this.editCPF.Mask = "000.000.000-00";
             this.editCPF.Name = "editCPF";
             this.editCPF.PromptChar = ' ';
+            this.editCPF.ReadOnly = true;
             this.editCPF.ResetOnPrompt = false;
             this.editCPF.Size = new System.Drawing.Size(139, 26);
             this.editCPF.TabIndex = 38;
@@ -1229,11 +1210,215 @@
             this.label23.Tag = "title";
             this.label23.Text = "Data de Nascimento";
             // 
+            // panelNav
+            // 
+            this.panelNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
+            this.panelNav.Controls.Add(this.btnHome);
+            this.panelNav.Controls.Add(this.btnConfig);
+            this.panelNav.Location = new System.Drawing.Point(0, 29);
+            this.panelNav.Name = "panelNav";
+            this.panelNav.Size = new System.Drawing.Size(50, 605);
+            this.panelNav.TabIndex = 2;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Location = new System.Drawing.Point(6, 30);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(35, 35);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHome.TabIndex = 9;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConfig.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfig.BackgroundImage = global::DeskForms.Properties.Resources.configBlack;
+            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfig.Location = new System.Drawing.Point(6, 552);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(35, 35);
+            this.btnConfig.TabIndex = 5;
+            this.btnConfig.TabStop = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnHospital
+            // 
+            this.btnHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHospital.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHospital.BackgroundImage")));
+            this.btnHospital.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHospital.Image = ((System.Drawing.Image)(resources.GetObject("btnHospital.Image")));
+            this.btnHospital.Location = new System.Drawing.Point(597, 430);
+            this.btnHospital.Name = "btnHospital";
+            this.btnHospital.Size = new System.Drawing.Size(90, 90);
+            this.btnHospital.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnHospital.TabIndex = 7;
+            this.btnHospital.TabStop = false;
+            this.btnHospital.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
+            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
+            this.btnConsulta.Location = new System.Drawing.Point(597, 61);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(90, 90);
+            this.btnConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.TabStop = false;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
+            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistro.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistro.Image")));
+            this.btnRegistro.Location = new System.Drawing.Point(597, 237);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(90, 90);
+            this.btnRegistro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRegistro.TabIndex = 2;
+            this.btnRegistro.TabStop = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
+            // 
+            // pfpLateral
+            // 
+            this.pfpLateral.BackgroundImage = global::DeskForms.Properties.Resources.dog;
+            this.pfpLateral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pfpLateral.Location = new System.Drawing.Point(763, 3);
+            this.pfpLateral.Name = "pfpLateral";
+            this.pfpLateral.Size = new System.Drawing.Size(38, 35);
+            this.pfpLateral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pfpLateral.TabIndex = 6;
+            this.pfpLateral.TabStop = false;
+            this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
+            // 
+            // abasPrincipal
+            // 
+            this.abasPrincipal.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.abasPrincipal.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.abasPrincipal.Controls.Add(this.tabHome);
+            this.abasPrincipal.Controls.Add(this.tabPerfil);
+            this.abasPrincipal.Controls.Add(this.tabRegistro);
+            this.abasPrincipal.Controls.Add(this.tabAcesso);
+            this.abasPrincipal.Controls.Add(this.tabRegistroHosp);
+            this.abasPrincipal.Controls.Add(this.tabConfig);
+            this.abasPrincipal.Controls.Add(this.tabEdição);
+            this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
+            this.abasPrincipal.Location = new System.Drawing.Point(43, 22);
+            this.abasPrincipal.Multiline = true;
+            this.abasPrincipal.Name = "abasPrincipal";
+            this.abasPrincipal.Padding = new System.Drawing.Point(0, 0);
+            this.abasPrincipal.SelectedIndex = 0;
+            this.abasPrincipal.Size = new System.Drawing.Size(854, 638);
+            this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.abasPrincipal.TabIndex = 3;
+            this.abasPrincipal.TabStop = false;
+            // 
+            // tabHome
+            // 
+            this.tabHome.Controls.Add(this.label59);
+            this.tabHome.Controls.Add(this.label58);
+            this.tabHome.Controls.Add(this.label43);
+            this.tabHome.Controls.Add(this.btnRefresh);
+            this.tabHome.Controls.Add(this.btnHospital);
+            this.tabHome.Controls.Add(this.flwPendentes);
+            this.tabHome.Controls.Add(this.btnConsulta);
+            this.tabHome.Controls.Add(this.lblAgendamentos);
+            this.tabHome.Controls.Add(this.btnRegistro);
+            this.tabHome.Location = new System.Drawing.Point(4, 4);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Size = new System.Drawing.Size(846, 590);
+            this.tabHome.TabIndex = 7;
+            this.tabHome.Text = "tabPage1";
+            this.tabHome.UseVisualStyleBackColor = true;
+            this.tabHome.Click += new System.EventHandler(this.tabHome_Click);
+            // 
+            // label59
+            // 
+            this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(544, 523);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(197, 34);
+            this.label59.TabIndex = 13;
+            this.label59.Tag = "label";
+            this.label59.Text = "Registrar Hospitais";
+            // 
+            // label58
+            // 
+            this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(554, 349);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(203, 34);
+            this.label58.TabIndex = 12;
+            this.label58.Tag = "label";
+            this.label58.Text = "Registrar Pacientes";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(554, 172);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(178, 34);
+            this.label43.TabIndex = 11;
+            this.label43.Tag = "label";
+            this.label43.Text = "Pesquisar Fichas";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(407, 61);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(35, 35);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRefresh.TabIndex = 10;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // flwPendentes
+            // 
+            this.flwPendentes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flwPendentes.AutoScroll = true;
+            this.flwPendentes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flwPendentes.Location = new System.Drawing.Point(108, 111);
+            this.flwPendentes.Name = "flwPendentes";
+            this.flwPendentes.Size = new System.Drawing.Size(334, 452);
+            this.flwPendentes.TabIndex = 0;
+            // 
+            // lblAgendamentos
+            // 
+            this.lblAgendamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAgendamentos.AutoSize = true;
+            this.lblAgendamentos.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgendamentos.Location = new System.Drawing.Point(102, 61);
+            this.lblAgendamentos.Name = "lblAgendamentos";
+            this.lblAgendamentos.Size = new System.Drawing.Size(310, 34);
+            this.lblAgendamentos.TabIndex = 1;
+            this.lblAgendamentos.Tag = "label";
+            this.lblAgendamentos.Text = "Verifique seus agendamentos";
+            // 
             // tabPerfil
             // 
             this.tabPerfil.BackColor = System.Drawing.Color.White;
             this.tabPerfil.Controls.Add(this.lblTelefone);
-            this.tabPerfil.Controls.Add(this.btnConfig);
             this.tabPerfil.Controls.Add(this.lblHospital);
             this.tabPerfil.Controls.Add(this.label19);
             this.tabPerfil.Controls.Add(this.btnLogout);
@@ -1270,19 +1455,6 @@
             this.lblTelefone.TabIndex = 21;
             this.lblTelefone.Tag = "label";
             this.lblTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            // 
-            // btnConfig
-            // 
-            this.btnConfig.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnConfig.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfig.BackgroundImage = global::DeskForms.Properties.Resources.configWhite;
-            this.btnConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfig.Location = new System.Drawing.Point(783, 507);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(40, 40);
-            this.btnConfig.TabIndex = 5;
-            this.btnConfig.TabStop = false;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // lblHospital
             // 
@@ -1432,103 +1604,6 @@
             this.imagePerfil.TabIndex = 7;
             this.imagePerfil.TabStop = false;
             // 
-            // panelNav
-            // 
-            this.panelNav.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
-            this.panelNav.Controls.Add(this.btnRegFunc);
-            this.panelNav.Controls.Add(this.btnHospital);
-            this.panelNav.Controls.Add(this.pfpLateral);
-            this.panelNav.Controls.Add(this.btnConsulta);
-            this.panelNav.Controls.Add(this.btnRegistro);
-            this.panelNav.Location = new System.Drawing.Point(0, 29);
-            this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(50, 605);
-            this.panelNav.TabIndex = 2;
-            // 
-            // btnRegFunc
-            // 
-            this.btnRegFunc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegFunc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegFunc.BackgroundImage")));
-            this.btnRegFunc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegFunc.Location = new System.Drawing.Point(11, 278);
-            this.btnRegFunc.Name = "btnRegFunc";
-            this.btnRegFunc.Size = new System.Drawing.Size(26, 25);
-            this.btnRegFunc.TabIndex = 8;
-            this.btnRegFunc.TabStop = false;
-            this.btnRegFunc.Click += new System.EventHandler(this.btnRegFunc_Click);
-            // 
-            // btnHospital
-            // 
-            this.btnHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHospital.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHospital.BackgroundImage")));
-            this.btnHospital.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHospital.Location = new System.Drawing.Point(11, 230);
-            this.btnHospital.Name = "btnHospital";
-            this.btnHospital.Size = new System.Drawing.Size(26, 25);
-            this.btnHospital.TabIndex = 7;
-            this.btnHospital.TabStop = false;
-            this.btnHospital.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pfpLateral
-            // 
-            this.pfpLateral.BackgroundImage = global::DeskForms.Properties.Resources.dog;
-            this.pfpLateral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pfpLateral.Location = new System.Drawing.Point(8, 22);
-            this.pfpLateral.Name = "pfpLateral";
-            this.pfpLateral.Size = new System.Drawing.Size(35, 35);
-            this.pfpLateral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pfpLateral.TabIndex = 6;
-            this.pfpLateral.TabStop = false;
-            this.pfpLateral.Click += new System.EventHandler(this.PfpLateral_Click);
-            // 
-            // btnConsulta
-            // 
-            this.btnConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
-            this.btnConsulta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsulta.Location = new System.Drawing.Point(11, 110);
-            this.btnConsulta.Name = "btnConsulta";
-            this.btnConsulta.Size = new System.Drawing.Size(26, 25);
-            this.btnConsulta.TabIndex = 3;
-            this.btnConsulta.TabStop = false;
-            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegistro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistro.BackgroundImage")));
-            this.btnRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistro.Location = new System.Drawing.Point(11, 174);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(26, 25);
-            this.btnRegistro.TabIndex = 2;
-            this.btnRegistro.TabStop = false;
-            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
-            // 
-            // abasPrincipal
-            // 
-            this.abasPrincipal.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.abasPrincipal.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.abasPrincipal.Controls.Add(this.tabPerfil);
-            this.abasPrincipal.Controls.Add(this.tabRegistro);
-            this.abasPrincipal.Controls.Add(this.tabAcesso);
-            this.abasPrincipal.Controls.Add(this.tabEdição);
-            this.abasPrincipal.Controls.Add(this.tabRegistroHosp);
-            this.abasPrincipal.Controls.Add(this.tabConfig);
-            this.abasPrincipal.Controls.Add(this.tabEdicaoHosp);
-            this.abasPrincipal.ItemSize = new System.Drawing.Size(50, 40);
-            this.abasPrincipal.Location = new System.Drawing.Point(43, 22);
-            this.abasPrincipal.Multiline = true;
-            this.abasPrincipal.Name = "abasPrincipal";
-            this.abasPrincipal.Padding = new System.Drawing.Point(0, 0);
-            this.abasPrincipal.SelectedIndex = 0;
-            this.abasPrincipal.Size = new System.Drawing.Size(854, 638);
-            this.abasPrincipal.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.abasPrincipal.TabIndex = 3;
-            this.abasPrincipal.TabStop = false;
-            // 
             // tabRegistro
             // 
             this.tabRegistro.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
@@ -1582,12 +1657,11 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(425, 441);
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(259, 26);
+            this.textBox1.Size = new System.Drawing.Size(259, 31);
             this.textBox1.TabIndex = 67;
             // 
             // label45
@@ -1606,12 +1680,11 @@
             // 
             this.txtCondicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCondicao.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCondicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCondicao.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCondicao.Location = new System.Drawing.Point(424, 363);
             this.txtCondicao.MaxLength = 30;
             this.txtCondicao.Name = "txtCondicao";
-            this.txtCondicao.ReadOnly = true;
-            this.txtCondicao.Size = new System.Drawing.Size(259, 26);
+            this.txtCondicao.Size = new System.Drawing.Size(259, 31);
             this.txtCondicao.TabIndex = 65;
             // 
             // label46
@@ -1678,11 +1751,11 @@
             // 
             this.txtID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtID.BackColor = System.Drawing.SystemColors.Window;
-            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(69, 128);
             this.txtID.MaxLength = 3;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(52, 26);
+            this.txtID.Size = new System.Drawing.Size(52, 31);
             this.txtID.TabIndex = 0;
             this.txtID.Tag = "text";
             // 
@@ -1702,13 +1775,12 @@
             // 
             this.txtCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCPF.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPF.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPF.Location = new System.Drawing.Point(68, 194);
-            this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.PromptChar = ' ';
             this.txtCPF.ResetOnPrompt = false;
-            this.txtCPF.Size = new System.Drawing.Size(139, 26);
+            this.txtCPF.Size = new System.Drawing.Size(139, 31);
             this.txtCPF.TabIndex = 1;
             this.txtCPF.Tag = "text";
             this.txtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1731,11 +1803,11 @@
             // 
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.Location = new System.Drawing.Point(68, 269);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(252, 26);
+            this.txtNome.Size = new System.Drawing.Size(252, 31);
             this.txtNome.TabIndex = 2;
             this.txtNome.Tag = "text";
             // 
@@ -1776,8 +1848,6 @@
             // 
             // tabAcesso
             // 
-            this.tabAcesso.Controls.Add(this.checkCNPJ);
-            this.tabAcesso.Controls.Add(this.checkCPF);
             this.tabAcesso.Controls.Add(this.txtCampo_Pac);
             this.tabAcesso.Controls.Add(this.btnSearchPac);
             this.tabAcesso.Controls.Add(this.pictureBox2);
@@ -1789,42 +1859,13 @@
             this.tabAcesso.Text = "0";
             this.tabAcesso.UseVisualStyleBackColor = true;
             // 
-            // checkCNPJ
-            // 
-            this.checkCNPJ.AutoSize = true;
-            this.checkCNPJ.Font = new System.Drawing.Font("Poppins Medium", 14.25F);
-            this.checkCNPJ.Location = new System.Drawing.Point(348, 373);
-            this.checkCNPJ.Name = "checkCNPJ";
-            this.checkCNPJ.Size = new System.Drawing.Size(183, 38);
-            this.checkCNPJ.TabIndex = 63;
-            this.checkCNPJ.Tag = "label";
-            this.checkCNPJ.Text = "CNPJ - Hospital";
-            this.checkCNPJ.UseVisualStyleBackColor = true;
-            this.checkCNPJ.CheckedChanged += new System.EventHandler(this.checkChanged);
-            this.checkCNPJ.Click += new System.EventHandler(this.checkCNPJ_Click);
-            // 
-            // checkCPF
-            // 
-            this.checkCPF.AutoSize = true;
-            this.checkCPF.Checked = true;
-            this.checkCPF.Font = new System.Drawing.Font("Poppins Medium", 14.25F);
-            this.checkCPF.Location = new System.Drawing.Point(348, 329);
-            this.checkCPF.Name = "checkCPF";
-            this.checkCPF.Size = new System.Drawing.Size(173, 38);
-            this.checkCPF.TabIndex = 62;
-            this.checkCPF.TabStop = true;
-            this.checkCPF.Tag = "label";
-            this.checkCPF.Text = "CPF - Paciente";
-            this.checkCPF.UseVisualStyleBackColor = true;
-            this.checkCPF.CheckedChanged += new System.EventHandler(this.checkChanged);
-            this.checkCPF.Click += new System.EventHandler(this.checkCPF_Click);
-            // 
             // txtCampo_Pac
             // 
             this.txtCampo_Pac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCampo_Pac.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCampo_Pac.Font = new System.Drawing.Font("Poppins Medium", 16F);
             this.txtCampo_Pac.Location = new System.Drawing.Point(250, 269);
+            this.txtCampo_Pac.Mask = "000.000.000-00";
             this.txtCampo_Pac.Name = "txtCampo_Pac";
             this.txtCampo_Pac.PromptChar = ' ';
             this.txtCampo_Pac.ResetOnPrompt = false;
@@ -1838,7 +1879,7 @@
             // 
             this.btnSearchPac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearchPac.Font = new System.Drawing.Font("Poppins Medium", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchPac.Location = new System.Drawing.Point(368, 417);
+            this.btnSearchPac.Location = new System.Drawing.Point(375, 340);
             this.btnSearchPac.Name = "btnSearchPac";
             this.btnSearchPac.Size = new System.Drawing.Size(153, 45);
             this.btnSearchPac.TabIndex = 58;
@@ -1858,398 +1899,49 @@
             this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
             // 
-            // tabEdicaoHosp
-            // 
-            this.tabEdicaoHosp.Controls.Add(this.btnDeleteHospital);
-            this.tabEdicaoHosp.Controls.Add(this.mskTelefone);
-            this.tabEdicaoHosp.Controls.Add(this.btnUpdateHospital);
-            this.tabEdicaoHosp.Controls.Add(this.label43);
-            this.tabEdicaoHosp.Controls.Add(this.label58);
-            this.tabEdicaoHosp.Controls.Add(this.label59);
-            this.tabEdicaoHosp.Controls.Add(this.dateFechamentoEdi);
-            this.tabEdicaoHosp.Controls.Add(this.dateAberturaEdi);
-            this.tabEdicaoHosp.Controls.Add(this.checkListEdicao);
-            this.tabEdicaoHosp.Controls.Add(this.label60);
-            this.tabEdicaoHosp.Controls.Add(this.mskEndereco);
-            this.tabEdicaoHosp.Controls.Add(this.label61);
-            this.tabEdicaoHosp.Controls.Add(this.mskEmail);
-            this.tabEdicaoHosp.Controls.Add(this.label62);
-            this.tabEdicaoHosp.Controls.Add(this.mskDirecao);
-            this.tabEdicaoHosp.Controls.Add(this.label63);
-            this.tabEdicaoHosp.Controls.Add(this.mskDiretor);
-            this.tabEdicaoHosp.Controls.Add(this.label64);
-            this.tabEdicaoHosp.Controls.Add(this.label65);
-            this.tabEdicaoHosp.Controls.Add(this.mskNomeHospital);
-            this.tabEdicaoHosp.Controls.Add(this.label66);
-            this.tabEdicaoHosp.Controls.Add(this.label67);
-            this.tabEdicaoHosp.Controls.Add(this.mskCNPJ);
-            this.tabEdicaoHosp.Controls.Add(this.label68);
-            this.tabEdicaoHosp.Controls.Add(this.label69);
-            this.tabEdicaoHosp.Location = new System.Drawing.Point(4, 4);
-            this.tabEdicaoHosp.Name = "tabEdicaoHosp";
-            this.tabEdicaoHosp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEdicaoHosp.Size = new System.Drawing.Size(846, 590);
-            this.tabEdicaoHosp.TabIndex = 6;
-            this.tabEdicaoHosp.Text = "tabPage1";
-            this.tabEdicaoHosp.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.BackgroundImage = global::DeskForms.Properties.Resources.close1;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(866, 11);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
             // pictureBox7
             // 
             this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.pictureBox7.BackColor = System.Drawing.Color.White;
-            this.pictureBox7.BackgroundImage = global::DeskForms.Properties.Resources.min1;
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(840, 11);
+            this.pictureBox7.Location = new System.Drawing.Point(817, 8);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox7.TabIndex = 8;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(853, 8);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Controls.Add(this.pfpLateral);
+            this.panel1.Location = new System.Drawing.Point(0, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(897, 38);
+            this.panel1.Size = new System.Drawing.Size(893, 41);
             this.panel1.TabIndex = 22;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Principal_MouseUp);
-            // 
-            // mskTelefone
-            // 
-            this.mskTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.mskTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskTelefone.Location = new System.Drawing.Point(417, 466);
-            this.mskTelefone.Name = "mskTelefone";
-            this.mskTelefone.PromptChar = ' ';
-            this.mskTelefone.ResetOnPrompt = false;
-            this.mskTelefone.Size = new System.Drawing.Size(140, 26);
-            this.mskTelefone.TabIndex = 84;
-            this.mskTelefone.Tag = "text";
-            this.mskTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            // 
-            // btnUpdateHospital
-            // 
-            this.btnUpdateHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdateHospital.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
-            this.btnUpdateHospital.Font = new System.Drawing.Font("Poppins ExtraBold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateHospital.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateHospital.Location = new System.Drawing.Point(640, 449);
-            this.btnUpdateHospital.Name = "btnUpdateHospital";
-            this.btnUpdateHospital.Size = new System.Drawing.Size(173, 60);
-            this.btnUpdateHospital.TabIndex = 83;
-            this.btnUpdateHospital.Text = "Atualizar";
-            this.btnUpdateHospital.UseVisualStyleBackColor = false;
-            this.btnUpdateHospital.Click += new System.EventHandler(this.btnUpdateHospital_Click);
-            // 
-            // label43
-            // 
-            this.label43.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(411, 426);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(91, 31);
-            this.label43.TabIndex = 82;
-            this.label43.Tag = "title";
-            this.label43.Text = "Telefone";
-            // 
-            // label58
-            // 
-            this.label58.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(557, 328);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(176, 25);
-            this.label58.TabIndex = 81;
-            this.label58.Tag = "title";
-            this.label58.Text = "Horário de fechamento";
-            // 
-            // label59
-            // 
-            this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Poppins SemiBold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(557, 237);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(151, 25);
-            this.label59.TabIndex = 80;
-            this.label59.Tag = "title";
-            this.label59.Text = "Horário de abertura";
-            // 
-            // dateFechamentoEdi
-            // 
-            this.dateFechamentoEdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateFechamentoEdi.CustomFormat = "  HH:mm";
-            this.dateFechamentoEdi.Font = new System.Drawing.Font("Poppins Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateFechamentoEdi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFechamentoEdi.Location = new System.Drawing.Point(562, 356);
-            this.dateFechamentoEdi.Name = "dateFechamentoEdi";
-            this.dateFechamentoEdi.ShowUpDown = true;
-            this.dateFechamentoEdi.Size = new System.Drawing.Size(108, 39);
-            this.dateFechamentoEdi.TabIndex = 79;
-            // 
-            // dateAberturaEdi
-            // 
-            this.dateAberturaEdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateAberturaEdi.CustomFormat = "  HH:mm";
-            this.dateAberturaEdi.Font = new System.Drawing.Font("Poppins Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateAberturaEdi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateAberturaEdi.Location = new System.Drawing.Point(562, 265);
-            this.dateAberturaEdi.Name = "dateAberturaEdi";
-            this.dateAberturaEdi.ShowUpDown = true;
-            this.dateAberturaEdi.Size = new System.Drawing.Size(108, 39);
-            this.dateAberturaEdi.TabIndex = 78;
-            // 
-            // checkListEdicao
-            // 
-            this.checkListEdicao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkListEdicao.Font = new System.Drawing.Font("Poppins Medium", 10F);
-            this.checkListEdicao.FormattingEnabled = true;
-            this.checkListEdicao.Items.AddRange(new object[] {
-            "Segunda",
-            "Terça",
-            "Quarta",
-            "Quinta",
-            "Sexta",
-            "Sábado",
-            "Domingo"});
-            this.checkListEdicao.Location = new System.Drawing.Point(418, 237);
-            this.checkListEdicao.Name = "checkListEdicao";
-            this.checkListEdicao.Size = new System.Drawing.Size(121, 158);
-            this.checkListEdicao.TabIndex = 77;
-            // 
-            // label60
-            // 
-            this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(411, 199);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(265, 31);
-            this.label60.TabIndex = 76;
-            this.label60.Tag = "title";
-            this.label60.Text = "Funcionamento do Hospital";
-            // 
-            // mskEndereco
-            // 
-            this.mskEndereco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.mskEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskEndereco.Location = new System.Drawing.Point(418, 138);
-            this.mskEndereco.MaxLength = 100;
-            this.mskEndereco.Name = "mskEndereco";
-            this.mskEndereco.Size = new System.Drawing.Size(252, 26);
-            this.mskEndereco.TabIndex = 74;
-            this.mskEndereco.Tag = "text";
-            // 
-            // label61
-            // 
-            this.label61.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(411, 98);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(99, 31);
-            this.label61.TabIndex = 75;
-            this.label61.Tag = "title";
-            this.label61.Text = "Endereço";
-            // 
-            // mskEmail
-            // 
-            this.mskEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskEmail.BackColor = System.Drawing.SystemColors.Window;
-            this.mskEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskEmail.Location = new System.Drawing.Point(44, 466);
-            this.mskEmail.MaxLength = 50;
-            this.mskEmail.Name = "mskEmail";
-            this.mskEmail.Size = new System.Drawing.Size(252, 26);
-            this.mskEmail.TabIndex = 72;
-            this.mskEmail.Tag = "text";
-            // 
-            // label62
-            // 
-            this.label62.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(37, 426);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(171, 31);
-            this.label62.TabIndex = 73;
-            this.label62.Tag = "title";
-            this.label62.Text = "Email do Hospital";
-            // 
-            // mskDirecao
-            // 
-            this.mskDirecao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskDirecao.BackColor = System.Drawing.SystemColors.Window;
-            this.mskDirecao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskDirecao.Location = new System.Drawing.Point(44, 381);
-            this.mskDirecao.MaxLength = 50;
-            this.mskDirecao.Name = "mskDirecao";
-            this.mskDirecao.Size = new System.Drawing.Size(252, 26);
-            this.mskDirecao.TabIndex = 70;
-            this.mskDirecao.Tag = "text";
-            // 
-            // label63
-            // 
-            this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(37, 341);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(211, 31);
-            this.label63.TabIndex = 71;
-            this.label63.Tag = "title";
-            this.label63.Text = "Descrição do Hospital";
-            // 
-            // mskDiretor
-            // 
-            this.mskDiretor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskDiretor.BackColor = System.Drawing.SystemColors.Window;
-            this.mskDiretor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskDiretor.Location = new System.Drawing.Point(44, 299);
-            this.mskDiretor.MaxLength = 50;
-            this.mskDiretor.Name = "mskDiretor";
-            this.mskDiretor.Size = new System.Drawing.Size(252, 26);
-            this.mskDiretor.TabIndex = 68;
-            this.mskDiretor.Tag = "text";
-            // 
-            // label64
-            // 
-            this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(37, 259);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(160, 31);
-            this.label64.TabIndex = 69;
-            this.label64.Tag = "title";
-            this.label64.Text = "Nome do Diretor";
-            // 
-            // label65
-            // 
-            this.label65.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.ForeColor = System.Drawing.Color.Red;
-            this.label65.Location = new System.Drawing.Point(205, 184);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(16, 20);
-            this.label65.TabIndex = 67;
-            this.label65.Text = "*";
-            // 
-            // mskNomeHospital
-            // 
-            this.mskNomeHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskNomeHospital.BackColor = System.Drawing.SystemColors.Window;
-            this.mskNomeHospital.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskNomeHospital.Location = new System.Drawing.Point(44, 224);
-            this.mskNomeHospital.MaxLength = 50;
-            this.mskNomeHospital.Name = "mskNomeHospital";
-            this.mskNomeHospital.Size = new System.Drawing.Size(252, 26);
-            this.mskNomeHospital.TabIndex = 65;
-            this.mskNomeHospital.Tag = "text";
-            // 
-            // label66
-            // 
-            this.label66.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(37, 184);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(174, 31);
-            this.label66.TabIndex = 66;
-            this.label66.Tag = "title";
-            this.label66.Text = "Nome do Hospital";
-            // 
-            // label67
-            // 
-            this.label67.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.Red;
-            this.label67.Location = new System.Drawing.Point(90, 98);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(16, 20);
-            this.label67.TabIndex = 64;
-            this.label67.Text = "*";
-            // 
-            // mskCNPJ
-            // 
-            this.mskCNPJ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mskCNPJ.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.mskCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskCNPJ.Location = new System.Drawing.Point(44, 137);
-            this.mskCNPJ.Name = "mskCNPJ";
-            this.mskCNPJ.PromptChar = ' ';
-            this.mskCNPJ.ResetOnPrompt = false;
-            this.mskCNPJ.Size = new System.Drawing.Size(177, 26);
-            this.mskCNPJ.TabIndex = 62;
-            this.mskCNPJ.Tag = "text";
-            this.mskCNPJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mskCNPJ.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            // 
-            // label68
-            // 
-            this.label68.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Poppins SemiBold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(35, 98);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(62, 31);
-            this.label68.TabIndex = 63;
-            this.label68.Tag = "title";
-            this.label68.Text = "CNPJ";
-            // 
-            // label69
-            // 
-            this.label69.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(226, 21);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(295, 36);
-            this.label69.TabIndex = 61;
-            this.label69.Tag = "label";
-            this.label69.Text = "Edição dos Hospitais";
-            // 
-            // btnDeleteHospital
-            // 
-            this.btnDeleteHospital.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeleteHospital.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(96)))));
-            this.btnDeleteHospital.Font = new System.Drawing.Font("Poppins ExtraBold", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteHospital.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDeleteHospital.Location = new System.Drawing.Point(640, 515);
-            this.btnDeleteHospital.Name = "btnDeleteHospital";
-            this.btnDeleteHospital.Size = new System.Drawing.Size(173, 60);
-            this.btnDeleteHospital.TabIndex = 85;
-            this.btnDeleteHospital.Text = "Apagar";
-            this.btnDeleteHospital.UseVisualStyleBackColor = false;
-            this.btnDeleteHospital.Click += new System.EventHandler(this.btnDeleteHospital_Click);
             // 
             // Principal
             // 
@@ -2279,19 +1971,22 @@
             this.tabConfig.PerformLayout();
             this.tabRegistroHosp.ResumeLayout(false);
             this.tabRegistroHosp.PerformLayout();
+            this.panelNav.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
+            this.abasPrincipal.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
+            this.tabHome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.tabPerfil.ResumeLayout(false);
             this.tabPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLogout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagePerfil)).EndInit();
-            this.panelNav.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegFunc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHospital)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pfpLateral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnConsulta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegistro)).EndInit();
-            this.abasPrincipal.ResumeLayout(false);
             this.tabRegistro.ResumeLayout(false);
             this.tabRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditRegistro)).EndInit();
@@ -2299,10 +1994,8 @@
             this.tabAcesso.ResumeLayout(false);
             this.tabAcesso.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabEdicaoHosp.ResumeLayout(false);
-            this.tabEdicaoHosp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -2336,21 +2029,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabRegistroHosp;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TabPage tabPerfil;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblNomeCompleto;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.PictureBox btnEdit;
-        private System.Windows.Forms.PictureBox imagePerfil;
         private System.Windows.Forms.Panel panelNav;
-        private System.Windows.Forms.PictureBox btnLogout;
         private System.Windows.Forms.PictureBox pfpLateral;
-        private System.Windows.Forms.PictureBox btnConfig;
         private System.Windows.Forms.PictureBox btnConsulta;
         private System.Windows.Forms.PictureBox btnRegistro;
         private System.Windows.Forms.TabControl abasPrincipal;
@@ -2362,16 +2042,10 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblHospital;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.MaskedTextBox lblTelefone;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox editCondicao;
         private System.Windows.Forms.Label label28;
@@ -2404,8 +2078,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox btnHospital;
-        private System.Windows.Forms.PictureBox btnRegFunc;
-        private System.Windows.Forms.TabPage tabEdicaoHosp;
         private System.Windows.Forms.TextBox editSangue;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.PictureBox btnBack;
@@ -2437,32 +2109,32 @@
         private System.Windows.Forms.Button btnRegistroHospital;
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.MaskedTextBox telHospital;
-        private System.Windows.Forms.RadioButton checkCNPJ;
-        private System.Windows.Forms.RadioButton checkCPF;
-        private System.Windows.Forms.MaskedTextBox mskTelefone;
-        private System.Windows.Forms.Button btnUpdateHospital;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabPage tabPerfil;
+        private System.Windows.Forms.MaskedTextBox lblTelefone;
+        private System.Windows.Forms.PictureBox btnConfig;
+        private System.Windows.Forms.Label lblHospital;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.PictureBox btnLogout;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblNomeCompleto;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.PictureBox btnEdit;
+        private System.Windows.Forms.PictureBox imagePerfil;
+        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.TabPage tabHome;
+        private System.Windows.Forms.Label lblAgendamentos;
+        private System.Windows.Forms.FlowLayoutPanel flwPendentes;
+        private System.Windows.Forms.PictureBox btnRefresh;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.DateTimePicker dateFechamentoEdi;
-        private System.Windows.Forms.DateTimePicker dateAberturaEdi;
-        private System.Windows.Forms.CheckedListBox checkListEdicao;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox mskEndereco;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TextBox mskEmail;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox mskDirecao;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.TextBox mskDiretor;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.TextBox mskNomeHospital;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.MaskedTextBox mskCNPJ;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Button btnDeleteHospital;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label43;
     }
 }

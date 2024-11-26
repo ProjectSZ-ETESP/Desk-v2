@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Droitech.TextFont;
 
 namespace DeskForms
 {
@@ -32,6 +33,8 @@ namespace DeskForms
 
         private void Principal_Load(object sender, EventArgs e)
         {
+
+
             loadConfig();
             maskCPF();
             reset();
@@ -48,7 +51,8 @@ namespace DeskForms
             kurtCorners(pcbEdit);
             kurtCorners(btnEditRegistro);
             kurtCorners(editEditarrs);
-            
+
+            UpdateRefresh();
 
         }
 
@@ -308,15 +312,15 @@ namespace DeskForms
                 string tempoMenor = dataPura.ToString("yyyy-MM-dd");
                 try
                 {
-                    sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}','{imgPac}')");
+                    sqlReturn($"call proc_cadastroPac('{id}','{cpf}', '{nome}', '{sexo}', '{tempoMenor}', '{numero}')");
+                    MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
+                    reset();
                 }
                 catch
                 {
                     throw new Exception();
                 }
 
-                MessageBox.Show("Paciente Cadastrado com sucesso", "Sucesso!!");
-                reset();
             }
             catch (Exception e)
             {
@@ -446,7 +450,6 @@ namespace DeskForms
                             panelNav.BackColor = darkGreen;
                             this.BackColor = darkGreen;
 
-                            btnConfig.BackgroundImage = Properties.Resources.configBlack;
                             btnLogout.BackgroundImage = Properties.Resources.logout;
                             btnBack.BackgroundImage = Properties.Resources.arrowWhite;
                             Properties.Settings.Default.theme = "Tema Escuro";
@@ -478,7 +481,6 @@ namespace DeskForms
                             }
                             panelNav.BackColor = lightGreen;
                             this.BackColor = lightGreen;
-                            btnConfig.BackgroundImage = Properties.Resources.configWhite;
                             btnLogout.BackgroundImage = Properties.Resources.logoutClear;
                             btnBack.BackgroundImage = Properties.Resources.arrowBlack;
                             Properties.Settings.Default.theme = "Tema Claro";
@@ -501,7 +503,7 @@ namespace DeskForms
 
         private void TxtCPF_KeyDown(object sender, KeyEventArgs e)
         {
-
+            txtCPF.Mask = "000.000.000-00";
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -511,7 +513,6 @@ namespace DeskForms
 
         private bool mouseDown;
         private Point lastLocation;
-
 
         private void Principal_MouseDown(object sender, MouseEventArgs e)
         {
@@ -559,103 +560,19 @@ namespace DeskForms
             pfpPaciente.BackgroundImage = getImg(garrafa);
         }
 
+        private void FindUnique()
+        {
+            
+                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
+            
+            
+        }
+
         private void BtnSearchPac_Click(object sender, EventArgs e)
         {
-            if(checkCPF.Checked == true)
-            {
-                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
-            }
-            else if(checkCNPJ.Checked == true)
-            {
-                UpdateHospital($"select * from tblHospital where cnpj = '{txtCampo_Pac.Text}'");
-            }
-
-        }
-        
-        private void UpdateHospital(string query)
-        {
-            MySqlConnection conn = new MySqlConnection(stringConexão);
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                myreader = cmd.ExecuteReader();
-
-                string cnpj = "", nomeHosp = "", direcao = "", descricaoHosp = "", emailHosp = "", endereco = "", horarioHosp = "", foneHosp = "";
-
-                while (myreader.Read())
-                {
-                    cnpj = myreader["cnpj"].ToString();
-                    nomeHosp = myreader["nomeHosp"].ToString();
-                    direcao = myreader["direcao"].ToString();
-                    descricaoHosp = myreader["descricaoHosp"].ToString();
-                    emailHosp = myreader["emailHosp"].ToString();
-                    endereco = myreader["endereco"].ToString();
-                    horarioHosp = myreader["horarioHosp"].ToString();
-                    foneHosp = myreader["foneHosp"].ToString();
-                }
-
-                mskTelefone.Mask = "(00) 0000-0000";
-                mskCNPJ.Mask = "00.000.000/0000-00";
-
-                mskCNPJ.Text = cnpj;
-                mskNomeHospital.Text = nomeHosp;
-                mskDiretor.Text = direcao;
-                mskDirecao.Text = descricaoHosp;
-                mskEmail.Text = emailHosp;
-                mskEndereco.Text = endereco;
-                mskTelefone.Text = foneHosp;
-                FillCheckedItemsFromSchedule(horarioHosp);
-
-                abasPrincipal.SelectedTab = tabEdicaoHosp;
-
-            }
-            catch { 
-            }
+            FindUnique();
         }
 
-        private void FillCheckedItemsFromSchedule(string input)
-        {
-            // Desmarca todos os itens antes de preencher
-            for (int i = 0; i < checkListDias.Items.Count; i++)
-            {
-                checkListDias.SetItemChecked(i, false);
-            }
-
-            // Expressão regular para identificar o intervalo de dias e o horário
-            var regex = new Regex(@"([a-z]+)\s*à\s*([a-z]+):\s*(\d{2}:\d{2})-(\d{2}:\d{2})", RegexOptions.IgnoreCase);
-            var match = regex.Match(input);
-
-            if (match.Success)
-            {
-                // Extrai os valores capturados
-                string startDay = match.Groups[1].Value.ToLower();
-                string endDay = match.Groups[2].Value.ToLower();
-                string startTime = match.Groups[3].Value;
-                string endTime = match.Groups[4].Value;
-
-                // Obtém os índices dos dias na lista
-                int startDayIndex = diasDaSemana.IndexOf(startDay);
-                int endDayIndex = diasDaSemana.IndexOf(endDay);
-
-                if (startDayIndex != -1 && endDayIndex != -1)
-                {
-                    // Marcar os dias consecutivos
-                    for (int i = startDayIndex; i <= endDayIndex; i++)
-                    {
-                        checkListDias.SetItemChecked(i, true);
-                    }
-                }
-
-                // Aqui você pode manipular os horários (caso precise usar em algum outro contexto)
-                // Exemplo: Você pode usar `startTime` e `endTime` para validar ou exibir os horários em um campo adicional
-                MessageBox.Show($"Horário de funcionamento: {startTime} até {endTime}", "Horário", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Formato de entrada inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void UpdateEdicao(String query)        {
 
@@ -739,18 +656,11 @@ namespace DeskForms
 
         private void TxtCPF_Pac_KeyDown(object sender, KeyEventArgs e)
         {
-            if (checkCPF.Checked == true)
-            {
-                txtCampo_Pac.Mask = "000.000.000-00";
-            }
-            else if (checkCNPJ.Checked == true)
-            {
-                txtCampo_Pac.Mask = "00.000.000 / 0000 - 00";
-            }
+            
 
             if (e.KeyData == Keys.Enter)
             {
-                UpdateEdicao($"select * from tblPaciente where cpfPaciente = '{txtCampo_Pac.Text}'");
+                FindUnique();
             }
         }
 
@@ -807,7 +717,13 @@ namespace DeskForms
             {
                 try
                 {
+                    sqlVoid($"delete from tblNotificacao where idUsuario = {editID.Text}");
+                    sqlVoid($"delete from tblPendente where idPaciente = (select idUsuario from tblPaciente where idUsuario = {editID.Text})");
+                    sqlVoid($"delete from tblProntuario where idConsulta = (select idUsuario from tblPaciente where idUsuario = {editID.Text})");
+                    
+                    sqlVoid($"delete from tblConsulta where idPaciente = (select idUsuario from tblPaciente where idUsuario = {editID.Text})");
                     sqlVoid($"delete from tblPaciente where idUsuario = {editID.Text}");
+
                     MessageBox.Show("Dados do paciente apagados", "BANIDO!!");
                     foreach(Control control in tabEdição.Controls)
                     {
@@ -999,6 +915,287 @@ namespace DeskForms
         }
 
         private void btnUpdateHospital_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            abasPrincipal.SelectedTab = tabHome;
+        }
+
+
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateRefresh();
+        }
+
+        private void UpdateRefresh()
+        {
+            int quant = int.Parse(Count());
+
+            if (quant == 0)
+            {
+                flwPendentes.Controls.Clear();
+                flwPendentes.AutoScroll = false;
+
+                Panel pnl = new Panel();
+                pnl.Size = flwPendentes.Size;
+                pnl.BackColor = Color.Red;
+                Label lbl = new Label();
+                lbl.Text = "Não há nada de \nnovo pra ver aqui ^^";
+                lbl.Size = pnl.Size;
+                lbl.Font = new Font("Poppins Medium", 16, FontStyle.Bold);
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+
+                pnl.Controls.Add(lbl);
+
+                flwPendentes.Controls.Add(pnl);
+
+                lblAgendamentos.Text = $"{quant} Agendamentos Pendentes";
+            }
+
+            else
+            {
+                lblAgendamentos.Text = $"{quant} Agendamentos Pendentes";
+                flwPendentes.Controls.Clear();
+
+                for (int i = 0; i <= quant + 1; i++)
+                {
+                    addPendentes(i);
+                }
+
+            }
+        }
+
+        private void addPendentes(int id)
+        {
+            string query = $"Select * from tblPendente where idPendente = {id}";
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string nome = "", hora = "", hospital = "", idPac = "";
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    idPac = myreader["idPaciente"].ToString();
+                    hospital = myreader["dataPendente"].ToString();
+                    hora = myreader["horaPendente"].ToString();
+                }
+
+                nome = findName(idPac);
+
+                // Criação do painel
+                Panel pnl = new Panel
+                {
+                    Tag = idPac,
+                    Size = new Size(300, 90),
+                    BackColor = Color.White,
+                    Margin = new Padding(5)
+                    
+                    // Adiciona espaçamento entre os painéis no FlowLayoutPanel
+                };
+
+                // Criação da label para o nome do paciente
+                Label lblPaciente = new Label
+                {
+                    Text = $"Nome do Paciente: {nome}", // Exemplo estático, você pode tornar dinâmico
+                    Size = new Size(300, 20),
+                    Font = new Font("Poppins Medium", 10),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Location = new Point(10, 10) // Ajusta a posição dentro do painel
+                };
+
+                // Criação da label para o hospital
+                Label lblHospital = new Label
+                {
+                    Text = $"Data: {hospital.Split(' ')[0]}", // Exemplo estático, pode ser dinâmico
+                    Size = new Size(300, 20),
+                    Font = new Font("Poppins Medium", 8, FontStyle.Bold),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Location = new Point(10, 35)
+                };
+
+                // Criação da label para a hora
+                Label lblHora = new Label
+                {
+                    Text = $"Hora: {hora} ", // Hora atual
+                    Size = new Size(300, 20),
+                    Font = new Font("Poppins Light", 10),
+                    TextAlign = ContentAlignment.MiddleLeft,
+                    Location = new Point(10, 60)
+                };
+
+
+                pnl.Click += (sender, e) => Panel_Click(sender, e, idPac);
+                lblPaciente.Click += (sender, e) => Panel_Click(sender, e, idPac);
+                lblHospital.Click += (sender, e) => Panel_Click(sender, e, idPac);
+                lblHora.Click += (sender, e) => Panel_Click(sender, e, idPac);
+
+
+                // Adicionando labels ao painel
+                pnl.Controls.Add(lblPaciente);
+                pnl.Controls.Add(lblHospital);
+                pnl.Controls.Add(lblHora);
+
+                // Adicionando o painel ao FlowLayoutPanel
+                if(nome != "")
+                {
+                    flwPendentes.Controls.Add(pnl);
+                }
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+        private void Panel_Click(object sender, EventArgs e, string idPaciente)
+        {
+            CheckPendente ckp = new CheckPendente();
+            ckp.Tag = idPaciente;
+            ckp.ShowDialog();
+
+            int quant = int.Parse(Count());
+
+            if (quant == 0)
+            {
+                flwPendentes.Controls.Clear();
+                flwPendentes.AutoScroll = false;
+
+                Panel pnl = new Panel();
+                pnl.Size = flwPendentes.Size;
+                pnl.BackColor = Color.Beige;
+                Label lbl = new Label();
+                lbl.Text = "Não há nada de \nnovo pra ver aqui ^^";
+                lbl.Size = pnl.Size;
+                lbl.Font = new Font("Poppins Medium", 16, FontStyle.Bold);
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+
+                pnl.Controls.Add(lbl);
+
+                flwPendentes.Controls.Add(pnl);
+
+                lblAgendamentos.Text = $"{quant} Agendamentos Pendentes";
+            }
+
+            else
+            {
+                lblAgendamentos.Text = $"{quant} Agendamentos Pendentes";
+                flwPendentes.Controls.Clear();
+
+                for (int i = 0; i <= quant + 1; i++)
+                {
+                    addPendentes(i);
+                }
+
+            }
+
+        }
+
+        public string findName(string id)
+        {
+
+            string query = $"Select nomePaciente from tblPaciente where idPaciente = {id}";
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string name = "";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                if(id != null || id != "")
+                {
+                    myreader = cmd.ExecuteReader();
+                    while (myreader.Read())
+                    {
+                        name = myreader["nomePaciente"].ToString();
+                    }
+                }                
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return name;
+        }
+
+        private string Count()
+        {
+            string query = $"Select count(*) as quant from tblPendente";
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+            string count = "";
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                myreader = cmd.ExecuteReader();
+                while (myreader.Read())
+                {
+                    count = myreader["quant"].ToString();
+                }
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return count;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string query = $"";
+            MySqlConnection conn = new MySqlConnection(stringConexão);
+
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.ExecuteNonQuery();
+                
+                conn.Close();
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show($"Erro na conexão\n{ep}", "uh oh");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void tabHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
